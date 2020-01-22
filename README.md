@@ -6,4 +6,4 @@ Proyecto final de programacion avanzada(UPO), web de noticias para videojuegos e
 * [Oscar Gomez Gomez](https://github.com/OscarGomezGonzalez)
 * [Germán Alejo Domínguez](https://github.com/GermanAlejo)
 * [Miguel Gallego Zarco]
-* [Javier Bermejo Torrent]
+* [Javier Bermejo Torrent](https://github.com/JavierBermejo)
