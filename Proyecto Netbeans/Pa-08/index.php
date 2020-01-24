@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
     <head>
 
@@ -13,6 +13,7 @@
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="assets/css/style.css">
         <link href="assets/bootstrap/css/blog-home.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
@@ -24,7 +25,7 @@
         <link rel="stylesheet" href="assets/css/untitled.css">
     </head>
 
-    <body>
+    <body class='bg-secondary'>
 
         <!-- Navigation -->
         <?php include("header.php"); ?>
@@ -35,7 +36,7 @@
             <div class="row">
 
                 <!-- Blog Entries Column -->
-                <div class="col-md-8">
+                <div class="col-md-8 principio">
 
                     <h1 class="my-4">Page Heading
                         <small>Secondary Text</small>
@@ -82,7 +83,7 @@
                 </div>
 
                 <!-- Sidebar Widgets Column -->
-                <div class="col-md-4">
+                <div class="col-md-4" id="sidebar">
 
                     <!-- Search Widget -->
                     <div class="card my-4">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-01-2020 a las 19:36:47
+-- Tiempo de generación: 24-01-2020 a las 14:45:12
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -58,11 +58,19 @@ CREATE TABLE `comentario` (
 --
 
 CREATE TABLE `equipo` (
-  `id_equipo` int(11) NOT NULL,
   `nombre` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `pais_origen` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `ranking_global` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `equipo`
+--
+
+INSERT INTO `equipo` (`nombre`, `pais_origen`, `ranking_global`) VALUES
+('Astralis', 'Dinarmarca', 1),
+('Fnatic', 'Suecia', 3),
+('Team_Liquid', 'America del Norte', 2);
 
 -- --------------------------------------------------------
 
@@ -75,8 +83,29 @@ CREATE TABLE `jugador` (
   `nombre` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `pais_origen` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `ranking_jugador` int(11) NOT NULL,
-  `id_equipo` int(11) NOT NULL
+  `nombre_equipo` varchar(32) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `jugador`
+--
+
+INSERT INTO `jugador` (`id_jugador`, `nombre`, `pais_origen`, `ranking_jugador`, `nombre_equipo`) VALUES
+(1, 'Xyp9x', 'Dinarmarca', 5, 'Astralis'),
+(2, 'dupreeh', 'Dinamarca', 4, 'Astralis'),
+(3, 'gla1ve', 'Dinamarca', 2, 'Astralis'),
+(4, 'device', 'Dinamarca', 1, 'Astralis'),
+(5, 'Magisk', 'Dinamarca', 6, 'Astralis'),
+(6, 'Nitr0', 'USA', 7, 'Team_Liquid'),
+(7, 'NAF', 'Canada', 8, 'Team_Liquid'),
+(8, 'Elige', 'USA', 3, 'Team_Liquid'),
+(9, 'Stewie2k', 'USA', 9, 'Team_Liquid'),
+(10, 'Twistzz', 'Canada', 10, 'Team_Liquid'),
+(11, 'flusha', 'Suecia', 11, 'Fnatic'),
+(12, 'JW', 'Suecia', 12, 'Fnatic'),
+(13, 'Krimz', 'Suecia', 13, 'Fnatic'),
+(14, 'Golden', 'Suecia', 14, 'Fnatic'),
+(15, 'Brollan', 'Suecia', 15, 'Fnatic');
 
 -- --------------------------------------------------------
 
@@ -155,14 +184,14 @@ ALTER TABLE `comentario`
 -- Indices de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD PRIMARY KEY (`id_equipo`);
+  ADD PRIMARY KEY (`nombre`);
 
 --
 -- Indices de la tabla `jugador`
 --
 ALTER TABLE `jugador`
   ADD PRIMARY KEY (`id_jugador`),
-  ADD KEY `id_equipo` (`id_equipo`);
+  ADD KEY `nombre_equipo` (`nombre_equipo`);
 
 --
 -- Indices de la tabla `liga`
@@ -205,15 +234,10 @@ ALTER TABLE `articulo`
 ALTER TABLE `comentario`
   MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `equipo`
---
-ALTER TABLE `equipo`
-  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
-  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT de la tabla `liga`
 --
@@ -243,7 +267,7 @@ ALTER TABLE `comentario`
 -- Filtros para la tabla `jugador`
 --
 ALTER TABLE `jugador`
-  ADD CONSTRAINT `jugador_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipo` (`id_equipo`);
+  ADD CONSTRAINT `jugador_ibfk_1` FOREIGN KEY (`nombre_equipo`) REFERENCES `equipo` (`nombre`);
 
 --
 -- Filtros para la tabla `partido`

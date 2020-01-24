@@ -1,7 +1,7 @@
 
 <!--<body id="page-top" style="height: 647px;">-->
-    <header class="masthead bg-primary text-white text-center">
-        <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-dark text-uppercase" id="mainNav" style="color: #dddddd;">
+    <header class="masthead bg-primary text-white text-center header row">
+        <nav class="col-12 navbar navbar-light navbar-expand-lg fixed-top bg-dark text-uppercase" id="mainNav" style="color: #dddddd;">
             <div class="container-fluid"><i class="icon ion-ios-plus-outline d-none"></i><a href="index.php" style="height: 38px;width: 0px;font-size: 0px;margin: 0px;padding: 0px;">Link<i class="fa fa-star border-dark d-inline-block" style="background-image: url(&quot;assets/img/csgo_icon.png&quot;);background-size: contain;font-size: 0;height: 40px;width: 40px;"></i></a>
                 <nav
                     class="navbar navbar-light navbar-expand-lg navigation-clean-search" style="height: 25px;margin: 0px;width: 55%;padding: 22px;max-height: 25px;">
