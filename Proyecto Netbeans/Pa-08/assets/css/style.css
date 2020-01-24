@@ -1,14 +1,19 @@
-/*Este fichero*/
-
-.header{
-    position: relative;
-   
-}
+/*Este fichero contiene modificaciones generales para todas las vistas*/
 
 .principio{
     padding-top: 5%;
+    margin-top: 3%;
 }
 
 #sidebar{
     padding-top: 15%;
+}
+
+.card{
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.footer{
+    position:absolute;
 }
