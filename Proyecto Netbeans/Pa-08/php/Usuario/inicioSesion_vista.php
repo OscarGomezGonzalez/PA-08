@@ -20,6 +20,8 @@
                     <form>
                         <div class="form-group"><label class="text-secondary">Usuario</label><input name="nombre_usuario" class="form-control" type="text" required=""></div>
                         <div class="form-group"><label class="text-secondary">Contraseña</label><input name="password" class="form-control" type="password" required=""></div><button class="btn btn-info bg-secondary border-secondary mt-2" type="submit">Iniciar sesión</button></form>
+                        <br>
+                        <div class="form-group"><a class="text-secondary" href="../../php/Usuario/registro_vista.php">¿Todavia no tienes cuenta? Registrate aqui</a></div>
                 </div>
             </div>
             <div class="col-lg-6 d-flex align-items-end" id="bg-block" style="background-image:url(&quot;../../assets/img/fondo_session.jpg&quot;);background-size:cover;background-position:center center;">
