@@ -114,3 +114,63 @@ function getPlayerByName($nombre) {
 
     return $jugador;
 }
+
+/*
+ * Esta funcion devuelve dos jugadores en funcion del ranking pasado por 
+ * parametro que sera de otro jugador, estos jugadores estaran ordenados segun 
+ * su ranking y se corresponderan a uno por encima del ranking pasado y otro 
+ * por debajo, si fuera el peor jugador se devolveran los siguientes dos mejores
+ * o los dos peores si fuera el ultimo
+ */
+
+function getPlayersByPlayerRanking($playerRanking) {
+
+    //array que guarda todos los errores
+    $error[] = "";
+    $conn = conexionDB();
+
+    if ($playerRanking == 1) {
+
+        $ranking1 = 2;
+        $ranking2 = 3;
+    } else {
+
+        $ranking1 = $playerRanking + 1;
+        $ranking2 = $playerRanking - 1;
+    }
+
+    $sql = "SELECT * FROM jugador WHERE jugador.ranking='$ranking1' OR jugador.ranking='$ranking2'";
+
+    $query = mysqli_query($conn, $sql);
+
+    if (!$query) {
+        $error[] = "Error en sql getPlayerByName";
+    } else {
+
+        if (mysqli_num_rows($query) > 1) {
+
+            $row = mysqli_fetch_array($query);
+
+            $jugador = array(
+                'id_' => $row['id_jugador'],
+                'nombre' => $row['nombre'],
+                'pais' => $row['pais_origen'],
+                'ranking' => $row['ranking_jugador'],
+                'equipo' => $row['nombre_equipo']
+            );
+            
+        //es el ultimo jugador    
+        } elseif (mysqli_num_rows($query) == 1) {
+            
+            
+        } else {
+            $error[] = "Se han devuelto mas de un resultado";
+        }
+    }
+    mysqli_close($conn);
+//For debbuging only
+    print_r($error);
+    print_r($jugador);
+
+    return $jugador;
+}
