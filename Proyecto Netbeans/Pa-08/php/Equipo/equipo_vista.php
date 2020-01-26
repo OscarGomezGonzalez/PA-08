@@ -86,6 +86,10 @@
                                         <h4 class="card-title"><?php echo$jugadores[$i]['nombre'] ?></h4>
                                         <p class="float-left card-text"><?php echo$jugadores[$i]['pais'] ?></p>
                                         <p class="text-left float-right card-text">Ranking: <?php echo$jugadores[$i]['ranking'] ?></p>
+                                        <form action="" method="post">
+                                            <input type="hidden" name="nombreEquipo" value="<?php echo$equipos[$i]['nombre']; ?>">
+                                            <input class="btn btn-secondary boton-equipo" value="Ver Jugador" type="submit">
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -110,6 +114,10 @@
                                         <h4 class="card-title"><?php echo$jugadores[$i]['nombre'] ?></h4>
                                         <p class="float-left card-text"><?php echo$jugadores[$i]['pais'] ?></p>
                                         <p class="text-left float-right card-text">Ranking: <?php echo$jugadores[$i]['ranking'] ?></p>
+                                        <form action="" method="post">
+                                            <input type="hidden" name="nombreEquipo" value="<?php echo$equipos[$i]['nombre']; ?>">
+                                            <input class="btn btn-secondary boton-equipo" value="Ver Jugador" type="submit">
+                                        </form>
                                     </div>
                                 </div>
                             </div>
