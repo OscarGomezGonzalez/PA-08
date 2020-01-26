@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-01-2020 a las 14:45:12
+-- Tiempo de generación: 26-01-2020 a las 11:57:30
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -60,17 +60,18 @@ CREATE TABLE `comentario` (
 CREATE TABLE `equipo` (
   `nombre` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `pais_origen` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
-  `ranking_global` int(11) NOT NULL
+  `ranking_global` int(11) NOT NULL,
+  `ruta_foto` varchar(32) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `equipo`
 --
 
-INSERT INTO `equipo` (`nombre`, `pais_origen`, `ranking_global`) VALUES
-('Astralis', 'Dinarmarca', 1),
-('Fnatic', 'Suecia', 3),
-('Team_Liquid', 'America del Norte', 2);
+INSERT INTO `equipo` (`nombre`, `pais_origen`, `ranking_global`, `ruta_foto`) VALUES
+('Astralis', 'Dinarmarca', 1, 'img/logo_equipos/astralis.jpg'),
+('Fnatic', 'Suecia', 3, 'img/logo_equipos/fnatic.jpg'),
+('Team_Liquid', 'America del Norte', 2, 'img/logo_equipos/team-liquid.png');
 
 -- --------------------------------------------------------
 
@@ -237,7 +238,7 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
-  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `liga`
 --

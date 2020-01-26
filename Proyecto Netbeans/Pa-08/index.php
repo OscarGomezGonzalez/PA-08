@@ -28,7 +28,11 @@
     <body class='bg-secondary'>
 
         <!-- Navigation -->
-        <?php include("header.php"); ?>
+        <?php
+        //define('__ROOT__', dirname(dirname(__FILE__)));
+        //require_once(__ROOT__ . 'index.php');
+        require_once("header.php");
+        ?>
 
         <!-- Page Content -->
         <div class="container">

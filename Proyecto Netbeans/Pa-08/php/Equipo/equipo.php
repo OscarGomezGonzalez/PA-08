@@ -61,7 +61,8 @@ function getEquipoByName($nombre) {
             $equipo = array(
                 'nombre' => $row['nombre'],
                 'pais' => $row['pais_origen'],
-                'ranking' => $row['ranking_global']
+                'ranking' => $row['ranking_global'],
+                'rutaImg' => $row['ruta_foto']
             );
         } else {
             $error[] = "Se han devuelto mas de un resultado";
@@ -72,7 +73,7 @@ function getEquipoByName($nombre) {
 
 //For debbuging only
     print_r($error);
-    print_r($equipo);
+    //print_r($equipo);
 
     return $equipo;
 }
