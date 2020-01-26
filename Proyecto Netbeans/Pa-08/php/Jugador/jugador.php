@@ -53,7 +53,6 @@ function getAllPlayersFromTeam($equipo) {
 
     if (!$query) {
         $error[] = "Error en sql getAllPlayers";
-        mysqli_close($conn);
     } else {
 
         if (mysqli_num_rows($query) >= 1) {
@@ -71,10 +70,8 @@ function getAllPlayersFromTeam($equipo) {
         } else {
             $error[] = "No se ha encontrado ninguna fila";
         }
-
-        mysqli_close($conn);
     }
-
+    mysqli_close($conn);
     //For debbuging only
     //print_r($error);
     //print_r($jugadores);
@@ -93,7 +90,6 @@ function getPlayerByName($nombre) {
 
     if (!$query) {
         $error[] = "Error en sql getPlayerByName";
-        mysqli_close($conn);
     } else {
 
         if (mysqli_num_rows($query) == 1) {
@@ -110,10 +106,8 @@ function getPlayerByName($nombre) {
         } else {
             $error[] = "Se han devuelto mas de un resultado";
         }
-
-        mysqli_close($conn);
     }
-
+    mysqli_close($conn);
 //For debbuging only
     print_r($error);
     print_r($jugador);
