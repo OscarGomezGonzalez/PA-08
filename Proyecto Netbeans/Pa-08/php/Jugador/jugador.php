@@ -76,8 +76,8 @@ function getAllPlayersFromTeam($equipo) {
     }
 
     //For debbuging only
-    print_r($error);
-    print_r($jugadores);
+    //print_r($error);
+    //print_r($jugadores);
 
     return $jugadores;
 }

@@ -21,18 +21,18 @@
         <!-- Navigation -->
         <?php
         //importa header
-        //include_once("../../header.php");
+        include_once("../../header.php");
         //importa backend equipo
-        include 'equipo.php';
+        include_once 'equipo.php';
+        //necesitamos importar las funciones de jugador para obtener los jugadores del equipo
+        include_once '../Jugador/jugador.php';
         //vamos a obtener el equipo seleccionado y todos los jugadores de dicho equipo
         //Cuando la vista de equipos este hecha deberemos cambiar esto
         //El valor pasado por parametro debera depender de un formulario
         //obteniendo el valor desde la vista anterior de equipos
         $equipo = getEquipoByName('Astralis');
-        print_r($equipo);
+        //print_r($equipo);
         //echo $equipo['nombre'];
-        //obtenemos los jugadores de dicho equipo
-        //$jugadores = getAllPlayersFromTeam($equipo['nombre']);
         ?>
 
 
@@ -41,10 +41,10 @@
                 <div class="row">
                     <!--Informacion del equipo-->
                     <div class="col-8 col-md-6" style="margin: 0px;color: #958484;background-image: url(&quot;../../assets/img/225-2253433_cs-go-1.jpg&quot;);background-size: 100%;"><img>
-                        <img src="../../assets/<?php echo$equipo['rutaImg'];?>" width="15%"/>
-                        <h1><?php echo $equipo['nombre'];?></h1>
-                        <h3>Ranking global: <?php echo$equipo['ranking'];?></h3>
-                        <h4><?php echo$equipo['pais'];?></h4>
+                        <img src="../../assets/<?php echo$equipo['rutaImg']; ?>" width="15%"/>
+                        <h1><?php echo $equipo['nombre']; ?></h1>
+                        <h3>Ranking global: <?php echo$equipo['ranking']; ?></h3>
+                        <h4><?php echo$equipo['pais']; ?></h4>
                     </div>
                     <!--Informacion con ultimos eventos donde el equipo ha participado-->
                     <div class="col-4 col-md-6" style="background-image: url(&quot;../../assets/img/csgo_torneo.jpg&quot;);background-size: 100%;">
@@ -62,58 +62,65 @@
                     </div>
                 </div>
                 <!-- cartas jugadores -->
-                
-                
-                
-                <div class="row justify-content-center" style="width: 100%;">
-                    <div class="col-4 col-md-4 col-xl-4 offset-xl-0">
-                        <div class="card bg-dark" style="color: rgb(206,211,182);">
-                            <div class="card-body">
-                                <h4 class="card-title">Nombre jugador</h4>
-                                <p class="float-left card-text">Pais</p>
-                                <p class="text-left float-right card-text">Ranking</p>
+                <?php
+                //obtenemos los jugadores de dicho equipo
+                $jugadores = getAllPlayersFromTeam($equipo['nombre']);
+
+                //debemos hacer un bucle para recorrer los jugadores
+                for ($i = 0; $i < sizeof($jugadores); $i++) {
+
+                    if ($i < 3) {
+
+                        if ($i == 0) {
+                            ?>
+                            <div class="row justify-content-center" style="width: 100%;">
+                                <?php
+                            }
+                            ?>
+
+                            <div class="col-4 col-md-4 col-xl-4 offset-xl-0">
+                                <div class="card bg-dark" style="color: rgb(206,211,182);">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><?php echo$jugadores[$i]['nombre'] ?></h4>
+                                        <p class="float-left card-text"><?php echo$jugadores[$i]['pais'] ?></p>
+                                        <p class="text-left float-right card-text">Ranking: <?php echo$jugadores[$i]['ranking'] ?></p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-4 col-md-4 col-xl-4 offset-xl-0">
-                        <div class="card bg-dark" style="color: rgb(206,211,182);">
-                            <div class="card-body">
-                                <h4 class="card-title">Nombre jugador</h4>
-                                <p class="float-left card-text">Pais</p>
-                                <p class="text-left float-right card-text">Ranking</p>
+                            <?php
+                            if ($i == 2) {
+                                ?>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-4 col-md-4 col-xl-4 offset-xl-0">
-                        <div class="card bg-dark" style="color: rgb(206,211,182);">
-                            <div class="card-body">
-                                <h4 class="card-title">Nombre jugador</h4>
-                                <p class="float-left card-text">Pais</p>
-                                <p class="text-left float-right card-text">Ranking</p>
+                            <?php
+                        }
+                    } else {
+
+                        if ($i == 3) {
+                            ?>
+                            <div class="row justify-content-center">
+                                <?php
+                            }
+                            ?>
+
+                            <div class="col-md-4 col-xl-4 offset-xl-0">
+                                <div class="card bg-dark" style="color: rgb(206,211,182);">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><?php echo$jugadores[$i]['nombre'] ?></h4>
+                                        <p class="float-left card-text"><?php echo$jugadores[$i]['pais'] ?></p>
+                                        <p class="text-left float-right card-text">Ranking: <?php echo$jugadores[$i]['ranking'] ?></p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-4 col-xl-4 offset-xl-0">
-                        <div class="card bg-dark" style="color: rgb(206,211,182);">
-                            <div class="card-body">
-                                <h4 class="card-title">Nombre jugador</h4>
-                                <p class="float-left card-text">Pais</p>
-                                <p class="text-left float-right card-text">Ranking</p>
+                            <?php
+                            if ($i == 4) {
+                                ?>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xl-4 offset-xl-0">
-                        <div class="card bg-dark" style="color: rgb(206,211,182);">
-                            <div class="card-body">
-                                <h4 class="card-title">Nombre jugador</h4>
-                                <p class="float-left card-text">Pais</p>
-                                <p class="text-left float-right card-text">Ranking</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            <?php
+                        }
+                    }
+                }
+                ?>
+
             </div>
         </div>
 
