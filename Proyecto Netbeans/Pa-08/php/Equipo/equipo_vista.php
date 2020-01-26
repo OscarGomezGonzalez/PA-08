@@ -13,7 +13,7 @@
         <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <script src="../../assets/js/freelancer.js"></script>
-        <link rel="stylesheet" href="../../assets/css/style.css">
+
     </head>
 
     <body class="bg-secondary">
@@ -26,11 +26,13 @@
         include_once 'equipo.php';
         //necesitamos importar las funciones de jugador para obtener los jugadores del equipo
         include_once '../Jugador/jugador.php';
+
+
+
         //vamos a obtener el equipo seleccionado y todos los jugadores de dicho equipo
-        //Cuando la vista de equipos este hecha deberemos cambiar esto
-        //El valor pasado por parametro debera depender de un formulario
-        //obteniendo el valor desde la vista anterior de equipos
-        $equipo = getEquipoByName('Astralis');
+        $selectedEquipo = $_POST['nombreEquipo'];
+        //echo $selectedEquipo[0];
+        $equipo = getEquipoByName($selectedEquipo);
         //print_r($equipo);
         //echo $equipo['nombre'];
         ?>
