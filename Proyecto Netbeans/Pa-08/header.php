@@ -1,5 +1,6 @@
 
 <!--<body id="page-top" style="height: 647px;">-->
+<!--
 <header class="masthead bg-primary text-white text-center header row">
     <nav class="col-12 navbar navbar-light navbar-expand-lg fixed-top bg-dark text-uppercase" id="mainNav" style="color: #dddddd;">
         <div class="container-fluid"><i class="icon ion-ios-plus-outline d-none"></i><a href="index.php" style="height: 38px;width: 0px;font-size: 0px;margin: 0px;padding: 0px;">Link<i class="fa fa-star border-dark d-inline-block" style="background-image: url(&quot;assets/img/csgo_icon.png&quot;);background-size: contain;font-size: 0;height: 40px;width: 40px;"></i></a>
@@ -15,51 +16,73 @@
             <div class="dropdown" style="font-size:20px; height: 10%;"><a class="dropdown-toggle text-capitalize text-white" style="text-decoration: none" data-toggle="dropdown" aria-expanded="false" href="#">Menu</a>
                 <div class="dropdown-menu text-white" role="menu" style="background-color: #bee5eb; min-width: 10%;height: 112px;"><a class="dropdown-item text-capitalize" role="presentation" href="#" style="margin-right: -2px;">Liga</a><a class="dropdown-item text-capitalize" role="presentation" href="php/Equipo/equipos_vista.php">Equipos</a><a class="dropdown-item text-capitalize" role="presentation"
                                                                                                                                                                                                         href="#">Partidos</a></div>
-                    <?php
-                    session_start();
-                    if (isset($_SESSION['usuario'])) {
-                        if ($_SESSION['tipo'] == "lector") {
-                            ?>
-                    </div>
-                    <div class="dropdown" style = "margin: 0px;font-size: 20px;filter: contrast(85%) grayscale(100%) hue-rotate(0deg);width: 15%;height: 10%;min-height: 70%;max-height: 5%;">
-                        <a class="dropdown-toggle text-capitalize text-white" style="text-decoration: none;" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['nombre']; ?></strong></a>
-                        <div class="dropdown-menu text-white" role="menu" style="background-color: #dddddd;min-width: 10%;height: 144px;">
-                            <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/cuentaVista.php" style="margin-right: -2px;">Mi cuenta</a>
-                            <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis comentarios</a>
-                            <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis valoraciones</a>
-                            <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
-                        </div>
-                    </div>
-                    <?php
-                } else {
-                    ?>
-                </div>
-                <div class="dropdown" style = "margin: 0px;font-size: 20px;filter: contrast(85%) grayscale(100%) hue-rotate(0deg);width: 15%;height: 10%;min-height: 70%;max-height: 5%;">
-                    <a class="dropdown-toggle text-capitalize text-white" style="text-decoration: none;" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['nombre']; ?></strong></a>
-                    <div class="dropdown-menu text-white" role="menu" style="background-color: #dddddd; min-width: 10%;height: 174px;">
-                        <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/cuentaVista.php" style="margin-right: -2px;">Mi cuenta</a>
-                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis artículos</a>
-                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis comentarios</a>
-                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis valoraciones</a>
-                        <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
-                    </div>
-                </div>
-                <?php
-            }
-        } else {
-            ?>
-            </div>
-            <div class = "btn btn-secondary text-capitalize bg-dark" role = "button" onclick = " location.href = 'php/Usuario/inicioSesion_vista.php'" style = "margin: 0px;font-size: 15px;filter: contrast(85%) grayscale(100%) hue-rotate(0deg);width: 13%;height: 5%;min-height: 5%;max-height: 5%;">Iniciar sesión</div>
-            
-            <?php
-        }
+<?php
+session_start();
+if (isset($_SESSION['usuario'])) {
+    if ($_SESSION['tipo'] == "lector") {
         ?>
+                                    </div>
+                                    <div class="dropdown" style = "margin: 0px;font-size: 20px;filter: contrast(85%) grayscale(100%) hue-rotate(0deg);width: 15%;height: 10%;min-height: 70%;max-height: 5%;">
+                                        <a class="dropdown-toggle text-capitalize text-white" style="text-decoration: none;" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['nombre']; ?></strong></a>
+                                        <div class="dropdown-menu text-white" role="menu" style="background-color: #dddddd;min-width: 10%;height: 144px;">
+                                            <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/cuentaVista.php" style="margin-right: -2px;">Mi cuenta</a>
+                                            <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis comentarios</a>
+                                            <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis valoraciones</a>
+                                            <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
+                                        </div>
+                                    </div>
+        <?php
+    } else {
+        ?>
+                                </div>
+                                <div class="dropdown" style = "margin: 0px;font-size: 20px;filter: contrast(85%) grayscale(100%) hue-rotate(0deg);width: 15%;height: 10%;min-height: 70%;max-height: 5%;">
+                                    <a class="dropdown-toggle text-capitalize text-white" style="text-decoration: none;" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['nombre']; ?></strong></a>
+                                    <div class="dropdown-menu text-white" role="menu" style="background-color: #dddddd; min-width: 10%;height: 174px;">
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/cuentaVista.php" style="margin-right: -2px;">Mi cuenta</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis artículos</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis comentarios</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis valoraciones</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
+                                    </div>
+                                </div>
+        <?php
+    }
+} else {
+    ?>
+                    </div>
+                    <div class = "btn btn-secondary text-capitalize bg-dark" role = "button" onclick = " location.href = 'php/Usuario/inicioSesion_vista.php'" style = "margin: 0px;font-size: 15px;filter: contrast(85%) grayscale(100%) hue-rotate(0deg);width: 13%;height: 5%;min-height: 5%;max-height: 5%;">Iniciar sesión</div>
+                    
+    <?php
+}
+?>
+    </nav>
+</header>-->
+
+<header class="bg-primary text-white text-center header">
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav flex-grow-1 justify-content-between">
+                    <li class="nav-item d-flex d-md-flex justify-content-start align-items-center justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;"><a class="nav-link" href="index.php" style="height: 38px;width: 0px;font-size: 0px;margin: 0px;padding: 0px;">Link<i class="fa fa-star border-dark d-inline-block" style="background-image: url(&quot;assets/img/csgo_icon.png&quot;);background-size: contain;font-size: 0;height: 40px;width: 40px;"></i></a></li>
+                    <li
+                        class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;"><input class="d-md-flex justify-content-md-center align-items-md-center" type="search" style="width: 150px;padding: 0;"><a class="nav-link d-md-flex justify-content-md-center align-items-md-center" href="#" style="width: 24px;padding: 0;margin-left: 5px;"><img src="assets/img/search-icon.png"></a></li>
+                    <li
+                        class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;">
+                        <div class="nav-item dropdown d-md-flex justify-content-md-center align-items-md-center"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Menu</a>
+                            <div class="dropdown-menu bg-primary" role="menu">
+                                <a class="dropdown-item" role="presentation" href="#">Liga</a>
+                                <a class="dropdown-item" role="presentation" href="php/Equipo/equipos_vista.php">Equipos</a>
+                                <a class="dropdown-item" role="presentation" href="#">Partidos</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;"><a class="btn btn-primary" role="button">Log In</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 </header>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<script src="assets/js/freelancer.js"></script>
+
 <!--</body>-->
 
 

@@ -24,9 +24,17 @@
         <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
         <link rel="stylesheet" href="assets/css/Pretty-Search-Form.css">
 
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="assets/js/freelancer.js"></script>
+
     </head>
 
-    <body class='bg-secondary'>
+    <body class='bg-secondary' id="page-top" style="height: 647px;">
 
         <!-- Navigation -->
         <?php
@@ -39,10 +47,10 @@
         <!-- Page Content -->
         <div class="container">
 
-            <div class="row">
+            <div class="row principio">
 
                 <!-- Blog Entries Column -->
-                <div class="col-md-8 principio">
+                <div class="col-md-8">
 
                     <h1 class="my-4">Page Heading
                         <small>Secondary Text</small>
@@ -158,9 +166,6 @@
         <!-- Footer -->
         <?php include("footer.php"); ?>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     </body>
 

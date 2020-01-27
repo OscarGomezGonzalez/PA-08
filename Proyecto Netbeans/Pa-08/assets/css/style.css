@@ -1,5 +1,9 @@
 /*Este fichero contiene modificaciones generales para todas las vistas*/
 
+.icon{
+    margin-left: 300%;
+}
+
 .principio{
     padding-top: 5%;
     margin-top: 3%;
@@ -26,7 +30,7 @@
 }
 
 .principio-jugador{
-    margin-top: 2%;
+    margin-top: 5%;
     padding-top: 8%;
 }
 
@@ -35,5 +39,6 @@
 }
 
 .footer{
+    margin-top: 5%;
     position:absolute;
 }
