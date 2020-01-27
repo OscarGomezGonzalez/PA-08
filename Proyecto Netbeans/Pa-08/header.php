@@ -38,7 +38,7 @@
                     <a class="dropdown-toggle text-capitalize text-white" style="text-decoration: none;" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['nombre']; ?></strong></a>
                     <div class="dropdown-menu text-white" role="menu" style="background-color: #dddddd; min-width: 10%;height: 174px;">
                         <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/cuentaVista.php" style="margin-right: -2px;">Mi cuenta</a>
-                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis artículos</a>
+                        <a class="dropdown-item text-capitalize" role="presentation" href="php/Articulo/listaArticulos.php">Mis artículos</a>
                         <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis comentarios</a>
                         <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis valoraciones</a>
                         <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
@@ -50,7 +50,7 @@
             ?>
             </div>
             <div class = "btn btn-secondary text-capitalize bg-dark" role = "button" onclick = " location.href = 'php/Usuario/inicioSesion_vista.php'" style = "margin: 0px;font-size: 15px;filter: contrast(85%) grayscale(100%) hue-rotate(0deg);width: 13%;height: 5%;min-height: 5%;max-height: 5%;">Iniciar sesión</div>
-            
+
             <?php
         }
         ?>
