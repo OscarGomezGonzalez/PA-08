@@ -28,3 +28,12 @@ function conexionDB() {
     mysqli_set_charset($con, "utf-8");
     return $con;
 }
+
+function setDateFormat($fecha) {
+
+    //$newDate = date("d-m-Y", strtotime($fecha)); 
+    setlocale(LC_TIME, "es_ES");
+    $newDate=strftime("%A, %d de %B de %Y", $fecha);
+    //$newDate = date("%A, %d de %B de %Y", strtotime($fecha));
+    return $newDate;
+}

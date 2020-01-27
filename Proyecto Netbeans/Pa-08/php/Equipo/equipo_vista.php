@@ -42,14 +42,14 @@
             <div class="container-fluid" style="height: 80%;width: 100%;margin-top: 2%;margin-right: 2%;margin-left: 2%;padding-top: 0%;opacity: 1;">
                 <div class="row">
                     <!--Informacion del equipo-->
-                    <div class="col-8 col-md-6" style="margin: 0px;color: #958484;background-image: url(&quot;../../assets/img/225-2253433_cs-go-1.jpg&quot;);background-size: 100%;"><img>
+                    <div class="col-8 col-md-6 equipo" style="margin: 0px;color: #958484;background-image: url(&quot;../../assets/img/225-2253433_cs-go-1.jpg&quot;);background-size: 100%;"><img>
                         <img src="../../assets/<?php echo$equipo['rutaImg']; ?>" width="15%"/>
                         <h1><?php echo $equipo['nombre']; ?></h1>
                         <h3>Ranking global: <?php echo$equipo['ranking']; ?></h3>
                         <h4><?php echo$equipo['pais']; ?></h4>
                     </div>
                     <!--Informacion con ultimos eventos donde el equipo ha participado-->
-                    <div class="col-4 col-md-6" style="background-image: url(&quot;../../assets/img/csgo_torneo.jpg&quot;);background-size: 100%;">
+                    <div class="col-4 col-md-6 equipo" style="background-image: url(&quot;../../assets/img/csgo_torneo.jpg&quot;);background-size: 100%;">
                         <div class="card" style="background-image: url(&quot;../../assets/img/csgo_torneo.jpg&quot;);background-size: 100%;color: rgb(206,211,182);">
                             <div class="card-body">
                                 <h4 class="card-title">Title</h4>
@@ -80,7 +80,7 @@
                             }
                             ?>
 
-                            <div class="col-4 col-md-4 col-xl-4 offset-xl-0">
+                            <div class="col-4 col-md-4 col-xl-4 offset-xl-0 equipo">
                                 <div class="card bg-dark" style="color: rgb(206,211,182);">
                                     <div class="card-body">
                                         <h4 class="card-title"><?php echo$jugadores[$i]['nombre'] ?></h4>
@@ -108,7 +108,7 @@
                             }
                             ?>
 
-                            <div class="col-md-4 col-xl-4 offset-xl-0">
+                            <div class="col-md-4 col-xl-4 offset-xl-0 equipo">
                                 <div class="card bg-dark" style="color: rgb(206,211,182);">
                                     <div class="card-body">
                                         <h4 class="card-title"><?php echo$jugadores[$i]['nombre'] ?></h4>

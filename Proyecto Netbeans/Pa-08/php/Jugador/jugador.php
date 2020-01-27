@@ -97,7 +97,7 @@ function getPlayerByName($nombre) {
             $row = mysqli_fetch_array($query);
 
             $jugador = array(
-                'id_' => $row['id_jugador'],
+                'id' => $row['id_jugador'],
                 'nombre' => $row['nombre'],
                 'pais' => $row['pais_origen'],
                 'ranking' => $row['ranking_jugador'],
