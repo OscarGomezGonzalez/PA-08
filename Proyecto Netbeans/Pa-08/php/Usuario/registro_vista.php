@@ -31,9 +31,9 @@
                     <div class="form-group"><input class="form-control" type="password" name="password" id="pass" placeholder="Contraseña" required=""></div>
                     <div class="form-group"><input class="form-control" type="password" name="password-repeat" id="pass2" placeholder="Repita la contraseña" required=""></div>
                     <div class="form-group"><select class="form-control" name="tipo_usuario"><option value="lector" selected="">Lector</option><option value="redactor">Redactor</option></select></div>
-                    <div class="form-group"><input name="imagen_perfil" type="file"></div>
+                    <div class="form-group"><label for="file">Elija foto de perfil: </label><br><input name="imagen_perfil" type="file" value="Selecciona imagen de perfil"></div>
                     <div class="form-group">
-                        <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">Acepto las condiciones y terminos de uso</label></div>
+                        <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox" required="">Acepto las condiciones y terminos de uso</label></div>
                     </div>
                     <div class="form-group"><button class="btn btn-primary btn-block bg-secondary" type="submit" onClick="comprobarClave()">Registrarse</button></div><a class="already" href="../../php/Usuario/inicioSesion_vista.php">¿Ya tienes una cuenta? Inicia sesión aqui</a></form>
             </div>
