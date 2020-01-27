@@ -36,15 +36,29 @@
                             </thead>
                             <tbody>
 
-                                <tr>
-                                    <td>02</td>
-                                    <td>Torta Mil Hojas</td>
-                                    <td>Pasteles</td>
-                                    <td>23.500</td>
-                                    <td><button type="button" class="btn btn-danger"><i class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">Eliminar</i></button>
-                                        <button type="button" class="btn btn-warning"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">Modificar</i></button>
-                                    </td>
-                                </tr>
+                                <?php
+                                include_once '../../funciones.php';
+
+                                session_start();
+                                $user = $_SESSION['usuario'];
+                                $conn = conexionDB();
+                                $consulta = "SELECT id_articulo,titulo,categoria,fecha FROM `articulo` WHERE nombre_usuario='$user'";
+                                $resultado = mysqli_query($conn, $consulta);
+                                while ($row = mysqli_fetch_array($resultado)) {
+                                    ?>
+                                    <tr>
+                                        <td><?php $row['id_articulo'] ?></td>
+                                        <td><?php $row['titulo'] ?></td>
+                                        <td><?php $row['categoria'] ?></td>
+                                        <td><?php $row['fecha'] ?></td>
+                                        <td><button type="button" class="btn btn-danger"><i class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">Eliminar</i></button>
+                                            <button type="button" class="btn btn-warning"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">Modificar</i></button>
+                                        </td>
+                                    </tr> 
+                                    <?php
+                                }
+                                ?>
+                                mysqli_close($conn);
                             </tbody>
                         </table></div>
                 </div>
