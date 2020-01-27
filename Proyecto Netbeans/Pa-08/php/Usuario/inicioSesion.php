@@ -15,7 +15,7 @@ $usuario = $datos["nombre_usuario"];
 $password = $datos["password"];
 
 $conn = conexionDB();
-$consulta = "SELECT password,tipo_usuario,nombre FROM `usuario` WHERE nombre_usuario='$usuario'";
+$consulta = "SELECT password,tipo_usuario,nombre,imagen_perfil,email FROM `usuario` WHERE nombre_usuario='$usuario'";
 $resultado = mysqli_query($conn, $consulta);
 $resultadoProcesado = mysqli_fetch_array($resultado);
 mysqli_close($conn);
@@ -27,6 +27,8 @@ if ($resultadoProcesado) {
         $_SESSION["password"] = $password;
         $_SESSION["tipo"] = $resultadoProcesado["tipo_usuario"];
         $_SESSION["nombre"] = $resultadoProcesado["nombre"];
+        $_SESSION["foto"] = $resultadoProcesado["imagen_perfil"];
+        $_SESSION["email"] = $resultadoProcesado["email"];
         header("location:../../index.php");
     } else {
         echo'<script type="text/javascript">

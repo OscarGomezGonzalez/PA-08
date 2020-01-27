@@ -24,7 +24,7 @@
                     <div class="dropdown" style = "margin: 0px;font-size: 20px;filter: contrast(85%) grayscale(100%) hue-rotate(0deg);width: 15%;height: 10%;min-height: 70%;max-height: 5%;">
                         <a class="dropdown-toggle text-capitalize text-white" style="text-decoration: none;" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['nombre']; ?></strong></a>
                         <div class="dropdown-menu text-white" role="menu" style="background-color: #dddddd;min-width: 10%;height: 144px;">
-                            <a class="dropdown-item text-capitalize" role="presentation" href="#" style="margin-right: -2px;">Mi cuenta</a>
+                            <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/cuentaVista.php" style="margin-right: -2px;">Mi cuenta</a>
                             <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis comentarios</a>
                             <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis valoraciones</a>
                             <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
@@ -37,7 +37,7 @@
                 <div class="dropdown" style = "margin: 0px;font-size: 20px;filter: contrast(85%) grayscale(100%) hue-rotate(0deg);width: 15%;height: 10%;min-height: 70%;max-height: 5%;">
                     <a class="dropdown-toggle text-capitalize text-white" style="text-decoration: none;" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['nombre']; ?></strong></a>
                     <div class="dropdown-menu text-white" role="menu" style="background-color: #dddddd; min-width: 10%;height: 174px;">
-                        <a class="dropdown-item text-capitalize" role="presentation" href="#" style="margin-right: -2px;">Mi cuenta</a>
+                        <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/cuentaVista.php" style="margin-right: -2px;">Mi cuenta</a>
                         <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis artículos</a>
                         <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis comentarios</a>
                         <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis valoraciones</a>
