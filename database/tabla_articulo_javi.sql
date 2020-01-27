@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-01-2020 a las 14:00:30
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Tiempo de generación: 26-01-2020 a las 13:04:39
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `pa_08`
 --
-CREATE DATABASE IF NOT EXISTS `pa_08` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `pa_08`;
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `equipo` (
 INSERT INTO `equipo` (`nombre`, `pais_origen`, `ranking_global`, `ruta_foto`) VALUES
 ('Astralis', 'Dinarmarca', 1, 'img/logo_equipos/astralis.jpg'),
 ('Fnatic', 'Suecia', 3, 'img/logo_equipos/fnatic.jpg'),
-('Team Liquid', 'America del Norte', 2, 'img/logo_equipos/team-liquid.png');
+('Team_Liquid', 'America del Norte', 2, 'img/logo_equipos/team-liquid.png');
 
 -- --------------------------------------------------------
 
@@ -84,30 +84,29 @@ CREATE TABLE `jugador` (
   `nombre` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `pais_origen` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `ranking_jugador` int(11) NOT NULL,
-  `nombre_equipo` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
-  `ruta_imagen` varchar(32) COLLATE utf8_spanish_ci NOT NULL
+  `nombre_equipo` varchar(32) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `jugador`
 --
 
-INSERT INTO `jugador` (`id_jugador`, `nombre`, `pais_origen`, `ranking_jugador`, `nombre_equipo`, `ruta_imagen`) VALUES
-(1, 'Xyp9x', 'Dinarmarca', 5, 'Astralis', 'img/jugadores/xipne.jpg'),
-(2, 'dupreeh', 'Dinamarca', 4, 'Astralis', 'img/jugadores/dupreeh.jpg'),
-(3, 'gla1ve', 'Dinamarca', 2, 'Astralis', 'img/jugadores/glaive.jpg'),
-(4, 'device', 'Dinamarca', 1, 'Astralis', 'img/jugadores/device.jpg'),
-(5, 'Magisk', 'Dinamarca', 6, 'Astralis', 'img/jugadores/magisk.jpg'),
-(6, 'Nitr0', 'USA', 7, 'Team Liquid', 'img/jugadores/nitro.jpeg'),
-(7, 'NAF', 'Canada', 8, 'Team Liquid', 'img/jugadores/naf.jpg'),
-(8, 'Elige', 'USA', 3, 'Team Liquid', 'img/jugadores/elige.jpeg'),
-(9, 'Stewie2k', 'USA', 9, 'Team Liquid', 'img/jugadores/stewie.jpg'),
-(10, 'Twistzz', 'Canada', 10, 'Team Liquid', 'img/jugadores/twistzz.jpg'),
-(11, 'flusha', 'Suecia', 11, 'Fnatic', 'img/jugadores/flusha.jpeg'),
-(12, 'JW', 'Suecia', 12, 'Fnatic', 'img/jugadores/jw.jpeg'),
-(13, 'Krimz', 'Suecia', 13, 'Fnatic', 'img/jugadores/krimz.jpeg'),
-(14, 'Golden', 'Suecia', 14, 'Fnatic', 'img/jugadores/golden.jpeg'),
-(15, 'Brollan', 'Suecia', 15, 'Fnatic', 'img/jugadores/brollan.jpeg');
+INSERT INTO `jugador` (`id_jugador`, `nombre`, `pais_origen`, `ranking_jugador`, `nombre_equipo`) VALUES
+(1, 'Xyp9x', 'Dinarmarca', 5, 'Astralis'),
+(2, 'dupreeh', 'Dinamarca', 4, 'Astralis'),
+(3, 'gla1ve', 'Dinamarca', 2, 'Astralis'),
+(4, 'device', 'Dinamarca', 1, 'Astralis'),
+(5, 'Magisk', 'Dinamarca', 6, 'Astralis'),
+(6, 'Nitr0', 'USA', 7, 'Team_Liquid'),
+(7, 'NAF', 'Canada', 8, 'Team_Liquid'),
+(8, 'Elige', 'USA', 3, 'Team_Liquid'),
+(9, 'Stewie2k', 'USA', 9, 'Team_Liquid'),
+(10, 'Twistzz', 'Canada', 10, 'Team_Liquid'),
+(11, 'flusha', 'Suecia', 11, 'Fnatic'),
+(12, 'JW', 'Suecia', 12, 'Fnatic'),
+(13, 'Krimz', 'Suecia', 13, 'Fnatic'),
+(14, 'Golden', 'Suecia', 14, 'Fnatic'),
+(15, 'Brollan', 'Suecia', 15, 'Fnatic');
 
 -- --------------------------------------------------------
 
@@ -153,14 +152,6 @@ CREATE TABLE `usuario` (
   `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`email`, `tipo_usuario`, `imagen_perfil`, `nombre_usuario`, `password`, `nombre`) VALUES
-('admin@admin.com', 'redactor', '', 'admin', '$2y$10$PjmFU7vi9ilMPJ4/wvffAujYT14UTEsNE1JqMVbbY070m7SyeeLVe', 'pepe'),
-('ger@ger.com', 'lector', '../../assets/img/usuarios/german1/astralis.jpg', 'german1', '$2y$10$YO7we3aujoKfUGLItO.wN.k9CfZYDPNS5pXBTCaJ40/wOY3r4Wi3O', 'german');
-
 -- --------------------------------------------------------
 
 --
@@ -168,9 +159,9 @@ INSERT INTO `usuario` (`email`, `tipo_usuario`, `imagen_perfil`, `nombre_usuario
 --
 
 CREATE TABLE `valoracion` (
-  `id_valoracion` int(11) NOT NULL,
   `id_articulo` int(11) NOT NULL,
-  `valor` int(11) NOT NULL
+  `valor` int(11) NOT NULL,
+  `usuario` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -226,8 +217,8 @@ ALTER TABLE `usuario`
 -- Indices de la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
-  ADD PRIMARY KEY (`id_valoracion`),
-  ADD KEY `id_articulo` (`id_articulo`);
+  ADD KEY `id_articulo` (`id_articulo`),
+  ADD KEY `usuario` (`usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -238,31 +229,31 @@ ALTER TABLE `valoracion`
 --
 ALTER TABLE `articulo`
   MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
   MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
   MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
 --
 -- AUTO_INCREMENT de la tabla `liga`
 --
 ALTER TABLE `liga`
   MODIFY `id_liga` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `partido`
 --
 ALTER TABLE `partido`
   MODIFY `id_partido` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `valoracion`
---
-ALTER TABLE `valoracion`
-  MODIFY `id_valoracion` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -289,7 +280,9 @@ ALTER TABLE `partido`
 -- Filtros para la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
-  ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id_articulo`);
+  ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id_articulo`),
+  ADD CONSTRAINT `valoracion_ibfk_2` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`nombre_usuario`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
