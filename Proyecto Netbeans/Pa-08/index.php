@@ -12,6 +12,7 @@
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
         <!-- Custom styles for this template -->
         <link rel="stylesheet" href="assets/css/style.css">
         <link href="assets/bootstrap/css/blog-home.css" rel="stylesheet">
@@ -22,7 +23,7 @@
         <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
         <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
         <link rel="stylesheet" href="assets/css/Pretty-Search-Form.css">
-        <link rel="stylesheet" href="assets/css/untitled.css">
+
     </head>
 
     <body class='bg-secondary'>
@@ -31,6 +32,7 @@
         <?php
         //define('__ROOT__', dirname(dirname(__FILE__)));
         //require_once(__ROOT__ . 'index.php');
+
         require_once("header.php");
         ?>
 

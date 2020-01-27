@@ -101,7 +101,8 @@ function getPlayerByName($nombre) {
                 'nombre' => $row['nombre'],
                 'pais' => $row['pais_origen'],
                 'ranking' => $row['ranking_jugador'],
-                'equipo' => $row['nombre_equipo']
+                'equipo' => $row['nombre_equipo'],
+                'rutaImg' => $row['ruta_imagen']
             );
         } else {
             $error[] = "Se han devuelto mas de un resultado";
@@ -139,7 +140,8 @@ function getPlayersByPlayerRanking($playerRanking) {
         $ranking2 = $playerRanking - 1;
     }
 
-    $sql = "SELECT * FROM jugador WHERE jugador.ranking='$ranking1' OR jugador.ranking='$ranking2'";
+    $sql = "SELECT * FROM jugador WHERE jugador.ranking_jugador='$ranking1' OR "
+            . "jugador.ranking_jugador='$ranking2' ORDER BY jugador.ranking_jugador";
 
     $query = mysqli_query($conn, $sql);
 
@@ -149,28 +151,52 @@ function getPlayersByPlayerRanking($playerRanking) {
 
         if (mysqli_num_rows($query) > 1) {
 
-            $row = mysqli_fetch_array($query);
+            while ($row = mysqli_fetch_array($query)) {
 
-            $jugador = array(
-                'id_' => $row['id_jugador'],
-                'nombre' => $row['nombre'],
-                'pais' => $row['pais_origen'],
-                'ranking' => $row['ranking_jugador'],
-                'equipo' => $row['nombre_equipo']
-            );
-            
-        //es el ultimo jugador    
+                $jugadores[] = array(
+                    'id' => $row['id_jugador'],
+                    'nombre' => $row['nombre'],
+                    'pais' => $row['pais_origen'],
+                    'ranking' => $row['ranking_jugador'],
+                    'equipo' => $row['nombre_equipo'],
+                    'rutaImg' => $row['ruta_imagen']
+                );
+            }
         } elseif (mysqli_num_rows($query) == 1) {
-            
-            
+
+            $ranking1 = $playerRanking - 2; //dos puestos por encima
+            $ranking2 = $playerRanking - 1; //un puesto por encima
+            //necesimas repetir la consulta
+            $sql = "SELECT * FROM jugador WHERE jugador.ranking_jugador='$ranking1' OR"
+                    . " jugador.ranking_jugador='$ranking2' ORDER BY jugador.ranking_jugador";
+            $query = mysqli_query($conn, $sql);
+
+            if (!$query) {
+                $error[] = "Error en sql getPlayersByRanking";
+            } else {
+                if (mysqli_num_rows($query) >= 1) {
+
+                    while ($row = mysqli_fetch_array($query)) {
+
+                        $jugadores[] = array(
+                            'id' => $row['id_jugador'],
+                            'nombre' => $row['nombre'],
+                            'pais' => $row['pais_origen'],
+                            'ranking' => $row['ranking_jugador'],
+                            'equipo' => $row['nombre_equipo'],
+                            'rutaImg' => $row['ruta_imagen']
+                        );
+                    }
+                }
+            }
         } else {
             $error[] = "Se han devuelto mas de un resultado";
         }
     }
     mysqli_close($conn);
 //For debbuging only
-    print_r($error);
-    print_r($jugador);
+    //print_r($error);
+    //print_r($jugadores);
 
-    return $jugador;
+    return $jugadores;
 }

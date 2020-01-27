@@ -13,7 +13,7 @@
                     </div><a class="btn btn-dark text-capitalize bg-secondary d-xl-flex ml-auto justify-content-xl-end action-button" role="button" href="#" style="height: 28px;width: 15%;background-position: right;background-size: contain;font-size: 10px;">Buscar</a></div>
             </nav>
             <div class="dropdown" style="font-size:20px; height: 10%;"><a class="dropdown-toggle text-capitalize text-white" style="text-decoration: none" data-toggle="dropdown" aria-expanded="false" href="#">Menu</a>
-                <div class="dropdown-menu text-white" role="menu" style="background-color: #bee5eb; min-width: 10%;height: 112px;"><a class="dropdown-item text-capitalize" role="presentation" href="#" style="margin-right: -2px;">Liga</a><a class="dropdown-item text-capitalize" role="presentation" href="#">Equipos</a><a class="dropdown-item text-capitalize" role="presentation"
+                <div class="dropdown-menu text-white" role="menu" style="background-color: #bee5eb; min-width: 10%;height: 112px;"><a class="dropdown-item text-capitalize" role="presentation" href="#" style="margin-right: -2px;">Liga</a><a class="dropdown-item text-capitalize" role="presentation" href="php/Equipo/equipos_vista.php">Equipos</a><a class="dropdown-item text-capitalize" role="presentation"
                                                                                                                                                                                                         href="#">Partidos</a></div>
                     <?php
                     session_start();
