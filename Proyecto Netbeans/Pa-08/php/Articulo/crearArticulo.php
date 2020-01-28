@@ -38,7 +38,7 @@ if ($_FILES['imagen1']['error'] > 0) {
             $mTmpFile = $_FILES['imagen2']['tmp_name'];
             $mTipo = exif_imagetype($mTmpFile);
             if (($mTipo == IMAGETYPE_JPEG) or ( $mTipo == IMAGETYPE_PNG)) {
-                $ruta = "../../assets/img/usuarios/" . $_SESSION["usuario"] . "/articulos/" . $titulo;
+                $ruta = "assets/img/usuarios/" . $_SESSION["usuario"] . "/articulos/" . $titulo;
                 mkdir($ruta, 0777, true);
                 $imagen1 = $ruta . "/primeraImagen";
                 move_uploaded_file($_FILES['imagen1']['tmp_name'], $imagen1);
