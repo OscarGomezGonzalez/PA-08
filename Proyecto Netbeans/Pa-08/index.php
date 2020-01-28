@@ -40,6 +40,9 @@
         <?php
         //define('__ROOT__', dirname(dirname(__FILE__)));
         //require_once(__ROOT__ . 'index.php');
+        session_start();
+
+        include_once 'funciones.php';
 
         require_once("header.php");
         ?>
@@ -57,33 +60,32 @@
                     </h1>
 
                     <!-- Blog Post -->
-                    <div class="card mb-4">
-                        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-                        <div class="card-body">
-                            <h2 class="card-title">Post Title</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-                        </div>
-                        <div class="card-footer text-muted">
-                            Posted on January 1, 2017 by
-                            <a href="#">Start Bootstrap</a>
-                        </div>
-                    </div>
+                    <?php
+                    $conn = conexionDB();
+                    $consulta = "SELECT * FROM `articulo`";
+                    $resultado = mysqli_query($conn, $consulta);
+                    while ($row = mysqli_fetch_array($resultado)) {
+                        $imagenes = explode(";", $row['imagenes']);
+                        ?>
 
-                    <!-- Blog Post -->
-                    <div class="card mb-4">
-                        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-                        <div class="card-body">
-                            <h2 class="card-title">Post Title</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="<?php echo $imagenes[0]; ?>" alt="Card image cap">
+                            <div class="card-body">
+                                <h2 class="card-title"><?php echo $row['titulo']; ?></h2>
+                                <p class="card-text"><?php echo $row['contenido1'] ?></p>
+                                <form action="php/Articulo/articulo_vista.php" method="POST">
+                                    <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
+                                    <button  type="submit" class="btn btn-primary">Leer más &rarr;</button>
+                                </form>
+                            </div>
+                            <div class="card-footer text-muted">
+                                Creado el <?php echo $row['fecha']; ?> por <?php echo $row['nombre_usuario']; ?>
+                            </div>
                         </div>
-                        <div class="card-footer text-muted">
-                            Posted on January 1, 2017 by
-                            <a href="#">Start Bootstrap</a>
-                        </div>
-                    </div>
 
+                        <?php
+                    }
+                    ?>
                     <!-- Pagination -->
                     <ul class="pagination justify-content-center mb-4">
                         <li class="page-item">
