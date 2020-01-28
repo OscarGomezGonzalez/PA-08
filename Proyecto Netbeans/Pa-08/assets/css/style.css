@@ -19,6 +19,10 @@
     margin-bottom: 2%;
 }
 
+.card-partidos{
+    opacity: 0.85;
+}
+
 .logoEquipo{
     width: 12%;
     height: 40%;
