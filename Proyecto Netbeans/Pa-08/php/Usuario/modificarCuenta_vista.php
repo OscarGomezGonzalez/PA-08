@@ -13,6 +13,9 @@
     <body>
         <?php
         session_start();
+         
+        require_once("../../header.php");
+        
         ?>
         <div class="bg-secondary register-photo">
             <div class="form-container">
