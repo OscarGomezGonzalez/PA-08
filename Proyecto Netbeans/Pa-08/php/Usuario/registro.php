@@ -28,7 +28,7 @@ if ($datos["password"] == $datos["password-repeat"]) {
         $mTmpFile = $_FILES['imagen_perfil']['tmp_name'];
         $mTipo = exif_imagetype($mTmpFile);
         if (($mTipo == IMAGETYPE_JPEG) or ( $mTipo == IMAGETYPE_PNG)) {
-            $ruta = "../../assets/img/usuarios/" . $usuario;
+            $ruta = "assets/img/usuarios/" . $usuario;
             mkdir($ruta, 0777, true);
             $imagen_perfil = $ruta . "/imagenPerfil";
             move_uploaded_file($_FILES['imagen_perfil']['tmp_name'], $imagen_perfil);

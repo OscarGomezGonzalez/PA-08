@@ -59,7 +59,7 @@
                                 <div class="nav-item dropdown d-md-flex justify-content-md-center align-items-md-center"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['nombre']; ?></strong></a>
                                     <div class="dropdown-menu bg-primary" role="menu">
                                         <a class="dropdown-item" role="presentation" href="php/Usuario/cuentaVista.php">Mi cuenta</a>
-                                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis artículos</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="php/Articulo/listaArticulos.php">Mis artículos</a>
                                         <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis comentarios</a>
                                         <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis valoraciones</a>
                                         <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
