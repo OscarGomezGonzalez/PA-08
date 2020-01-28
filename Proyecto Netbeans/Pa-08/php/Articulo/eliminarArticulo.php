@@ -17,7 +17,8 @@ if (isset($_POST['SI'])) {
     header("location:../../php/Articulo/listaArticulos.php");
 } else {
     $_SESSION['idArticulo'] = $_POST['idArticulo'];
-} $_SESSION['titulo'] = $_POST['nomArticulo'];
+    $_SESSION['titulo'] = $_POST['nomArticulo'];
+}
 ?>
 
 <!DOCTYPE html>

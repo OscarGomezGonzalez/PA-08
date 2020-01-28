@@ -30,9 +30,8 @@ if ($datos["password"] == $datos["password-repeat"]) {
         if (($mTipo == IMAGETYPE_JPEG) or ( $mTipo == IMAGETYPE_PNG)) {
             $ruta = "../../assets/img/usuarios/" . $usuario;
             mkdir($ruta, 0777, true);
-            $imagen_perfil = $ruta . "/" . $_FILES['imagen_perfil']['name'];
+            $imagen_perfil = $ruta . "/imagenPerfil";
             move_uploaded_file($_FILES['imagen_perfil']['tmp_name'], $imagen_perfil);
-            $imagen_perfil = $ruta . "/" . $_FILES['imagen_perfil']['name'];
         } else {
             $imagen_perfil = "";
         }
