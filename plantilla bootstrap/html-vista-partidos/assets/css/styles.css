@@ -1,4 +1,6 @@
 .card {
   opacity: 0.85;
+  min-width: 300px;
+  min-height: auto;
 }
 

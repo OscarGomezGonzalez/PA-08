@@ -52,3 +52,5 @@ function setDateFormat($fecha) {
     //$newDate = date("%A, %d de %B de %Y", strtotime($fecha));
     return $newDate;
 }
+
+
