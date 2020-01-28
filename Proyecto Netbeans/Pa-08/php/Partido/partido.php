@@ -1,9 +1,13 @@
 <?php
 
+echo 'loko';
+
 include_once '../../funciones.php';
 
-function getPartidoById($idPartido) {
+echo 'loko';
 
+function getPartidoById($idPartido) {
+    
     //array que guarda todos los errores
     $error[] = "";
     $conn = conexionDB();
@@ -55,11 +59,42 @@ function getPartidoById($idPartido) {
     }
     mysqli_close($conn);
 //For debbuging only
-    print_r($error);
+    //print_r($error);
     //print_r($partido);
 
     return $partido;
 }
+
+
+function getPartidosPaginated($lastOne) {
+    echo 'loko';
+    $sql = "SELECT * FROM partidos ORDER BY id ASC LIMIT 6 OFFSET '$lastOne'";
+    $conn = conexionDB();
+    
+    $query = mysqli_query($conn, $sql);
+
+    if (!$query) {
+        $error[] = "Error en sql paginated";
+    } else {
+        if (mysqli_num_rows($query) >= 1) {
+
+            while ($row = mysqli_fetch_array($query)) {
+
+                //$partidos[] = $row[];
+            }
+        } else {
+            $error[] = "No se han devuelto resultados";
+        }
+    }
+
+    mysqli_close($conn);
+//For debbuging only
+    //print_r($error);
+    //print_r($rutasMapas);
+
+    return $partidos;
+}
+
 
 function getGanadorPartido($partido) {
 
@@ -115,16 +150,14 @@ function getRutasMapas($partido) {
     return $rutasMapas;
 }
 
-function isTwoMaps($partido){
-    
+function isTwoMaps($partido) {
+
     $lessThan3 = false;
-    
-    if($partido['ganador3'] == ""){
-        
+
+    if ($partido['ganador3'] == "") {
+
         $lessThan3 = true;
-        
     }
-    
+
     return$lessThan3;
-    
 }
