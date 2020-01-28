@@ -9,14 +9,14 @@
         <link rel="stylesheet" href="../../assets/css/style.css">
     </head>
 
-    <body class="bg-secondary" style="height: 100%;">
+    <body class="bg-secondary" style="height: 100%;background-size: 120%;background-repeat: no-repeat;background-image: url(&quot;../../assets/img/fondoversus.jpg&quot;);">
         <!-- Navigation -->
         <?php
         require_once("../../header.php");
         include_once './partido.php';
         $partido = getPartidoById(1);
         ?>
-        <div class="principio" style="height: 100%;background-size: 100%;background-repeat: no-repeat;background-image: url(&quot;../../assets/img/fondoversus.jpg&quot;);">
+        <div class="principio" style="height: 100%;">
             <div class="container" style="height: 100%;min-height: 100%;max-height: 100%;">
                 <div class="row">
                     <div class="col-auto col-md-12" style="width: 40%;">
