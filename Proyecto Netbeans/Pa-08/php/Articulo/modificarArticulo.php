@@ -14,9 +14,12 @@ $saneamiento = array(
 );
 
 $datos = filter_input_array(INPUT_POST, $saneamiento);
+$idArticulo = $_POST['idArticulo'];
+$tituloAn = $_POST['titulo'];
 
 
 $titulo = $datos["titulo"];
+$fecha = date("Y-m-d");
 $categoria = $datos["categoria"];
 $contenido1 = $datos["contenido1"];
 $subtitulo = $datos["subtitulo"];
@@ -24,33 +27,30 @@ $contenido2 = $datos["contenido2"];
 $contenido3 = $datos["contenido3"];
 $imagen1Error = false;
 $imagen2Error = false;
+$ruta = "../../assets/img/usuarios/" . $_SESSION["usuario"] . "/articulos/" . $tituloAn;
 
 if ($_FILES['imagen1']['error'] > 0) {
-    $imagen1Error = true;
+    
 } else {
     $mTmpFile = $_FILES['imagen1']['tmp_name'];
     $mTipo = exif_imagetype($mTmpFile);
     if (($mTipo == IMAGETYPE_JPEG) or ( $mTipo == IMAGETYPE_PNG)) {
-
-        if ($_FILES['imagen2']['error'] > 0) {
-            $imagen2Error = true;
-        } else {
-            $mTmpFile = $_FILES['imagen2']['tmp_name'];
-            $mTipo = exif_imagetype($mTmpFile);
-            if (($mTipo == IMAGETYPE_JPEG) or ( $mTipo == IMAGETYPE_PNG)) {
-                $ruta = "../../assets/img/usuarios/" . $_SESSION["usuario"] . "/articulos/" . $titulo;
-                mkdir($ruta, 0777, true);
-                $imagen1 = $ruta . "/primeraImagen";
-                move_uploaded_file($_FILES['imagen1']['tmp_name'], $imagen1);
-                $imagen2 = $ruta . "/segundaImagen";
-                move_uploaded_file($_FILES['imagen2']['tmp_name'], $imagen2);
-                $imagenes = $imagen1 . ";" . $imagen2;
-            } else {
-                $imagen2Error = true;
-            }
-        }
+        $imagen1 = $ruta . "/primeraImagen";
+        move_uploaded_file($_FILES['imagen1']['tmp_name'], $imagen1);
     } else {
         $imagen1Error = true;
+    }
+}
+if ($_FILES['imagen2']['error'] > 0) {
+    
+} else {
+    $mTmpFile = $_FILES['imagen2']['tmp_name'];
+    $mTipo = exif_imagetype($mTmpFile);
+    if (($mTipo == IMAGETYPE_JPEG) or ( $mTipo == IMAGETYPE_PNG)) {
+        $imagen2 = $ruta . "/segundaImagen";
+        move_uploaded_file($_FILES['imagen2']['tmp_name'], $imagen2);
+    } else {
+        $imagen2Error = true;
     }
 }
 
@@ -67,15 +67,11 @@ if ($imagen1Error == true) {
         </script>';
     } else {
         $conn = conexionDB();
-        $user = $_SESSION["usuario"];
-        $fecha = date("Y-m-d");
-        $consulta = "INSERT INTO `articulo`(`titulo`, `id_articulo`, `nombre_usuario`, `valor_valoracion`, `fecha`, `categoria`, `imagenes`, `contenido1`, `contenido2`, `contenido3`, `subtitulo`) VALUES ('$titulo',NULL,'$user',0,'$fecha','$categoria','$imagenes','$contenido1','$contenido2','$contenido3','$subtitulo')";
+        $consulta = "UPDATE `articulo` SET `titulo`='$titulo', `fecha`='$fecha',`categoria`='$categoria',`contenido1`='$contenido1',`contenido2`='$contenido2',`contenido3`='$contenido3',`subtitulo`='$subtitulo' WHERE id_articulo='$idArticulo'";
         $resultado = mysqli_query($conn, $consulta);
         mysqli_close($conn);
         if ($resultado) {
             header("location:../../php/Articulo/listaArticulos.php");
-        } else {
-            header("location:../../php/Articulo/crearArticulo.php");
         }
     }
 }

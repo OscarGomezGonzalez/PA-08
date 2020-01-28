@@ -24,7 +24,7 @@
                     <div class="col"><button class="btn btn-secondary d-flex align-items-center align-self-center" type="button" onclick="location.href = '../../php/Articulo/crearArticulo_vista.php'" style="height: 38px;background-color: #868e96;">Agregar Artículo&nbsp;<i class="fa fa-plus-circle"></i></button></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12"><table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <div class="col-md-12"><table id="example" class="table table-striped table-bordered"  cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -46,25 +46,32 @@
                                 $resultado = mysqli_query($conn, $consulta);
                                 while ($row = mysqli_fetch_array($resultado)) {
                                     ?>
-                                <form action="../../php/Articulo/articulo_vista.php"  method="POST">
                                     <tr>
                                         <td><?php echo $row['id_articulo'] ?></td>
                                         <td><?php echo $row['titulo'] ?></td>
                                         <td><?php echo $row['categoria'] ?></td>
                                         <td><?php echo $row['fecha'] ?></td>
-                                        <td>
-                                            <button type="submit" class="btn btn-light"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">Ver</i></button>
-                                            <button type="button" class="btn btn-warning"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">Modificar</i></button>
-                                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">Eliminar</i></button>
-                                            <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
+                                        <td class="form-inline">
+                                            <form action="../../php/Articulo/articulo_vista.php"  method="POST">
+                                                <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
+                                                <button type="submit" class="btn btn-light"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">Ver</i></button>
+                                            </form>
+                                            <form action="../../php/Articulo/modificarArticulo_vista.php"  method="POST">
+                                                <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
+                                                <button type="submit" class="btn btn-warning"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">Modificar</i></button>
+                                            </form>
+                                            <form action="../../php/Articulo/eliminarArticulo.php"  method="POST">
+                                                <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">Eliminar</i></button>
+                                                <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
+                                                <input type='hidden' value="<?php echo $row['titulo'] ?>" name='nomArticulo'/>
+                                            </form>
                                         </td>
                                     </tr> 
-                                </form>
-                                <?php
-                            }
-                            mysqli_close($conn);
-                            ?>
-
+                                    </form>
+                                    <?php
+                                }
+                                mysqli_close($conn);
+                                ?>
                             </tbody>
                         </table></div>
                 </div>
