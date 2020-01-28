@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>vista-jugador</title>
-        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../assets/css/Navigation-with-Search.css">
-        <link rel="stylesheet" href="../../assets/css/style.css">
-
-    </head>
+    <?php include_once '../../head.php';?>
 
     <body class="bg-secondary">
 
         <!-- Navigation -->
         <?php
-        //define('__ROOT__', dirname(dirname(__FILE__)));
-        //require_once(__ROOT__ . 'index.php');
         require_once("../../header.php");
         require_once 'jugador.php';
         //obtenemos jugador seleccionado
@@ -42,7 +32,7 @@
                 <div class="row">
                     <div class="col-8 col-md-6" style="width: 50%;min-width: 450px;">
                         <div class="card" style="background-color: #98A0A9">
-                            <div class="card-body"><img src="../../assets/<?php echo$rutaImagen ?>" width="50%">
+                            <div class="card-body"><img src="assets/<?php echo$rutaImagen ?>" width="50%">
                                 <h3><?php echo$jugador['nombre']; ?></h3>
                                 <h5>Ranking Global: <?php echo$jugador['ranking']; ?></h5>
                                 <h6><?php echo$jugador['pais']; ?></h6>
@@ -60,7 +50,7 @@
                                 <h4 class="card-title"><?php echo$otrosJugadores[0]['nombre']; ?></h4>
                                 <h6 class="text-muted card-subtitle mb-2">Ranking Global: <?php echo$otrosJugadores[0]['ranking']; ?></h6>
                                 <h6 class="text-muted card-subtitle mb-2"><?php echo$otrosJugadores[0]['equipo']; ?></h6>
-                                <form action="jugador_vista.php" method="post">
+                                <form action="php/Jugador/jugador_vista.php" method="post">
                                     <input type="hidden" name="nombreJugador" value="<?php echo$otrosJugadores[0]['nombre']; ?>">
                                     <input class="btn btn-secondary boton-equipo" value="Ver Jugador" type="submit">
                                 </form>
@@ -69,7 +59,7 @@
                                 <h4 class="card-title"><?php echo$otrosJugadores[1]['nombre']; ?></h4>
                                 <h6 class="text-muted card-subtitle mb-2">Ranking Global: <?php echo$otrosJugadores[1]['ranking']; ?></h6>
                                 <h6 class="text-muted card-subtitle mb-2"><?php echo$otrosJugadores[1]['equipo']; ?></h6>
-                                <form action="jugador_vista.php" method="post">
+                                <form action="php/Jugador/jugador_vista.php" method="post">
                                     <input type="hidden" name="nombreJugador" value="<?php echo$otrosJugadores[1]['nombre']; ?>">
                                     <input class="btn btn-secondary boton-equipo" value="Ver Jugador" type="submit">
                                 </form>

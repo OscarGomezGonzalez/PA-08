@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>lista-equipos</title>
-        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../assets/css/Responsive-Card-Item-List.css">
-        <link rel="stylesheet" href="../../assets/css/style.css">
-    </head>
+    <?php include_once '../../head.php';?>
 
-    <body style="background-image: url(&quot;../../assets/img/csgo-parche-diciembre.png&quot;);background-size: 120%;">
+    <body style="background-image: url(&quot;assets/img/csgo-parche-diciembre.png&quot;);background-size: 120%;">
         <!-- Navigation -->
         <?php
         //importa header
@@ -46,12 +39,12 @@
                         <div class="row  justify-content-center" style="margin-bottom: 2%;">
                             <div class="col">
                                 <div class="card text-left" style="opacity: 0.62;filter: grayscale(0%);background-color: #000000;color: rgb(248,249,251);">
-                                    <div class="card-body" style="opacity: 1;"><img class="logoEquipo" src="../../assets/<?php echo$equipos[$i]['rutaImg']; ?>">
+                                    <div class="card-body" style="opacity: 1;"><img class="logoEquipo" src="assets/<?php echo$equipos[$i]['rutaImg']; ?>">
                                         <h3 class="card-title"><?php echo$equipos[$i]['nombre']; ?></h3>
                                         <h5 class="card-title">Ranking Global: <?php echo$equipos[$i]['ranking']; ?></h5>
                                         <h6 class="text-muted card-subtitle mb-2"><?php echo$equipos[$i]['pais']; ?></h6>
                                     </div>
-                                    <form action="equipo_vista.php" method="post">
+                                    <form action="php/Equipo/equipo_vista.php" method="post">
                                         <input type="hidden" name="nombreEquipo" value="<?php echo$equipos[$i]['nombre']; ?>">
                                         <input class="btn btn-secondary boton-equipo" value="Ver Equipo" type="submit">
                                     </form>
@@ -63,12 +56,12 @@
                             ?>
                             <div class="col">
                                 <div class="card text-left" style="opacity: 0.62;filter: grayscale(0%);background-color: #000000;color: rgb(248,249,251);">
-                                    <div class="card-body" style="opacity: 1;"><img class="logoEquipo" src="../../assets/<?php echo$equipos[$i]['rutaImg']; ?>">
+                                    <div class="card-body" style="opacity: 1;"><img class="logoEquipo" src="assets/<?php echo$equipos[$i]['rutaImg']; ?>">
                                         <h3 class="card-title"><?php echo$equipos[$i]['nombre']; ?></h3>
                                         <h5 class="card-title">Ranking Global: <?php echo$equipos[$i]['ranking']; ?></h5>
                                         <h6 class="text-muted card-subtitle mb-2"><?php echo$equipos[$i]['pais']; ?></h6>
                                     </div>
-                                    <form action="equipo_vista.php" method="post">
+                                    <form action="php/Equipo/equipo_vista.php" method="post">
                                         <input type="hidden" name="nombreEquipo" value="<?php echo$equipos[$i]['nombre']; ?>">
                                         <input class="btn btn-secondary boton-equipo" value="Ver Equipo" type="submit">
                                     </form>
