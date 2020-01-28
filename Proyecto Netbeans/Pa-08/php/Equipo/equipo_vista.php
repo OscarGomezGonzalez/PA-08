@@ -52,33 +52,47 @@
                     <div class="col-4 col-md-6 equipo" style="background-image: url(&quot;../../assets/img/csgo_torneo.jpg&quot;);background-size: 100%;">
                         <div class="card" style="background-image: url(&quot;../../assets/img/csgo_torneo.jpg&quot;);background-size: 100%;color: rgb(206,211,182);">
                             <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                </ul>
+
+                                <?php
+                                $partidos = getPartidosByEquipo($equipo['nombre']);
+
+                                if (sizeof($partidos) > 0) {
+                                    ?><h4 class="card-title">Proximos Partidos</h4>  <ul><?php
+                                    for ($i = 0; $i < sizeof($partidos); $i++) {
+                                        $fecha = setDateFormat($partidos[$i]['fecha']);
+                                        ?>
+                                            <li><?php echo $partidos[$i]['equipo1']; echo ' vs '; echo$partidos[$i]['equipo2']; echo " " . $fecha;
+                                ?></li>
+                                            <?php }
+                                        ?></ul><?php
+                                        } else {
+                                            ?><h4 class="card-title">No hay proximos partidos</h4><?php
+                                    }
+                                    ?>
+
+                                    <?php ?>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- cartas jugadores -->
-                <?php
-                //obtenemos los jugadores de dicho equipo
-                $jugadores = getAllPlayersFromTeam($equipo['nombre']);
+<?php
+//obtenemos los jugadores de dicho equipo
+$jugadores = getAllPlayersFromTeam($equipo['nombre']);
 
-                //debemos hacer un bucle para recorrer los jugadores
-                for ($i = 0; $i < sizeof($jugadores); $i++) {
+//debemos hacer un bucle para recorrer los jugadores
+for ($i = 0; $i < sizeof($jugadores); $i++) {
 
-                    if ($i < 3) {
+    if ($i < 3) {
 
-                        if ($i == 0) {
-                            ?>
+        if ($i == 0) {
+            ?>
                             <div class="row justify-content-center" style="width: 100%;">
-                                <?php
-                            }
-                            ?>
+                            <?php
+                        }
+                        ?>
 
                             <div class="col-4 col-md-4 col-xl-4 offset-xl-0 equipo">
                                 <div class="card bg-dark" style="color: rgb(206,211,182);">
@@ -93,20 +107,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php
-                            if ($i == 2) {
-                                ?>
+        <?php
+        if ($i == 2) {
+            ?>
                             </div>
-                            <?php
-                        }
-                    } else {
-
-                        if ($i == 3) {
-                            ?>
-                            <div class="row justify-content-center">
                                 <?php
                             }
-                            ?>
+                        } else {
+
+                            if ($i == 3) {
+                                ?>
+                            <div class="row justify-content-center">
+                            <?php
+                        }
+                        ?>
 
                             <div class="col-md-4 col-xl-4 offset-xl-0 equipo">
                                 <div class="card bg-dark" style="color: rgb(206,211,182);">
@@ -121,21 +135,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php
-                            if ($i == 4) {
-                                ?>
+        <?php
+        if ($i == 4) {
+            ?>
                             </div>
-                            <?php
+                                <?php
+                            }
                         }
                     }
-                }
-                ?>
+                    ?>
 
             </div>
         </div>
 
         <!-- Footer -->
-        <?php include("../../footer.php"); ?>
+<?php include("../../footer.php"); ?>
         <script src="../../assets/js/jquery.min.js"></script>
         <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
     </body>

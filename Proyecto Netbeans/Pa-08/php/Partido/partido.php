@@ -115,3 +115,16 @@ function getRutasMapas($partido) {
     return $rutasMapas;
 }
 
+function isTwoMaps($partido){
+    
+    $lessThan3 = false;
+    
+    if($partido['ganador3'] == ""){
+        
+        $lessThan3 = true;
+        
+    }
+    
+    return$lessThan3;
+    
+}
