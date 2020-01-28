@@ -36,8 +36,8 @@ function getAllPlayers() {
     }
 
     //For debbuging only
-    print_r($error);
-    print_r($jugadores);
+    //print_r($error);
+    //print_r($jugadores);
 
     return $jugadores;
 }
@@ -110,8 +110,8 @@ function getPlayerByName($nombre) {
     }
     mysqli_close($conn);
 //For debbuging only
-    print_r($error);
-    print_r($jugador);
+    //print_r($error);
+    //print_r($jugador);
 
     return $jugador;
 }

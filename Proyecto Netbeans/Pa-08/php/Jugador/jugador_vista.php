@@ -24,41 +24,41 @@
         //obtenemos todos los datos del jugador
         $jugador = getPlayerByName($nombreJugador);
         //print_r($jugador);
+
+        if ($jugador['rutaImg'] == "") {
+            $rutaImagen = "img/jugadores/default.png";
+        } else {
+            $rutaImagen = $jugador['rutaImg'];
+        }
         ?>
 
-        <div class="principio-jugador">
+        <div class="text-left principio-jugador">
             <div class="container" style="height: 90%;">
-                <div class="row">
+                <div class="row" style="margin-top: 20px;">
                     <div class="col-12 col-md-12">
                         <h2 class="text-center">Información de Jugador</h2>
                     </div>
                 </div>
-                <?php
-                if ($jugador['rutaImg'] == "") {
-                    $rutaImagen = "img/jugadores/default.png";
-                } else {
-                    $rutaImagen = $jugador['rutaImg'];
-                }
-                ?>
                 <div class="row">
-                    <div class="col-8 col-md-6"><img src="../../assets/<?php echo$rutaImagen ?>" width="50%">
-                        <h3><?php echo$jugador['nombre']; ?></h3>
-                        <h5>Ranking Global: <?php echo$jugador['ranking']; ?></h5>
-                        <h6><?php echo$jugador['pais']; ?></h6>
+                    <div class="col-8 col-md-6" style="width: 50%;min-width: 450px;">
+                        <div class="card" style="background-color: #98A0A9">
+                            <div class="card-body"><img src="../../assets/<?php echo$rutaImagen ?>" width="50%">
+                                <h3><?php echo$jugador['nombre']; ?></h3>
+                                <h5>Ranking Global: <?php echo$jugador['ranking']; ?></h5>
+                                <h6><?php echo$jugador['pais']; ?></h6>
+                            </div>
+                        </div>
                     </div>
-
                     <?php
                     //obtenemos los jugadores compañeros del ranking
                     $otrosJugadores = getPlayersByPlayerRanking($jugador['ranking']);
                     ?>
-
-
-                    <div class="col-4 col-md-6">
-                        <h5>Clasificación</h5>
-                        <div class="card" style="opacity: 0.62;">
+                    <div class="col-4 col-md-6" style="width: 50%;min-width: 450px;">
+                        <div class="card" style="opacity: 0.51;min-height: auto;min-width: 400px;">
                             <div class="card-body">
+                                <h5>Clafisicación</h5>
                                 <h4 class="card-title"><?php echo$otrosJugadores[0]['nombre']; ?></h4>
-                                <h6 class="text-muted card-subtitle mb-2">Ranking Global:<?php echo$otrosJugadores[0]['ranking']; ?></h6>
+                                <h6 class="text-muted card-subtitle mb-2">Ranking Global: <?php echo$otrosJugadores[0]['ranking']; ?></h6>
                                 <h6 class="text-muted card-subtitle mb-2"><?php echo$otrosJugadores[0]['equipo']; ?></h6>
                                 <form action="jugador_vista.php" method="post">
                                     <input type="hidden" name="nombreJugador" value="<?php echo$otrosJugadores[0]['nombre']; ?>">
@@ -67,7 +67,7 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title"><?php echo$otrosJugadores[1]['nombre']; ?></h4>
-                                <h6 class="text-muted card-subtitle mb-2">Ranking Global:<?php echo$otrosJugadores[1]['ranking']; ?></h6>
+                                <h6 class="text-muted card-subtitle mb-2">Ranking Global: <?php echo$otrosJugadores[1]['ranking']; ?></h6>
                                 <h6 class="text-muted card-subtitle mb-2"><?php echo$otrosJugadores[1]['equipo']; ?></h6>
                                 <form action="jugador_vista.php" method="post">
                                     <input type="hidden" name="nombreJugador" value="<?php echo$otrosJugadores[1]['nombre']; ?>">
@@ -79,11 +79,16 @@
                 </div>
             </div>
         </div>
-        <!-- Footer -->
-        <?php include("../../footer.php"); ?>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     </body>
+
+
+    <!-- Footer -->
+    <?php include("../../footer.php"); ?>
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
 
 </html>
 
