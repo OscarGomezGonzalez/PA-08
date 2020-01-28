@@ -1,46 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>Blog Home - Start Bootstrap Template</title>
-
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-
-        <!-- Custom styles for this template -->
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link href="assets/bootstrap/css/blog-home.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
-        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-        <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-        <link rel="stylesheet" href="assets/css/Pretty-Search-Form.css">
-
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <script src="assets/js/freelancer.js"></script>
-
-    </head>
+    <?php include_once 'head.php';?>
 
     <body class='bg-secondary' id="page-top" style="height: 647px;">
 
         <!-- Navigation -->
         <?php
-        //define('__ROOT__', dirname(dirname(__FILE__)));
-        //require_once(__ROOT__ . 'index.php');
-
         require_once("header.php");
         ?>
 

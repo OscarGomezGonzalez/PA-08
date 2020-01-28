@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>partidos</title>
-        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../assets/css/style.css">
-    </head>
+    <?php include_once '../../head.php'; ?>
 
-    <body class="bg-secondary" style="height: 100%;background-size: 120%;background-repeat: no-repeat;background-image: url(&quot;../../assets/img/fondoversus.jpg&quot;);">
+    <body class="bg-secondary" style="height: 100%;background-size: 120%;background-repeat: no-repeat;background-image: url(&quot;assets/img/fondoversus.jpg&quot;);">
         <!-- Navigation -->
         <?php
         require_once("../../header.php");
@@ -51,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col" style="width: 260px;min-width: 260px;"><img class="img-fluid d-xl-flex justify-content-xl-center" style="margin-right: 2%;margin-top: 1%;width: 25%;height: 90%;margin-left: 35%;" src="../../assets/img/versus.png" height="280px" width="260px"></div>
+                    <div class="col" style="width: 260px;min-width: 260px;"><img class="img-fluid d-xl-flex justify-content-xl-center" style="margin-right: 2%;margin-top: 1%;width: 25%;height: 90%;margin-left: 35%;" src="assets/img/versus.png" height="280px" width="260px"></div>
                     <div class="col">
                         <div class="card card-partidos text-light bg-dark" style="width: 100%;min-height: auto">
                             <div class="card-body">
@@ -61,21 +55,21 @@
                     </div>
                 </div>
                 <div class="row" style="height: 50%;max-height: 50%;min-height: 50%;margin-top: 1%;color: #c6d7f1;">
-                    <div class="col-md-4" style="background-image: url(&quot;../../assets/<?php echo$mapas[0]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;">
+                    <div class="col-md-4" style="background-image: url(&quot;assets/<?php echo$mapas[0]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;">
                         <h2><?php echo$partido['mapa1']; ?></h2>
                         <h3 style="margin-bottom: 30%;">Ganador: <?php echo$partido['ganador1']; ?></h3>
                     </div>
-                    <div class="col" style="background-image: url(&quot;../../assets/<?php echo$mapas[0]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;opacity: 0.85;margin-left: 2%;margin-right: 2%;">
+                    <div class="col" style="background-image: url(&quot;assets/<?php echo$mapas[0]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;opacity: 0.85;margin-left: 2%;margin-right: 2%;">
                         <h2><?php echo$partido['mapa2']; ?></h2>
                         <h3 style="margin-bottom: 30%;">Ganador: <?php echo$partido['ganador2']; ?></h3>
                     </div>
-                    <div class="col-md-4" style="background-image: url(&quot;../../assets/<?php echo$mapas[0]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;">
+                    <div class="col-md-4" style="background-image: url(&quot;assets/<?php echo$mapas[0]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;">
                         <h2><?php echo$partido['mapa3']; ?></h2>
 
                         <?php
                         if (isTwoMaps($partido)) {
                             ?>
-                            
+
                             <h3 style="margin-bottom: 30%;">Mapa no jugado</h3>
 
                             <?php

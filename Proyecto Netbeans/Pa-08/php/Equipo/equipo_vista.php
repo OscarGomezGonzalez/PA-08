@@ -3,18 +3,7 @@
 
     <!--vista de un equipo-->
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>plantilla-vista-equipos</title>
-        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../assets/css/style.css">
-        <script src="../../assets/js/jquery.min.js"></script>
-        <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <script src="../../assets/js/freelancer.js"></script>
-
-    </head>
+    <?php include_once '../../head.php';?>
 
     <body class="bg-secondary">
 
@@ -42,15 +31,15 @@
             <div class="container-fluid" style="height: 80%;width: 100%;margin-top: 2%;margin-right: 2%;margin-left: 2%;padding-top: 0%;opacity: 1;">
                 <div class="row">
                     <!--Informacion del equipo-->
-                    <div class="col-8 col-md-6 equipo" style="margin: 0px;color: #958484;background-image: url(&quot;../../assets/img/225-2253433_cs-go-1.jpg&quot;);background-size: 100%;"><img>
-                        <img src="../../assets/<?php echo$equipo['rutaImg']; ?>" width="15%"/>
+                    <div class="col-8 col-md-6 equipo" style="margin: 0px;color: #958484;background-image: url(&quot;assets/img/225-2253433_cs-go-1.jpg&quot;);background-size: 100%;"><img>
+                        <img src="assets/<?php echo$equipo['rutaImg']; ?>" width="15%"/>
                         <h1><?php echo $equipo['nombre']; ?></h1>
                         <h3>Ranking global: <?php echo$equipo['ranking']; ?></h3>
                         <h4><?php echo$equipo['pais']; ?></h4>
                     </div>
                     <!--Informacion con ultimos eventos donde el equipo ha participado-->
-                    <div class="col-4 col-md-6 equipo" style="background-image: url(&quot;../../assets/img/csgo_torneo.jpg&quot;);background-size: 100%;">
-                        <div class="card" style="background-image: url(&quot;../../assets/img/csgo_torneo.jpg&quot;);background-size: 100%;color: rgb(206,211,182);">
+                    <div class="col-4 col-md-6 equipo" style="background-image: url(&quot;assets/img/csgo_torneo.jpg&quot;);background-size: 100%;">
+                        <div class="card" style="background-image: url(&quot;assets/img/csgo_torneo.jpg&quot;);background-size: 100%;color: rgb(206,211,182);">
                             <div class="card-body">
 
                                 <?php
@@ -100,7 +89,7 @@ for ($i = 0; $i < sizeof($jugadores); $i++) {
                                         <h4 class="card-title"><?php echo$jugadores[$i]['nombre'] ?></h4>
                                         <p class="float-left card-text"><?php echo$jugadores[$i]['pais'] ?></p>
                                         <p class="text-left float-right card-text">Ranking: <?php echo$jugadores[$i]['ranking']; ?></p>
-                                        <form action="../Jugador/jugador_vista.php" method="post">
+                                        <form action="php/Jugador/jugador_vista.php" method="post">
                                             <input type="hidden" name="nombreJugador" value="<?php echo$jugadores[$i]['nombre']; ?>">
                                             <input class="btn btn-secondary boton-equipo" value="Ver Jugador" type="submit">
                                         </form>
@@ -128,7 +117,7 @@ for ($i = 0; $i < sizeof($jugadores); $i++) {
                                         <h4 class="card-title"><?php echo$jugadores[$i]['nombre'] ?></h4>
                                         <p class="float-left card-text"><?php echo$jugadores[$i]['pais'] ?></p>
                                         <p class="text-left float-right card-text">Ranking: <?php echo$jugadores[$i]['ranking'] ?></p>
-                                        <form action="../Jugador/jugador_vista.php" method="post">
+                                        <form action="php/Jugador/jugador_vista.php" method="post">
                                             <input type="hidden" name="nombreJugador" value="<?php echo$jugadores[$i]['nombre']; ?>">
                                             <input class="btn btn-secondary boton-equipo" value="Ver Jugador" type="submit">
                                         </form>
