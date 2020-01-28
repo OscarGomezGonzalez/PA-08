@@ -52,7 +52,7 @@
                 <div class="form-row profile-row">
                     <div class="col-md-4 relative">
                         <div class="avatar">
-                            <div class="avatar-bg center" style="background-image:url(&quot;<?php echo $row['imagen_perfil']; ?>&quot;);"></div>
+                            <div class="avatar-bg center" style="background-image:url(&quot;../../<?php echo $row['imagen_perfil']; ?>&quot;);"></div>
                         </div></div>
                     <div class="col-md-7">
                         <h1>Mi cuenta</h1>
@@ -99,6 +99,9 @@
         <script src="../../assets/js/jquery.min.js"></script>
         <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="../../assets/js/Profile-Edit-Form.js"></script>
+         <?php
+        require_once("../../footer.php");
+        ?>
     </body>
 
 </html>

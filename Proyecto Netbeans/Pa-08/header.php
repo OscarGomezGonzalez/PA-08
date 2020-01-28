@@ -13,7 +13,42 @@
                             <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Liga</a><a class="dropdown-item" role="presentation" href="php/Equipo/equipos_vista.php">Equipos</a><a class="dropdown-item" role="presentation" href="#">Partidos</a></div>
                         </div>
                     </li>
-                    <li class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;"><a class="btn btn-primary" role="button">Log In</a></li>
+                    <?php
+                    if (isset($_SESSION['usuario'])) {
+                        if ($_SESSION['tipo'] == "lector") {
+                            ?>
+                            <li class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;">
+                                <div class="nav-item dropdown d-md-flex justify-content-md-center align-items-md-center"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['nombre']; ?></strong></a>
+                                    <div class="dropdown-menu bg-primary" role="menu">
+                                        <a class="dropdown-item" role="presentation" href="php/Usuario/cuentaVista.php">Mi cuenta</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis comentarios</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis valoraciones</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <?php
+                        } else {
+                            ?>
+                            <li class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;">
+                                <div class="nav-item dropdown d-md-flex justify-content-md-center align-items-md-center"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['nombre']; ?></strong></a>
+                                    <div class="dropdown-menu bg-primary" role="menu">
+                                        <a class="dropdown-item" role="presentation" href="php/Usuario/cuentaVista.php">Mi cuenta</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="php/Articulo/listaArticulos.php">Mis artículos</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis comentarios</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="#">Mis valoraciones</a>
+                                        <a class="dropdown-item text-capitalize" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <?php
+                        }
+                    } else {
+                        ?>
+                        <li class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;"><a class="btn btn-primary" role="button" onclick = " location.href = 'php/Usuario/inicioSesion_vista.php'">Log In</a></li>
+                            <?php
+                        }
+                        ?>
                 </ul>
             </div>
         </div>
