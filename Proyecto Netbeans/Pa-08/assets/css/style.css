@@ -4,6 +4,10 @@
     margin-left: 300%;
 }
 
+.icono-header{
+    background-image: url(../img/csgo_icon.png);
+}
+
 .principio{
     padding-top: 5%;
     margin-top: 3%;
