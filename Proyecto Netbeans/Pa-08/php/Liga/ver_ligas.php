@@ -31,7 +31,7 @@ function ver_ligas() {
         </form>';*/
                 //Fin antigua vision
                 
-                echo '    
+                echo '      
                 <div class="col" style="padding-left: 0px;padding-right: 0px;width: 50%;min-width: 200px;">
                     <div class="card text-left" style="opacity: 0.62;filter: grayscale(0%);background-color: #000000;color: rgb(248,249,251);height: 100%;width: 100%;">
                         <div class="card-body" style="opacity: 1;padding: 0px;width: 100%;height: 100%;"><img>
@@ -39,7 +39,7 @@ function ver_ligas() {
                             <h5 class="card-title">'.$row['fecha_inicio'].'</h5>
                             <h5 class="card-title">'.$row['fecha_fin'].'</h5>
                             <h6 class="text-muted card-subtitle mb-2">'.$row['lugar'].'</h6>
-                            <form action="index.php" method="post">
+                            <form action="php/Liga/ver_unaLiga.php" method="post">
                                     <input type="hidden" id="custId" name="custId" value="'.$row['id_liga'].'">
                                     <input class="btn btn-secondary boton-equipo" value="Ver Liga" type="submit">
                             </form>
@@ -83,9 +83,9 @@ function ver_unaLiga($idliga) {
                 
                 echo '
         <div class="text-left">
-            <div class="container-fluid" style="height: 80%;width: 100%;margin-top: 2%;margin-right: 2%;margin-left: 2%;padding-top: 0%;opacity: 1;">
+            <div class="container-fluid" style="height: 80%;width: 100%;margin-top: 10%;margin-right: 2%;margin-left: 2%;padding-top: 0%;opacity: 1;">
                 <div class="row">
-                    <div class="col-8 col-md-6" style="margin: 0px;color: #958484;background-image: url(&quot;assets/img/225-2253433_cs-go-1.jpg&quot;);background-size: 100%;width: 50%;min-width: 300px;"><img src="assets/img/953433_1.jpg" width="15%">
+                    <div class="col-8 col-md-6" style="margin: 0px;color: #958484;background-image: url(&quot;assets/img/225-2253433_cs-go-1.jpg&quot;);background-size: 100%;width: 50%;min-width: 300px;">
                         <h1>'.$row['nombre'].'</h1>
                         <div class="d-inline-block d-sm-flex align-items-sm-center">
                             <h3 style="width: 50%;">'.$row['fecha_inicio'].'</h3>
