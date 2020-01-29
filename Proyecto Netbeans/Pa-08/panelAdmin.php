@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html style="background-image: url(&quot;assets/img/csgo-logo-wallpapers-4.jpg&quot;);background-position: center;background-size: auto;">
-
+<html>
+<!--
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>PanelAdministrador</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-</head>
+</head>-->
 
-<body>
+<?php include 'head.php';?>
+
+<body style="background-image: url(&quot;assets/img/csgo-logo-wallpapers-4.jpg&quot;);background-position: center;background-size: auto;">
     <div class="d-xl-flex justify-content-xl-center" style="width: 100%;height: 100%;margin: 0;margin-top: 10%;">
         <div class="container d-xl-flex justify-content-xl-center" style="padding-left: 0;padding-right: 0;width: 100%;height: 100%;">
             <div class="row d-lg-flex align-items-lg-center" style="width: 100%;min-width: 100%;max-width: 100%;">
@@ -85,10 +87,7 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    
 </body>
 
 </html>

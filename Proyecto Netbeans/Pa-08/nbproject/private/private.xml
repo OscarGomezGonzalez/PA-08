@@ -11,8 +11,10 @@
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/assets/css/Profile-Edit-Form.css</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/assets/css/-Login-form-Page-BS4-.css</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Equipo/equipo.php</file>
+            <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Articulo/modificarArticulo_vista.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/assets/css/Pretty-Search-Form.css</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Valoracion/index.php</file>
+            <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Articulo/listaArticulos.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Partido/partido.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/head.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/assets/fonts/material-icons.min.css</file>
@@ -28,9 +30,13 @@
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Jugador/jugador.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Valoracion/valoracion.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Partido/lista_partidos.php</file>
+            <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Usuario/inicioSesion_vista.php</file>
+            <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Articulo/articulo_vista.php</file>
+            <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Busqueda/vistaBusqueda.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/index.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/header.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Partido/partidos_vista.php</file>
+            <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Busqueda/busqueda.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Jugador/jugador_vista.php</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/assets/css/Profile-Edit-Form-1.css</file>
             <file>file:/C:/Users/geral/Documents/GitHub/PA-08/Proyecto%20Netbeans/Pa-08/php/Liga/index.php</file>

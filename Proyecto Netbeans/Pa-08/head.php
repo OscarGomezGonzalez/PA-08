@@ -49,13 +49,15 @@
     <link rel="stylesheet" href="../../assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="../../assets/css/Lista-Productos-Canito.css">
 
-<!-- Liga -->
+    <!-- Liga -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/material-icons.min.css">
     <link rel="stylesheet" href="assets/css/Responsive-Card-Item-List.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/script.js"></script>
 
 
     <script>

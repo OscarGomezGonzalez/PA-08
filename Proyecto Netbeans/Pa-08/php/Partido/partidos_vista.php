@@ -56,17 +56,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="height: 50%;max-height: 50%;min-height: 50%;margin-top: 1%;color: #c6d7f1;">
+                <div class="row" style="text-shadow: 2px 2px 5px black;height: 50%;max-height: 50%;min-height: 50%;margin-top: 1%;color: #c6d7f1;">
                     <div class="col-md-4" style="background-image: url(&quot;assets/<?php echo$mapas[0]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;">
-                        <h2><?php echo$partido['mapa1']; ?></h2>
+                        <h2 style="text-shadow: 2px 2px 5px black;"><?php echo$partido['mapa1']; ?></h2>
                         <h3 style="margin-bottom: 30%;">Ganador: <?php echo$partido['ganador1']; ?></h3>
                     </div>
                     <div class="col" style="background-image: url(&quot;assets/<?php echo$mapas[1]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;opacity: 0.85;margin-left: 2%;margin-right: 2%;">
-                        <h2><?php echo$partido['mapa2']; ?></h2>
+                        <h2 style="text-shadow: 2px 2px 5px black;"><?php echo$partido['mapa2']; ?></h2>
                         <h3 style="margin-bottom: 30%;">Ganador: <?php echo$partido['ganador2']; ?></h3>
                     </div>
                     <div class="col-md-4" style="background-image: url(&quot;assets/<?php echo$mapas[2]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;">
-                        <h2><?php echo$partido['mapa3']; ?></h2>
+                        <h2 style="text-shadow: 2px 2px 5px black;"><?php echo$partido['mapa3']; ?></h2>
 
                         <?php
                         if (isTwoMaps($partido)) {

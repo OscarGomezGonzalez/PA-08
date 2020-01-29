@@ -109,3 +109,4 @@ function getPartidosByEquipo($equipo) {
 
     return $partidos;
 }
+
