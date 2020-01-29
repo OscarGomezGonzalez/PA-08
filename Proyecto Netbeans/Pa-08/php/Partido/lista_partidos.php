@@ -10,7 +10,7 @@
         include_once 'partido.php';
         //obtenemos los primeros 6 partidos
         $offset = 0;
-        $limit = 3;
+        $limit = 6;
         if (isset($_GET['next'])) {
             $offset = $_GET['next'] + $limit;
         } elseif (isset($_GET['previous'])) {
@@ -27,15 +27,51 @@
                 <div class="row justify-content-center" style="width: 100%;">
                     <div class="col-4 col-md-4 col-xl-4 offset-xl-0" style="min-width: 350px;">
                         <form action="php/Partido/lista_partidos.php" method="GET" class="d-md-flex justify-content-md-center align-items-md-center">
-                            <?php if ($offset > 0) {
-                                ?><button class="btn d-md-fex" type="submit" name="previous" style="background-color: #98A0A9;color: rgb(0,0,0);font-size: 20px;width: 50%; margin: 5px;" value="<?php echo$offset; ?>">Anterior Pagina</button>
 
+                            <?php if ($offset > 0) {
+                                ?><button class="btn d-md-fex previous" type="submit" name="previous" style="background-color: #98A0A9;color: rgb(0,0,0);font-size: 20px;width: 50%; margin: 5px;" value="<?php echo$offset; ?>">Anterior Pagina</button>
+                                <script type="text/javascript">
+
+                                    document.getElementById("previous").onload = function () {
+                                        document.getElementById("previous").style.visibility = "visible";
+                                    };
+
+                                </script>
+
+                                <?php
+                            } else {
+                                ?>
+                                
+                                <script type="text/javascript">
+
+                                    document.getElementById("next").onload = function () {
+                                        document.getElementById("next").style.visibility = "hidden";
+                                    };
+
+                                </script>
                                 <?php
                             }
                             ?>
                             <?php if ($left) {
-                                ?><button class="btn" type="submit" name="next" style="background-color: #98A0A9;color: rgb(0,0,0);font-size: 20px;width: 50%;" value="<?php echo$offset; ?>">Siguiente Pagina</button>
+                                ?><button class="btn next" type="submit" name="next" style="background-color: #98A0A9;color: rgb(0,0,0);font-size: 20px;width: 50%;" value="<?php echo$offset; ?>">Siguiente Pagina</button>
+                                <script type="text/javascript">
 
+                                    document.getElementById("next").onload = function () {
+                                        document.getElementById("next").style.visibility = "visible";
+                                    };
+
+                                </script>
+                                <?php
+                            } else {
+                                ?>
+
+                                <script type="text/javascript">
+
+                                    document.getElementById("next").onload = function () {
+                                        document.getElementById("next").style.visibility = "hidden";
+                                    };
+
+                                </script>
                                 <?php
                             }
                             ?>
