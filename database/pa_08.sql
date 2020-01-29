@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-01-2020 a las 22:57:01
+-- Tiempo de generación: 29-01-2020 a las 16:15:26
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `pa_08`
 --
+CREATE DATABASE IF NOT EXISTS `pa_08` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+USE `pa_08`;
 
 -- --------------------------------------------------------
 
@@ -42,6 +44,17 @@ CREATE TABLE `articulo` (
   `subtitulo` varchar(20) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `articulo`
+--
+
+INSERT INTO `articulo` (`titulo`, `id_articulo`, `nombre_usuario`, `valor_valoracion`, `fecha`, `categoria`, `imagenes`, `contenido1`, `contenido2`, `contenido3`, `subtitulo`) VALUES
+('asdvfbn', 1, 'miguelgz_97', 0, '2020-01-28', 'sadfghn', 'assets/img/usuarios/miguelgz_97/articulos/asdvfbn/primeraImagen;assets/img/usuarios/miguelgz_97/articulos/asdvfbn/segundaImagen', 'sadfgxcv', 'adsfg', 'sdfgbn', 'asdfg'),
+('AZXSCDVFBGNHM,.', 6, 'admin', 0, '2020-01-29', 'Qwaesfthyjgkl', 'assets/img/usuarios/admin/articulos/AZXSCDVFBGNHM,./primeraImagen;assets/img/usuarios/admin/articulos/AZXSCDVFBGNHM,./segundaImagen', 'ewarstdfgh', 'qwertyu', 'wertyjk', 'qewartyju'),
+('asdzfcghjvkl,.', 7, 'admin', 0, '2020-01-29', 'sa>dZFXCGVHBJNM,-.', 'assets/img/usuarios/admin/articulos/asdzfcghjvkl,./primeraImagen;assets/img/usuarios/admin/articulos/asdzfcghjvkl,./segundaImagen', 'Swdafesghmbn,', 'asdgfhbnm', 'AFSGDHVMBJN,.', 'DSAFVHBNM'),
+('1', 8, 'admin', 0, '2020-01-29', '1', 'assets/img/usuarios/admin/articulos/sadfvbcgnhmjk.-./primeraImagen;assets/img/usuarios/admin/articulos/sadfvbcgnhmjk.-./segundaImagen', '1', '1', '1', '1'),
+('prueba', 9, 'admin', 0, '2020-01-29', 'Â´sadfghtyjkliÃ±okL', 'assets/img/usuarios/admin/articulos/prueba/primeraImagen;assets/img/usuarios/admin/articulos/prueba/segundaImagen', 'qwdafsghj,m', 'Asdafsgbn', 'asdfvcbgnm,.', 'WDAEFSGHN');
+
 -- --------------------------------------------------------
 
 --
@@ -55,6 +68,15 @@ CREATE TABLE `comentario` (
   `texto` text COLLATE utf8_spanish_ci NOT NULL,
   `nombre_usuario` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`id_comentario`, `id_articulo`, `fecha`, `texto`, `nombre_usuario`) VALUES
+(3, 6, '2020-01-29', 'ola q ase colega del infierno', 'admin'),
+(4, 8, '2020-01-29', 'pasa bro\r\n', 'admin'),
+(14, 6, '2020-01-29', 'sadfhjbknÃ±l,.-', 'admin');
 
 -- --------------------------------------------------------
 
@@ -171,8 +193,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`email`, `tipo_usuario`, `imagen_perfil`, `nombre_usuario`, `password`, `nombre`) VALUES
-('admin@admin.com', 'redactor', '', 'admin', '$2y$10$PjmFU7vi9ilMPJ4/wvffAujYT14UTEsNE1JqMVbbY070m7SyeeLVe', 'pepe'),
-('ger@ger.com', 'lector', '../../assets/img/usuarios/german1/astralis.jpg', 'german1', '$2y$10$YO7we3aujoKfUGLItO.wN.k9CfZYDPNS5pXBTCaJ40/wOY3r4Wi3O', 'german');
+('admin@admin.com', 'redactor', 'assets/img/usuarios/admin/imagenPerfil', 'admin', '$2y$10$cfsW63NdNSMJKUgE3KksjuwcqXDjpUxRQtnzW7fROnWIPH3UOuv9e', 'pepe20'),
+('car01@wd', 'lector', 'assets/img/usuarios/car02/imagenPerfil', 'car02', '$2y$10$vsb3Z.3rnCF74V1pwxmycO8E5.N3TZ3J9.Inw3HQiV8RRKqZBQisK', 'Carlos'),
+('ger@ger.com', 'lector', '../../assets/img/usuarios/german1/astralis.jpg', 'german1', '$2y$10$YO7we3aujoKfUGLItO.wN.k9CfZYDPNS5pXBTCaJ40/wOY3r4Wi3O', 'german'),
+('miguel@ola', 'lector', 'assets/img/usuarios/miguelgz97/imagenPerfil', 'miguelgz97', '$2y$10$FczPuO908xI1OmUn.Ux2IObb/wc2Xn5A4Jo.6hEpUzVUBjfRjThba', 'Miguel Gallego');
 
 -- --------------------------------------------------------
 
@@ -250,13 +274,13 @@ ALTER TABLE `valoracion`
 -- AUTO_INCREMENT de la tabla `articulo`
 --
 ALTER TABLE `articulo`
-  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `jugador`
