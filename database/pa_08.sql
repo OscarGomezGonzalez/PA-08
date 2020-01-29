@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-01-2020 a las 18:47:38
+-- Tiempo de generación: 29-01-2020 a las 18:55:05
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -151,6 +151,13 @@ CREATE TABLE `liga` (
   `premio_3` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `liga`
+--
+
+INSERT INTO `liga` (`id_liga`, `nombre`, `fecha_inicio`, `fecha_fin`, `lugar`, `premio_1`, `premio_2`, `premio_3`) VALUES
+(1, 'StarLadder', '2019-12-11', '2019-12-19', 'Berlin, Alemania', 100000, 50000, 30000);
+
 -- --------------------------------------------------------
 
 --
@@ -161,6 +168,16 @@ CREATE TABLE `mapa` (
   `nombre_mapa` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `ruta_imagen` varchar(32) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `mapa`
+--
+
+INSERT INTO `mapa` (`nombre_mapa`, `ruta_imagen`) VALUES
+('cache', 'img/mapas/cache.jpg'),
+('inferno', 'img/mapas/inferno.jpg'),
+('mirage', 'img/mapas/mirage.jpg'),
+('train', 'img/mapas/train.jpg');
 
 -- --------------------------------------------------------
 
@@ -181,6 +198,15 @@ CREATE TABLE `partido` (
   `ganador2` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `ganador3` varchar(30) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `partido`
+--
+
+INSERT INTO `partido` (`id_partido`, `id_liga`, `fecha`, `equipo1`, `equipo2`, `mapa1`, `mapa2`, `mapa3`, `ganador1`, `ganador2`, `ganador3`) VALUES
+(1, 1, '2019-11-11', 'Astralis', 'Fnatic', 'cache', 'inferno', 'mirage', 'Astralis', 'Astralis', ''),
+(2, 1, '2020-01-12', 'Fnatic', 'Team Liquid', 'train', 'inferno', 'mirage', 'Fnatic', 'Team Liquid', 'Team Liquid'),
+(3, 1, '2019-12-14', 'Astralis', 'Team Liquid', 'cache', 'train', 'inferno', 'Astralis', 'Team Liquid', 'Astralis');
 
 -- --------------------------------------------------------
 
@@ -309,12 +335,12 @@ ALTER TABLE `jugador`
 -- AUTO_INCREMENT de la tabla `liga`
 --
 ALTER TABLE `liga`
-  MODIFY `id_liga` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_liga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `partido`
 --
 ALTER TABLE `partido`
-  MODIFY `id_partido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_partido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `valoracion`
 --
