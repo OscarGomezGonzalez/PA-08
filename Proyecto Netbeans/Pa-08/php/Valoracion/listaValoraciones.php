@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html>
-
     <?php include_once '../../head.php'; ?>
-
     <body>
         <?php
         session_start();
         $_SESSION["idArticulo_coment"] = 0;
-
         include_once '../../funciones.php';
-
         require_once("../../header.php");
         ?>
-        <div>
-            <div class="container" style="margin-top: 125px;">
+        <div style="margin-top: 125px;">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <h2 style="width: 370px;">Lista de Comentarios</h2>
+                        <h2 style="width: 370px;">Lista de Valoraciones</h2>
                     </div>
                     <div class="col-md-4 d-flex justify-content-center align-items-center"></div>
                 </div>
@@ -24,10 +20,8 @@
                     <div class="col-md-12"><table id="example" class="table table-striped table-bordered"  cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
                                     <th>Artículo</th>
-                                    <th>Fecha</th>
-                                    <th>Contenido</th>
+                                    <th>Valoración</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -35,9 +29,8 @@
 
                                 <?php
                                 $user = $_SESSION['usuario'];
-
                                 $conn1 = conexionDB();
-                                $consulta1 = "SELECT * FROM `comentario` WHERE nombre_usuario='$user'";
+                                $consulta1 = "SELECT * FROM `valoracion` WHERE nombre_usuario='$user'";
                                 $resultado1 = mysqli_query($conn1, $consulta1);
                                 while ($row = mysqli_fetch_array($resultado1)) {
                                     $id_articulo = $row['id_articulo'];
@@ -49,10 +42,8 @@
                                     mysqli_close($conn2);
                                     ?>
                                     <tr>
-                                        <td><?php echo $row['id_comentario'] ?></td>
                                         <td><?php echo $titulo ?></td>
-                                        <td><?php echo $row['fecha'] ?></td>
-                                        <td><?php echo $row['texto'] ?></td>
+                                        <td><?php echo $row['valor'] ?></td>
                                         <td class="form-inline">
                                             <form action="php/Articulo/articulo_vista.php"  method="POST">
                                                 <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
