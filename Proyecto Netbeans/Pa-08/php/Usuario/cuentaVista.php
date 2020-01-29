@@ -86,7 +86,10 @@
                                 </div>
                                 <hr>
                                 <div class="form-row">
-                                    <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="button" onclick="location.href = '../../php/Usuario/modificarCuenta_vista.php'">Modificar<br> cuenta </button><button class="btn btn-primary form-btn" type="reset">Modificar<br> contraseña </button><button class="btn btn-danger form-btn" type="reset">Eliminar<br> cuenta </button></div>
+                                    <div class="col-md-12 content-right">
+                                        <button class="btn btn-primary form-btn" type="button" onclick="location.href = '../../php/Usuario/modificarCuenta_vista.php'">Modificar<br> cuenta </button>
+                                        <button class="btn btn-primary form-btn" type="button" onclick="location.href = '../../php/Usuario/modificarPassword_vista.php'">Modificar<br> contraseña </button>
+                                        <button class="btn btn-danger form-btn" type="button" onclick="location.href = '../../php/Usuario/eliminarCuenta.php'">Eliminar<br> cuenta </button></div>
                                 </div>
                             </div>
                         </div>

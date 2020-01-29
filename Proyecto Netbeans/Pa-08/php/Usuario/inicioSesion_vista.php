@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="../../assets/css/style.css">
     </head>
     <body>
+         <?php
+        require_once("../../header.php");
+         ?>
         <div class="container-fluid">
             <div class="row mh-100vh">
                 <div class="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block">
@@ -29,5 +32,6 @@
         </div>
         <script src="../../assets/js/jquery.min.js"></script>
         <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+        <?php include("../../footer.php"); ?>
     </body>
 </html>

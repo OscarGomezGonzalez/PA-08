@@ -6,8 +6,7 @@ session_start();
 
 $saneamiento = array(
     "nombre" => FILTER_SANITIZE_STRING,
-    "email" => FILTER_SANITIZE_STRING,
-    "tipo_usuario" => FILTER_SANITIZE_STRING
+    "email" => FILTER_SANITIZE_STRING
 );
 
 $datos = filter_input_array(INPUT_POST, $saneamiento);
@@ -15,7 +14,6 @@ $datos = filter_input_array(INPUT_POST, $saneamiento);
 $usuario = $_SESSION['usuario'];
 $nombre = $datos["nombre"];
 $email = $datos["email"];
-$tipo_usuario = $datos["tipo_usuario"];
 $imagenError = false;
 
 $ruta = "../../assets/img/usuarios/" . $_SESSION["usuario"];
@@ -40,13 +38,11 @@ if ($imagenError == true) {
         </script>';
 } else {
     $conn = conexionDB();
-    $consulta = "UPDATE `usuario` SET `email`='$email', `tipo_usuario`='$tipo_usuario',`nombre`='$nombre' WHERE nombre_usuario='$usuario'";
+    $consulta = "UPDATE `usuario` SET `email`='$email',`nombre`='$nombre' WHERE nombre_usuario='$usuario'";
     $resultado = mysqli_query($conn, $consulta);
     mysqli_close($conn);
     if ($resultado) {
         header("location:../../php/Usuario/cuentaVista.php");
-    } else {
-        echo 'fallo';
     }
 }
 
