@@ -1,16 +1,14 @@
 <?php
 
-
 include_once '../../funciones.php';
 
-
 function getPartidoById($idPartido) {
-    
+
     //array que guarda todos los errores
     $error[] = "";
     $conn = conexionDB();
     $sql = "SELECT * FROM partido WHERE id_partido='$idPartido'";
-    
+
     $query = mysqli_query($conn, $sql);
 
     if (!$query) {
@@ -66,21 +64,22 @@ function getPartidoById($idPartido) {
 /*
  * Funcion para obtener partidos y paginarlos, obtenemos partidos de 6 en 6
  */
+
 function getPartidosPaginated($lastOne, $limit) {
 
     $sql = "SELECT * FROM partido ORDER BY id_partido ASC LIMIT " . $limit . " OFFSET " . $lastOne;
     $conn = conexionDB();
- 
+
     $query = mysqli_query($conn, $sql);
-    
+
     if (!$query) {
         $error[] = "Error en sql paginated";
     } else {
         if (mysqli_num_rows($query) >= 1) {
-            
+
             $i = 0;
             while ($row = mysqli_fetch_array($query)) {
- 
+
 
                 $partidos[] = array(
                     'id' => $row['id_partido'],
@@ -103,7 +102,27 @@ function getPartidosPaginated($lastOne, $limit) {
     return $partidos;
 }
 
-    //retornamos el numero de partidos
+function partidosLeft($offset, $limit) {
+
+    $left = false;
+    $offset += $limit;
+    $sql = "SELECT id_partido FROM partido ORDER BY id_partido ASC LIMIT " . $limit . " OFFSET " . $offset;
+    $conn = conexionDB();
+
+    $query = mysqli_query($conn, $sql);
+
+    if (!$query) {
+        $error[] = "Error en sql paginated";
+    } else {
+        if (mysqli_num_rows($query) > 0) {
+            $left = true;
+        }
+    }
+
+    return $left;
+}
+
+//retornamos el numero de partidos
 function getNumPartidos() {
     $conn = conexionDB();
     $sql = "SELECT COUNT(id_partido) as total FROM partido";
@@ -115,7 +134,7 @@ function getNumPartidos() {
     mysqli_close($conn);
     return $ret;
 }
-    
+
 function getGanadorPartido($partido) {
 
     $g1 = $partido['ganador1'];
