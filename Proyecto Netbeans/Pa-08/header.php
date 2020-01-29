@@ -24,7 +24,7 @@
                         <div class="nav-item dropdown d-md-flex justify-content-md-center align-items-md-center">
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Menu</a>
                             <div class="dropdown-menu" role="menu">
-                                <a class="dropdown-item" role="presentation" href="#">Liga</a>
+                                <a class="dropdown-item" role="presentation" href="php/Liga/ver_variasLigas.php">Liga</a>
                                 <a class="dropdown-item" role="presentation" href="php/Equipo/equipos_vista.php">Equipos</a>
                                 <a class="dropdown-item" role="presentation" href="php/Partido/lista_partidos.php">Partidos</a>
                             </div>

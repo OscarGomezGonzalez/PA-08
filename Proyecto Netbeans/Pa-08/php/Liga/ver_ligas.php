@@ -32,12 +32,12 @@ function ver_ligas() {
                 //Fin antigua vision
                 
                 echo '      
-                <div class="col" style="padding-left: 0px;padding-right: 0px;width: 50%;min-width: 200px;">
+                <div class="col" style="padding-left: 0px;padding-right: 0px;width: 50%;min-width: 200px;margin-bottom: 10%;">
                     <div class="card text-left" style="opacity: 0.62;filter: grayscale(0%);background-color: #000000;color: rgb(248,249,251);height: 100%;width: 100%;">
-                        <div class="card-body" style="opacity: 1;padding: 0px;width: 100%;height: 100%;"><img>
+                        <div class="card-body" style="opacity: 1;padding: 3px;width: 100%;height: 100%;"><img>
                             <h3 class="card-title">'.$row['nombre'].'</h3>
-                            <h5 class="card-title">'.$row['fecha_inicio'].'</h5>
-                            <h5 class="card-title">'.$row['fecha_fin'].'</h5>
+                            <h5 class="card-title">Fecha de Inicio: '.$row['fecha_inicio'].'</h5>
+                            <h5 class="card-title">Fecha finalizaci&oacuten: '.$row['fecha_fin'].'</h5>
                             <h6 class="text-muted card-subtitle mb-2">'.$row['lugar'].'</h6>
                             <form action="php/Liga/ver_unaLiga.php" method="post">
                                     <input type="hidden" id="custId" name="custId" value="'.$row['id_liga'].'">
