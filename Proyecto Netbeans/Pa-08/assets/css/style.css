@@ -38,8 +38,8 @@
 }
 
 .equipos{
-    margin-top: 2%;
-    padding-top: 5%;
+    margin-top: 0%;
+    padding-top: 0%;
 }
 
 .principio-jugador{
@@ -49,6 +49,19 @@
 
 .boton-equipo{
     width: 100%;
+}
+
+.boton-busqueda{
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    /* put the height and width of your image here */
+    height: 25px;
+    width: 200px;
+    border: none;
+    background-image: url(assets/img/search-icon.png);
+    background-color: #343A40;
+    background-size: 100%;
 }
 
 .footer{

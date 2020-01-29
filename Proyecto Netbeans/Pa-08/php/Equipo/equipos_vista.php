@@ -3,7 +3,7 @@
 
     <?php include_once '../../head.php';?>
 
-    <body style="background-image: url(&quot;assets/img/csgo-parche-diciembre.png&quot;);background-size: 120%;">
+    <body style="background-image: url(&quot;assets/img/csgo-parche-diciembre.png&quot;);background-size: 130%;">
         <!-- Navigation -->
         <?php
         //importa header
