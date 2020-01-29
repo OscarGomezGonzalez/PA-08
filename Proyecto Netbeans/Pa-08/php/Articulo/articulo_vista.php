@@ -35,7 +35,7 @@
                             <p><?php echo $resArticulo['contenido1']; ?></p>
                             <h2><?php echo $resArticulo['subtitulo']; ?></h2>
                             <p><?php echo $resArticulo['contenido2']; ?></p>
-                            <figure><img class="figure-img" src="../../<?php echo $imagenes[1]; ?>"></figure>
+                            <figure><img class="figure-img" src="<?php echo $imagenes[1]; ?>"></figure>
                             <p><?php echo $resArticulo['contenido3']; ?></p>
                         </div>
                         <br><br>

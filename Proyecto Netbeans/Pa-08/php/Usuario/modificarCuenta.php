@@ -16,7 +16,7 @@ $nombre = $datos["nombre"];
 $email = $datos["email"];
 $imagenError = false;
 
-$ruta = "../../assets/img/usuarios/" . $_SESSION["usuario"];
+$ruta = "assets/img/usuarios/" . $_SESSION["usuario"];
 
 if ($_FILES['imagen_perfil']['error'] > 0) {
     
@@ -25,7 +25,7 @@ if ($_FILES['imagen_perfil']['error'] > 0) {
     $mTipo = exif_imagetype($mTmpFile);
     if (($mTipo == IMAGETYPE_JPEG) or ( $mTipo == IMAGETYPE_PNG)) {
         $imagen1 = $ruta . "/imagenPerfil";
-        move_uploaded_file($_FILES['imagen_perfil']['tmp_name'], $imagen1);
+        move_uploaded_file($_FILES['imagen_perfil']['tmp_name'], "../../" . $imagen1);
     } else {
         $imagenError = true;
     }
@@ -38,7 +38,7 @@ if ($imagenError == true) {
         </script>';
 } else {
     $conn = conexionDB();
-    $consulta = "UPDATE `usuario` SET `email`='$email',`nombre`='$nombre' WHERE nombre_usuario='$usuario'";
+    $consulta = "UPDATE `usuario` SET `email`='$email',`nombre`='$nombre', imagen_perfil='$imagen1' WHERE nombre_usuario='$usuario'";
     $resultado = mysqli_query($conn, $consulta);
     mysqli_close($conn);
     if ($resultado) {
