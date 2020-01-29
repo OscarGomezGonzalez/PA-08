@@ -56,39 +56,15 @@
                 </div>
 
                 <!-- Sidebar Widgets Column -->
-                <div class="col-md-4" id="sidebar">
+                <div class="col-md-4" id="sidebar" style="padding-left: 0px;padding-right: 0px;width: 50%;min-width: 200px;">
                     <!-- Categories Widget -->
-                    <div class="card my-4">
-                        <h5 class="card-header">Categories</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a href="#">Web Design</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">HTML</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Freebies</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a href="#">JavaScript</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">CSS</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Tutorials</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <div class="card my-4" style="opacity: 0.62;filter: grayscale(0%);background-color: #000000;color: rgb(248,249,251);height: 100%;width: 100%;">
+                        <h5 class="card-header">Ligas</h5>
+                        <div class="card-body" style="opacity: 1;padding: 0px;width: 100%;height: 100%;">
+                            <?php
+                            include 'php/Liga/ver_ligas.php';
+                            ver_ligas();
+                            ?>
                         </div>
                     </div>
 
