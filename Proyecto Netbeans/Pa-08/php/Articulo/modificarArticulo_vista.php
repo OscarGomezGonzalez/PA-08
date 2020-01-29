@@ -26,11 +26,11 @@
                             <div class="form-group"><input class="form-control" type="text" name="titulo" value="<?php echo $row['titulo']; ?>" required=""></div>
                             <div class="form-group"><input class="form-control" type="text" name="categoria" value="<?php echo $row['categoria']; ?>" required=""></div>
                             <div class="form-group"><label for="file">Si desea escoger una nueva primera imagen, adjuntela: </label><br><input name="imagen1" type="file" value="Selecciona imagen para artículo"></div>
-                            <div class="form-group"><textarea class="form-control"  maxlength="200" rows="5" name="contenido1" value="" required=""><?php echo $row['contenido1']; ?></textarea></div>
+                            <div class="form-group"><textarea class="form-control"  maxlength="900" rows="5" name="contenido1" value="" required=""><?php echo $row['contenido1']; ?></textarea></div>
                             <div class="form-group"><input class="form-control" type="text" name="subtitulo" value="<?php echo $row['subtitulo']; ?>" required=""></div>
-                            <div class="form-group"><textarea class="form-control"  maxlength="200" rows="5" name="contenido2" value="" required=""><?php echo $row['contenido2']; ?></textarea></div>
+                            <div class="form-group"><textarea class="form-control"  maxlength="900" rows="5" name="contenido2" value="" required=""><?php echo $row['contenido2']; ?></textarea></div>
                             <div class="form-group"><label for="file">Si desea escoger una nueva segunda imagen, adjuntela: </label><br><input name="imagen2" type="file" value="Selecciona imagen para artículo"></div>
-                            <div class="form-group"><textarea class="form-control"  maxlength="200" rows="5" name="contenido3" value="" required=""><?php echo $row['contenido3']; ?></textarea></div>
+                            <div class="form-group"><textarea class="form-control"  maxlength="900" rows="5" name="contenido3" value="" required=""><?php echo $row['contenido3']; ?></textarea></div>
 
                             <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
                             <div class="form-group"><button class="btn btn-secondary btn-block bg-secondary" type="submit">Modificar Artículo</button></div>
