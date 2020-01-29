@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-    <?php include_once '../../head.php'; ?>
+    <?php include '../../head.php'; ?>
 
     <body class="bg-secondary">
 
         <?php
-        require_once("../../header.php");
+        include("../../header.php");
         include_once 'partido.php';
         //obtenemos los primeros 6 partidos
         $offset = 0;
@@ -95,8 +95,7 @@
             </div>
         </div>
         <?php require_once("../../footer.php"); ?>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
     </body>
 
 </html>

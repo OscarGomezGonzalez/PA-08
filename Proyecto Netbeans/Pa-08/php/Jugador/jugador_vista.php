@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-    <?php include_once '../../head.php';?>
+    <?php include_once '../../head.php'; ?>
 
     <body class="bg-secondary">
 
@@ -69,16 +69,12 @@
                 </div>
             </div>
         </div>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Footer -->
+        <?php include("../../footer.php"); ?>
     </body>
 
 
-    <!-- Footer -->
-    <?php include("../../footer.php"); ?>
-    <script src="../../assets/js/jquery.min.js"></script>
-    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
 
 </html>
 

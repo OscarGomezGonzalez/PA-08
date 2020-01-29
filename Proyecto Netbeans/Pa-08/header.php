@@ -10,7 +10,7 @@
                     <li
                         class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;">
                         <div class="nav-item dropdown d-md-flex justify-content-md-center align-items-md-center"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Menu</a>
-                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Liga</a><a class="dropdown-item" role="presentation" href="php/Equipo/equipos_vista.php">Equipos</a><a class="dropdown-item" role="presentation" href="#">Partidos</a></div>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Liga</a><a class="dropdown-item" role="presentation" href="php/Equipo/equipos_vista.php">Equipos</a><a class="dropdown-item" role="presentation" href="php/Partido/lista_partidos.php">Partidos</a></div>
                         </div>
                     </li>
                     <?php

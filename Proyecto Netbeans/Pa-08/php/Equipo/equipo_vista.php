@@ -3,7 +3,7 @@
 
     <!--vista de un equipo-->
 
-    <?php include_once '../../head.php';?>
+    <?php include_once '../../head.php'; ?>
 
     <body class="bg-secondary">
 
@@ -50,16 +50,20 @@
                                     for ($i = 0; $i < sizeof($partidos); $i++) {
                                         $fecha = setDateFormat($partidos[$i]['fecha']);
                                         ?>
-                                            <li><?php echo $partidos[$i]['equipo1']; echo ' vs '; echo$partidos[$i]['equipo2']; echo " " . $fecha;
-                                ?></li>
-                                            <?php }
+                                            <li><?php
+                                                echo $partidos[$i]['equipo1'];
+                                                echo ' vs ';
+                                                echo$partidos[$i]['equipo2'];
+                                                echo " " . $fecha;
+                                                ?></li>
+                                        <?php }
                                         ?></ul><?php
-                                        } else {
-                                            ?><h4 class="card-title">No hay proximos partidos</h4><?php
+                                    } else {
+                                        ?><h4 class="card-title">No hay proximos partidos</h4><?php
                                     }
                                     ?>
 
-                                    <?php ?>
+                                <?php ?>
 
 
                             </div>
@@ -67,21 +71,21 @@
                     </div>
                 </div>
                 <!-- cartas jugadores -->
-<?php
+                <?php
 //obtenemos los jugadores de dicho equipo
-$jugadores = getAllPlayersFromTeam($equipo['nombre']);
+                $jugadores = getAllPlayersFromTeam($equipo['nombre']);
 
 //debemos hacer un bucle para recorrer los jugadores
-for ($i = 0; $i < sizeof($jugadores); $i++) {
+                for ($i = 0; $i < sizeof($jugadores); $i++) {
 
-    if ($i < 3) {
+                    if ($i < 3) {
 
-        if ($i == 0) {
-            ?>
+                        if ($i == 0) {
+                            ?>
                             <div class="row justify-content-center" style="width: 100%;">
-                            <?php
-                        }
-                        ?>
+                                <?php
+                            }
+                            ?>
 
                             <div class="col-4 col-md-4 col-xl-4 offset-xl-0 equipo">
                                 <div class="card bg-dark" style="color: rgb(206,211,182);">
@@ -96,20 +100,20 @@ for ($i = 0; $i < sizeof($jugadores); $i++) {
                                     </div>
                                 </div>
                             </div>
-        <?php
-        if ($i == 2) {
-            ?>
-                            </div>
-                                <?php
-                            }
-                        } else {
-
-                            if ($i == 3) {
+                            <?php
+                            if ($i == 2) {
                                 ?>
-                            <div class="row justify-content-center">
+                            </div>
                             <?php
                         }
-                        ?>
+                    } else {
+
+                        if ($i == 3) {
+                            ?>
+                            <div class="row justify-content-center">
+                                <?php
+                            }
+                            ?>
 
                             <div class="col-md-4 col-xl-4 offset-xl-0 equipo">
                                 <div class="card bg-dark" style="color: rgb(206,211,182);">
@@ -124,23 +128,21 @@ for ($i = 0; $i < sizeof($jugadores); $i++) {
                                     </div>
                                 </div>
                             </div>
-        <?php
-        if ($i == 4) {
-            ?>
+                            <?php
+                            if ($i == 4) {
+                                ?>
                             </div>
-                                <?php
-                            }
+                            <?php
                         }
                     }
-                    ?>
+                }
+                ?>
 
             </div>
         </div>
 
         <!-- Footer -->
-<?php include("../../footer.php"); ?>
-        <script src="../../assets/js/jquery.min.js"></script>
-        <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+        <?php include("../../footer.php"); ?>
     </body>
 
 </html>

@@ -61,11 +61,11 @@
                         <h2><?php echo$partido['mapa1']; ?></h2>
                         <h3 style="margin-bottom: 30%;">Ganador: <?php echo$partido['ganador1']; ?></h3>
                     </div>
-                    <div class="col" style="background-image: url(&quot;assets/<?php echo$mapas[0]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;opacity: 0.85;margin-left: 2%;margin-right: 2%;">
+                    <div class="col" style="background-image: url(&quot;assets/<?php echo$mapas[1]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;opacity: 0.85;margin-left: 2%;margin-right: 2%;">
                         <h2><?php echo$partido['mapa2']; ?></h2>
                         <h3 style="margin-bottom: 30%;">Ganador: <?php echo$partido['ganador2']; ?></h3>
                     </div>
-                    <div class="col-md-4" style="background-image: url(&quot;assets/<?php echo$mapas[0]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;">
+                    <div class="col-md-4" style="background-image: url(&quot;assets/<?php echo$mapas[2]['ruta_imagen']; ?>&quot;);background-size: 100%;height: 100%;min-height: 100%;max-height: 100%;background-repeat: no-repeat;opacity: 0.87;">
                         <h2><?php echo$partido['mapa3']; ?></h2>
 
                         <?php
@@ -89,8 +89,7 @@
 
         <!-- Footer -->
         <?php include_once("../../footer.php"); ?>
-        <script src="../../assets/js/jquery.min.js"></script>
-        <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+        
     </body>
 
 </html>
