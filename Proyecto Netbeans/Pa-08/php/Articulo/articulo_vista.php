@@ -59,7 +59,7 @@
                                 <label>Elija una valoracion para este artículo:</label>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <div class="text-center text-secondary">
-                                    <form action="php/Valoracion/crearValoracion.php" method="POST">
+                                    <form action="php/Valoracion/crearOActualizarValoracion.php" method="POST">
                                         <p class="valoracion">
                                             <input id="radio1" type="radio" name="estrellas" value="5"><!--
                                             --><label for="radio1">★</label><!--
@@ -72,14 +72,22 @@
                                             --><input id="radio5" type="radio" name="estrellas" value="1"><!--
                                             --><label for="radio5">★</label>
                                         </p>
+                                        <input type = 'hidden' value = "<?php echo $resArticulo['id_articulo'] ?>" name = 'idArticulo'/>
+                                        <button type = "submit" class = "btn btn-warning"><i class = "far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">Enviar valoración</i></button>
                                     </form>
                                 </div>
+                            </div>
+                            <br>
+                            <div class="form-inline">
+                                <p><strong>Media de valoracion del artículo:</strong></p>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <p style="margin-bottom: 20px; margin-left: 10%;"><?php echo valoracionArticulo($resArticulo['id_articulo']); ?>/5 </p>
                             </div>
                             <?php
                         }
                         ?>
                         <hr>
-
                         <?php
                         $conn2 = conexionDB();
                         $consulta2 = "SELECT * FROM `comentario` WHERE id_articulo='$articulo'";
@@ -108,7 +116,6 @@
                                                 <input type = 'hidden' value = "<?php echo $resArticulo['titulo'] ?>" name = 'titulo'/>
                                                 <input type = 'hidden' value = "<?php echo $resArticulo['id_articulo'] ?>" name = 'idArticulo'/>
                                                 <input type = 'hidden' value = "<?php echo $row['id_comentario'] ?>" name = 'idComentario'/>
-
                                             </form>
                                         </div>
                                         <?php
@@ -122,15 +129,10 @@
                             <?php
                         }
                         ?>
-
-
                     </div>
                 </div>
             </div>
-
         </div>
-
-
         <script src="../../assets/js/jquery.min.js"></script>
         <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
         <?php

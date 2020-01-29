@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-01-2020 a las 15:52:24
--- Versión del servidor: 10.4.8-MariaDB
--- Versión de PHP: 7.3.11
+-- Tiempo de generación: 29-01-2020 a las 18:55:05
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -153,6 +151,13 @@ CREATE TABLE `liga` (
   `premio_3` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `liga`
+--
+
+INSERT INTO `liga` (`id_liga`, `nombre`, `fecha_inicio`, `fecha_fin`, `lugar`, `premio_1`, `premio_2`, `premio_3`) VALUES
+(1, 'StarLadder', '2019-12-11', '2019-12-19', 'Berlin, Alemania', 100000, 50000, 30000);
+
 -- --------------------------------------------------------
 
 --
@@ -163,6 +168,16 @@ CREATE TABLE `mapa` (
   `nombre_mapa` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `ruta_imagen` varchar(32) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `mapa`
+--
+
+INSERT INTO `mapa` (`nombre_mapa`, `ruta_imagen`) VALUES
+('cache', 'img/mapas/cache.jpg'),
+('inferno', 'img/mapas/inferno.jpg'),
+('mirage', 'img/mapas/mirage.jpg'),
+('train', 'img/mapas/train.jpg');
 
 -- --------------------------------------------------------
 
@@ -183,6 +198,15 @@ CREATE TABLE `partido` (
   `ganador2` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `ganador3` varchar(30) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `partido`
+--
+
+INSERT INTO `partido` (`id_partido`, `id_liga`, `fecha`, `equipo1`, `equipo2`, `mapa1`, `mapa2`, `mapa3`, `ganador1`, `ganador2`, `ganador3`) VALUES
+(1, 1, '2019-11-11', 'Astralis', 'Fnatic', 'cache', 'inferno', 'mirage', 'Astralis', 'Astralis', ''),
+(2, 1, '2020-01-12', 'Fnatic', 'Team Liquid', 'train', 'inferno', 'mirage', 'Fnatic', 'Team Liquid', 'Team Liquid'),
+(3, 1, '2019-12-14', 'Astralis', 'Team Liquid', 'cache', 'train', 'inferno', 'Astralis', 'Team Liquid', 'Astralis');
 
 -- --------------------------------------------------------
 
@@ -258,11 +282,22 @@ ALTER TABLE `liga`
   ADD PRIMARY KEY (`id_liga`);
 
 --
+-- Indices de la tabla `mapa`
+--
+ALTER TABLE `mapa`
+  ADD PRIMARY KEY (`nombre_mapa`);
+
+--
 -- Indices de la tabla `partido`
 --
 ALTER TABLE `partido`
   ADD PRIMARY KEY (`id_partido`),
-  ADD KEY `id_liga` (`id_liga`);
+  ADD KEY `id_liga` (`id_liga`),
+  ADD KEY `equipo1` (`equipo1`),
+  ADD KEY `equipo2` (`equipo2`),
+  ADD KEY `mapa1` (`mapa1`),
+  ADD KEY `mapa2` (`mapa2`),
+  ADD KEY `mapa3` (`mapa3`);
 
 --
 -- Indices de la tabla `usuario`
@@ -286,37 +321,31 @@ ALTER TABLE `valoracion`
 --
 ALTER TABLE `articulo`
   MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
   MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
 --
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
   MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
 --
 -- AUTO_INCREMENT de la tabla `liga`
 --
 ALTER TABLE `liga`
-  MODIFY `id_liga` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_liga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `partido`
 --
 ALTER TABLE `partido`
-  MODIFY `id_partido` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_partido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
   MODIFY `id_valoracion` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- Restricciones para tablas volcadas
 --
@@ -337,14 +366,18 @@ ALTER TABLE `jugador`
 -- Filtros para la tabla `partido`
 --
 ALTER TABLE `partido`
-  ADD CONSTRAINT `partido_ibfk_1` FOREIGN KEY (`id_liga`) REFERENCES `liga` (`id_liga`);
+  ADD CONSTRAINT `partido_ibfk_1` FOREIGN KEY (`id_liga`) REFERENCES `liga` (`id_liga`),
+  ADD CONSTRAINT `partido_ibfk_2` FOREIGN KEY (`equipo1`) REFERENCES `equipo` (`nombre`),
+  ADD CONSTRAINT `partido_ibfk_3` FOREIGN KEY (`equipo2`) REFERENCES `equipo` (`nombre`),
+  ADD CONSTRAINT `partido_ibfk_4` FOREIGN KEY (`mapa1`) REFERENCES `mapa` (`nombre_mapa`),
+  ADD CONSTRAINT `partido_ibfk_5` FOREIGN KEY (`mapa2`) REFERENCES `mapa` (`nombre_mapa`),
+  ADD CONSTRAINT `partido_ibfk_6` FOREIGN KEY (`mapa3`) REFERENCES `mapa` (`nombre_mapa`);
 
 --
 -- Filtros para la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
   ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id_articulo`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

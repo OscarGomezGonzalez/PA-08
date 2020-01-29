@@ -29,7 +29,7 @@
                             <div class="form-group"><textarea class="form-control"  maxlength="200" rows="5" name="comentario" value="" required=""><?php echo $row['texto']; ?></textarea></div>
 
                             <input type='hidden' value="<?php echo $idComentario; ?>" name='idComentario'/>
-                            <div class="form-group"><button class="btn btn-secondary btn-block bg-secondary" type="submit">Modificar Artículo</button></div>
+                            <div class="form-group"><button class="btn btn-secondary btn-block bg-secondary" type="submit">Modificar Comentario</button></div>
                         </form>
                     </div>
 

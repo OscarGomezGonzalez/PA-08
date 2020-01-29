@@ -7,7 +7,8 @@
 
         <?php
         include("../../header.php");
-        include_once 'partido.php';
+        include 'partido.php';
+
         //obtenemos los primeros 6 partidos
         $offset = 0;
         $limit = 6;
@@ -41,7 +42,7 @@
                                 <?php
                             } else {
                                 ?>
-                                
+
                                 <script type="text/javascript">
 
                                     document.getElementById("next").onload = function () {
