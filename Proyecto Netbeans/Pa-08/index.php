@@ -31,8 +31,7 @@
                     $conn = conexionDB();
                     $consulta = "SELECT * FROM `articulo`";
                     $resultado = mysqli_query($conn, $consulta);
-                    $cont = 0;
-                    while ($row = mysqli_fetch_array($resultado) || $cont < 8) {
+                    while ($row = mysqli_fetch_array($resultado)) {
                         $imagenes = explode(";", $row['imagenes']);
                         ?>
 
@@ -51,7 +50,6 @@
                             </div>
                         </div>
                         <?php
-                        $cont++;
                     }
                     ?>
 
