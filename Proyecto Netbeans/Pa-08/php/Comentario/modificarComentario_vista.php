@@ -5,6 +5,7 @@
 
     <body>
         <?php
+        require_once("../../header.php");
         include_once '../../funciones.php';
 
         session_start();
@@ -37,6 +38,7 @@
         </div>
         <script src="../../assets/js/jquery.min.js"></script>
         <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+       <?php require_once("../../footer.php"); ?>
     </body>
 
-</ht
+</html>

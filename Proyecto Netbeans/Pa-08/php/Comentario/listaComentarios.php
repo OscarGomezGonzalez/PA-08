@@ -73,5 +73,6 @@
         </div>
         <script src="../../assets/js/jquery.min.js"></script>
         <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+            <?php require_once("../../footer.php"); ?>
     </body>
 </html>
