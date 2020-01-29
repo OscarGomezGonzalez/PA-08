@@ -24,16 +24,10 @@ if (isset($_POST['SI'])) {
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Untitled</title>
-        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
-        <link rel="stylesheet" href="../../assets/css/Article-Clean.css">
-        <link rel="stylesheet" href="../../assets/css/style.css">
-    </head>
+       <?php include_once '../../head.php'; ?>
+    
     <body>
+         <?php require_once("../../header.php"); ?>
         <div style="background-color: #c6c8ca; width: 45%; margin-left: 29%;  margin-top:15%; border: groove 1em red; border-radius: 2em;"><h3 class="text-danger" style="text-align: center;">¿Esta seguro de eliminar este articulo?</h3></div>
         <div style="margin-top:2%; margin-left: 45%;" class="form-inline">
             <form action="#"  method="POST">
@@ -44,5 +38,8 @@ if (isset($_POST['SI'])) {
                 <button name="NO" type="submit" class="btn btn-warning"><i class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">NO</i></button>
             </form>
         </div>
+        <?php
+        require_once("../../footer.php");
+        ?>
     </body>
 </html>

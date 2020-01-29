@@ -18,7 +18,7 @@
         ?>
         <div class="bg-secondary register-photo">
             <div class="form-container">
-                <form action="../../php/Usuario/registro.php" enctype="multipart/form-data" method="POST">
+                <form action="php/Usuario/registro.php" enctype="multipart/form-data" method="POST">
                     <h2 class="text-center">UNETE a nosotros</h2>
                     <div class="form-group"><input class="form-control" type="text" name="nombre" placeholder="Nombre completo" required=""></div>
                     <div class="form-group"><input class="form-control" type="text" name="nombre_usuario" placeholder="Nombre de usuario" required=""></div>
@@ -29,7 +29,7 @@
                     <div class="form-group">
                         <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox" required="">Acepto las condiciones y terminos de uso</label></div>
                     </div>
-                    <div class="form-group"><button class="btn btn-primary btn-block bg-secondary" type="submit" onClick="comprobarClave()">Registrarse</button></div><a class="already" href="../../php/Usuario/inicioSesion_vista.php">¿Ya tienes una cuenta? Inicia sesión aqui</a></form>
+                    <div class="form-group"><button class="btn btn-primary btn-block bg-secondary" type="submit" onClick="comprobarClave()">Registrarse</button></div><a class="already" href="php/Usuario/inicioSesion_vista.php">¿Ya tienes una cuenta? Inicia sesión aqui</a></form>
             </div>
         </div>
         <script src="../../assets/js/jquery.min.js"></script>

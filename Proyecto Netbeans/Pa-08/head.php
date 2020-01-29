@@ -42,6 +42,14 @@
 
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
 
+
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome-all.min.css">
+
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="../../assets/css/Lista-Productos-Canito.css">
+  
+
+
     <script>
         function comprobarClave() {
             clave1 = document.getElementById("pass").value;
@@ -52,5 +60,31 @@
             }
         }
     </script>
+
+    <style>
+        .valoracion {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .valoracion input {
+            position: absolute;
+            top: -100px;
+        }
+
+
+        .valoracion label {
+            float: right;
+            color: #c1b8b8;
+            font-size: 30px; 
+        }
+
+        .valoracion label:hover,
+        .valoracion label:hover ~ label,
+        .valoracion input:checked ~ label {
+            color: #ffff00;
+        }   
+    </style>
 
 </head>

@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
 
-
-    
-      <?php include_once '../../head.php'; ?>
+    <?php include_once '../../head.php'; ?>
 
     <body>
         <?php
         session_start();
-         
+
         require_once("../../header.php");
-        
         ?>
         <div class="bg-secondary register-photo">
             <div class="form-container">
-                <form action="../../php/Usuario/modificarCuenta.php" enctype="multipart/form-data" method="POST">
+                <form action="php/Usuario/modificarCuenta.php" enctype="multipart/form-data" method="POST">
                     <h2 class="text-center">MODIFICAR CUENTA DE "<?php echo $_SESSION["nombre"]; ?>"</h2>
                     <div class="form-group"><label><strong>Nombre completo:</strong></label><input class="form-control" type="text" name="nombre" value="<?php echo $_SESSION["nombre"]; ?>" required=""></div>
                     <div class="form-group"><label><strong>E-mail:</strong></label><input class="form-control" type="email" name="email" value="<?php echo $_SESSION["email"]; ?>" required=""></div>

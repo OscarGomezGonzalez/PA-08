@@ -11,7 +11,7 @@
         ?>
         <div class="bg-secondary register-photo">
             <div class="form-container">
-                <form action="../../php/Usuario/modificarPassword.php"  method="POST">
+                <form action="php/Usuario/modificarPassword.php"  method="POST">
                     <h2 class="text-center">MODIFICAR CONTRASEÑA DE "<?php echo $_SESSION["nombre"]; ?>"</h2>
                     <div class="form-group"><label><strong>Contraseña Actual:</strong></label><input class="form-control" type="password" name="passActual" required=""></div>
                     <div class="form-group"><label><strong>Contraseña nueva:</strong></label><input class="form-control" type="password" name="newPass" required=""></div>
