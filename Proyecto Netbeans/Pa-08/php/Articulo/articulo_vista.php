@@ -73,16 +73,24 @@
                                             --><label for="radio5">★</label>
                                         </p>
                                         <input type = 'hidden' value = "<?php echo $resArticulo['id_articulo'] ?>" name = 'idArticulo'/>
+                                        <br>
                                         <button type = "submit" class = "btn btn-warning"><i class = "far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">Enviar valoración</i></button>
                                     </form>
                                 </div>
                             </div>
-                            <br>
+                            <br> <br> <br>
                             <div class="form-inline">
                                 <p><strong>Media de valoracion del artículo:</strong></p>
 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <p style="margin-bottom: 20px; margin-left: 10%;"><?php echo valoracionArticulo($resArticulo['id_articulo']); ?>/5 </p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <p style="margin-bottom: 20px; margin-left: 13%;"><?php
+                                    $media = valoracionArticulo($resArticulo['id_articulo']);
+                                    if ($media <= 5 || $media >= 0) {
+                                        echo $media;
+                                    } else {
+                                        echo 0;
+                                    }
+                                    ?>/5
                             </div>
                             <?php
                         }
