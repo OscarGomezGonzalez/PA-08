@@ -28,10 +28,5 @@ mysqli_close($conn); // Cerramos la base de datos
 if ($resultado) {
     $_SESSION['idArticulo_coment'] = $articuloId;
     header("Location:../../php/Articulo/articulo_vista.php");
-} else {
-    echo $message;
-    echo $postedBy;
-    echo $articuloId;
-    echo $fecha;
 }
 ?>

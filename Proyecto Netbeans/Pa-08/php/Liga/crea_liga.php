@@ -1,6 +1,7 @@
 <?php
 
-include_once '../../funciones.php';
+//include_once '../../funciones.php';
+include_once 'funciones.php';
 
 function crear_liga() {
     if ($_POST['nombre'] == "" || $_POST['fechaInicio'] == "" || $_POST['fechaFin'] == "" || $_POST['lugar'] == "" || $_POST['primerPremio'] == "" || $_POST['segundoPremio'] == "" || $_POST['premioSemifinales'] == "") {
