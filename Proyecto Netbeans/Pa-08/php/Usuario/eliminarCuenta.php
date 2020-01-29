@@ -20,15 +20,8 @@ if (isset($_POST['SI'])) {
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Untitled</title>
-        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
-        <link rel="stylesheet" href="../../assets/css/Article-Clean.css">
-        <link rel="stylesheet" href="../../assets/css/style.css">
-    </head>
+    <?php include_once '../../head.php'; ?>
+    
     <body>
         <?php
         require_once("../../header.php");

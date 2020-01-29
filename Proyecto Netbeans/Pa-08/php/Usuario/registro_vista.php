@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Untitled</title>
-        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../assets/css/Registration-Form-with-Photo.css">
-        <link rel="stylesheet" href="../../assets/css/style.css">
-        <script>
-            function comprobarClave() {
-                clave1 = document.getElementById("pass").value;
-                clave2 = document.getElementById("pass2").value;
+    <script>
+        function comprobarClave() {
+            clave1 = document.getElementById("pass").value;
+            clave2 = document.getElementById("pass2").value;
 
-                if (clave1 != clave2) {
-                    alert("Las contraseñas introducidas no coinciden vuelva a intentarlo");
-                }
+            if (clave1 != clave2) {
+                alert("Las contraseñas introducidas no coinciden vuelva a intentarlo");
             }
-        </script>
-    </head>
+        }
+    </script>
 
     <body>
         <?php
         require_once("../../header.php");
-         ?>
+        ?>
         <div class="bg-secondary register-photo">
             <div class="form-container">
                 <form action="../../php/Usuario/registro.php" enctype="multipart/form-data" method="POST">

@@ -1,11 +1,11 @@
 <head>
-    
+
     <base href="//<?= $_SERVER['HTTP_HOST'] ?>/Pa-08/">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
     <title>Pa-08</title>
 
     <!-- Bootstrap core CSS -->
@@ -29,5 +29,28 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="assets/js/freelancer.js"></script>
+
+
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="assets/css/Article-Clean.css">
+
+    <link rel="stylesheet" href="assets/css/-Login-form-Page-BS4-.css">
+
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+
+    <script>
+        function comprobarClave() {
+            clave1 = document.getElementById("pass").value;
+            clave2 = document.getElementById("pass2").value;
+
+            if (clave1 != clave2) {
+                alert("Las contraseñas introducidas no coinciden vuelva a intentarlo");
+            }
+        }
+    </script>
 
 </head>
