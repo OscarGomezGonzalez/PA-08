@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-01-2020 a las 18:55:05
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Tiempo de generación: 29-01-2020 a las 21:09:24
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `pa_08`
 --
-CREATE DATABASE IF NOT EXISTS `pa_08` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `pa_08`;
 
 -- --------------------------------------------------------
 
@@ -35,7 +35,7 @@ CREATE TABLE `articulo` (
   `valor_valoracion` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `categoria` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `imagenes` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
+  `imagenes` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
   `contenido1` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
   `contenido2` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
   `contenido3` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
@@ -47,11 +47,10 @@ CREATE TABLE `articulo` (
 --
 
 INSERT INTO `articulo` (`titulo`, `id_articulo`, `nombre_usuario`, `valor_valoracion`, `fecha`, `categoria`, `imagenes`, `contenido1`, `contenido2`, `contenido3`, `subtitulo`) VALUES
-('asdvfbn', 1, 'miguelgz_97', 0, '2020-01-28', 'sadfghn', 'assets/img/usuarios/miguelgz_97/articulos/asdvfbn/primeraImagen;assets/img/usuarios/miguelgz_97/articulos/asdvfbn/segundaImagen', 'sadfgxcv', 'adsfg', 'sdfgbn', 'asdfg'),
-('AZXSCDVFBGNHM,.', 6, 'admin', 0, '2020-01-29', 'Qwaesfthyjgkl', 'assets/img/usuarios/admin/articulos/AZXSCDVFBGNHM,./primeraImagen;assets/img/usuarios/admin/articulos/AZXSCDVFBGNHM,./segundaImagen', 'ewarstdfgh', 'qwertyu', 'wertyjk', 'qewartyju'),
-('asdzfcghjvkl,.', 7, 'admin', 0, '2020-01-29', 'sa>dZFXCGVHBJNM,-.', 'assets/img/usuarios/admin/articulos/asdzfcghjvkl,./primeraImagen;assets/img/usuarios/admin/articulos/asdzfcghjvkl,./segundaImagen', 'Swdafesghmbn,', 'asdgfhbnm', 'AFSGDHVMBJN,.', 'DSAFVHBNM'),
-('1', 8, 'admin', 0, '2020-01-29', '1', 'assets/img/usuarios/admin/articulos/sadfvbcgnhmjk.-./primeraImagen;assets/img/usuarios/admin/articulos/sadfvbcgnhmjk.-./segundaImagen', '1', '1', '1', '1'),
-('prueba', 9, 'admin', 0, '2020-01-29', 'Â´sadfghtyjkliÃ±okL', 'assets/img/usuarios/admin/articulos/prueba/primeraImagen;assets/img/usuarios/admin/articulos/prueba/segundaImagen', 'qwdafsghj,m', 'Asdafsgbn', 'asdfvcbgnm,.', 'WDAEFSGHN');
+('Giants suspende de empleo y sueldo a un jugador', 6, 'admin', 0, '2020-01-29', 'Equipos', 'assets/img/usuarios/admin/articulos/Giants suspende de empleo y sueldo a un jugador/primeraImagen;assets/img/usuarios/admin/articulos/Giants suspende de empleo y sueldo a un jugador/segundaImagen', 'Cuidar lo que dices es fundamental en un sector puramente audiovisual. Pero no solo lo que comentas delante de una cÃ¡mara, sino tambiÃ©n la forma de decirlo.\r\nY es que parece que FOX, jugador portuguÃ©s de CS:GO para Vodafone Giants, realizÃ³ unas condenables y desafortunadas declaraciones tras un ', 'En el tuit se puede ver el vÃ­deo donde, supuestamente, hace tales declaraciones. Eso sÃ­, son en portuguÃ©s, y parece que la sanciÃ³n de Giants confirma las palabras del jugador luso. \r\nFOX se referÃ­a a la mujer de KILLDREAM, ex compaÃ±ero suyo en Giants, que, en teorÃ­a, estaba gritando y haciend', 'FOX respondiÃ³ a los entrevistadores afirmando que, si fuese su mujer, Ã©l hubiese reaccionado de otro modo, llegando incluso a golpearla por tales acciones. ', 'YoungGODCSGO'),
+('La renovada ESL Pro League', 8, 'admin', 0, '2020-01-29', 'Liga', 'assets/img/usuarios/admin/articulos/La renovada ESL Pro League/primeraImagen;assets/img/usuarios/admin/articulos/La renovada ESL Pro League/segundaImagen ', 'ESL ha anunciado un formato totalmente renovado para su Pro League de Counter-Strike: Global Offensive cuya gran novedad serÃ¡ la reconversiÃ³n a una liga totalmente global, eliminando asÃ­ las fases previas regionales.\r\nEste cambio tambiÃ©n ha supuesto una reducciÃ³n en el numero de equipos hasta s', 'Los criterios para escoger los invitados no han sido desvelados, ya que si bien casi todos ellos estÃ¡n entre los 25 primeros del ESL World Ranking, llama la atenciÃ³n la presencia de Complexity, situado en el puesto nÃºmero 41 del mismo, muy por detrÃ¡s de otros muchos que se han quedado fuera.\r\nEn', 'Por el momento no han desvelado la sede de ninguna de las fases â€”la primera se disputarÃ¡ en un estudio y la decisiva en un estadioâ€”, pero sÃ­ han confirmado que no se jugarÃ¡ ningÃºn evento del ESL Pro Tour durante el mes que dure la temporada de esta renovada ESL Pro League. ', ' Los 25 primeros'),
+('BIG se lleva la DreamHack', 10, 'admin2', 0, '2020-01-29', 'Equipos', 'assets/img/usuarios/admin2/articulos/BIG se lleva la DreamHack/primeraImagen;assets/img/usuarios/admin2/articulos/BIG se lleva la DreamHack/segundaImagen', 'BIG se ha proclamado vencedor del DreamHack Open de Counter-Strike: Global Offensive celebrado en la ciudad alemana de Leipzig tras vencer en la final a Renegades y sin perder ni un solo mapa en todo el evento.\r\nEl club alemÃ¡n quedÃ³ encuadro en el grupo A junto a Renegades, Cloud9 y Virtus.pro. Es', 'En el grupo B el primer clasificado fue MAD Lions. El club espaÃ±ol, que adquiriÃ³ justo antes de DreamHack Sevilla un quinteto danÃ©s, cuajÃ³ tambiÃ©n una buena fase de grupos y se impuso primero a Heoric y posteriormente a North, otros dos rosters daneses.\r\nEn playoffs el primer rival de BIG fue H', 'La final se puso muy rÃ¡pidamente de cara para BIG, que arrasÃ³ en el primer mapa disputado en Mirage al ganar 16-5. El club alemÃ¡n, que venÃ­a de una mala racha de resultados, no dejÃ³ escapar la oportunidad de ganar el torneo y certificÃ³ su victoria por 16-12 en Dust II, embolsÃ¡ndose asÃ­ 50 00', 'Campeones'),
+('Las finales de BLAST', 11, 'admin2', 0, '2020-01-29', 'Liga', 'assets/img/usuarios/admin2/articulos/Las finales de BLAST/primeraImagen;assets/img/usuarios/admin2/articulos/Las finales de BLAST/segundaImagen', 'La temporada 2020 de CS:GO comienza con fuerza, prÃ¡cticamente como todos los aÃ±os, en parte por la gran cantidad de torneos major y premier que hay en el calendario.\r\nUno de los mÃ¡s destacados de 2019 fue la BLAST Pro Series, que tuvo distintas paradas a lo largo del aÃ±o y que acabÃ³ ganando Ast', 'La temporada 2020 de CS:GO comienza con fuerza, prÃ¡cticamente como todos los aÃ±os, en parte por la gran cantidad de torneos major y premier que hay en el calendario.\r\n\r\nUno de los mÃ¡s destacados de 2019 fue la BLAST Pro Series, que tuvo distintas paradas a lo largo del aÃ±o y que acabÃ³ ganando A', 'Astralis, Na&#39;Vi, G2 Esports, FaZe Clan o MIBR son algunos de los equipos destacados en esta BLAST Premier de primavera. Los 6 mejores clasificados pasarÃ¡n directamente a las finales de MoscÃº, mientras que los otros 6 se disputarÃ¡n su plaza en el Showdown de primavera.', 'Las finales de BLAST');
 
 -- --------------------------------------------------------
 
@@ -72,9 +71,14 @@ CREATE TABLE `comentario` (
 --
 
 INSERT INTO `comentario` (`id_comentario`, `id_articulo`, `fecha`, `texto`, `nombre_usuario`) VALUES
-(3, 6, '2020-01-29', 'ola q ase colega del infierno', 'admin'),
-(4, 8, '2020-01-29', 'pasa bro\r\n', 'admin'),
-(14, 6, '2020-01-29', 'sadfhjbknÃ±l,.-', 'admin');
+(16, 6, '2020-01-29', 'Madre mia, increible', 'admin'),
+(17, 10, '2020-01-29', 'Campeones!!, os lo mereceis', 'admin2'),
+(18, 11, '2020-01-29', 'Que ganas!!!, por fiiin', 'admin2'),
+(19, 6, '2020-01-29', 'Se lo merece, no se puede ir asi por la vida', 'miguel'),
+(20, 8, '2020-01-29', 'Ya era hora, madre miaaa', 'miguel'),
+(21, 10, '2020-01-29', 'No!!!, eran los peoress', 'miguel'),
+(22, 11, '2020-01-29', 'ufff que nerviooos', 'miguel'),
+(23, 10, '2020-01-29', 'ufff, noooo esos no', 'admin');
 
 -- --------------------------------------------------------
 
@@ -228,10 +232,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`email`, `tipo_usuario`, `imagen_perfil`, `nombre_usuario`, `password`, `nombre`) VALUES
-('admin@admin.com', 'redactor', 'assets/img/usuarios/admin/imagenPerfil', 'admin', '$2y$10$cfsW63NdNSMJKUgE3KksjuwcqXDjpUxRQtnzW7fROnWIPH3UOuv9e', 'pepe20'),
-('car01@wd', 'lector', 'assets/img/usuarios/car02/imagenPerfil', 'car02', '$2y$10$vsb3Z.3rnCF74V1pwxmycO8E5.N3TZ3J9.Inw3HQiV8RRKqZBQisK', 'Carlos'),
-('ger@ger.com', 'lector', '../../assets/img/usuarios/german1/astralis.jpg', 'german1', '$2y$10$YO7we3aujoKfUGLItO.wN.k9CfZYDPNS5pXBTCaJ40/wOY3r4Wi3O', 'german'),
-('miguel@ola', 'lector', 'assets/img/usuarios/miguelgz97/imagenPerfil', 'miguelgz97', '$2y$10$FczPuO908xI1OmUn.Ux2IObb/wc2Xn5A4Jo.6hEpUzVUBjfRjThba', 'Miguel Gallego');
+('admin@admin', 'redactor', 'assets/img/usuarios/admin/imagenPerfil', 'admin', '$2y$10$ui1eRqSicmjZyUTEXcg8l.EJuY2eHQUw9TDW1T6kfrIRy3f/pDwGC', 'Javi Admin'),
+('admin2@admin2', 'redactor', 'assets/img/usuarios/admin2/imagenPerfil', 'admin2', '$2y$10$Dp7Q/Y6r06e1dgteeO.N1uZGM3K3gPWudhJXWot7R2b0QFvJFVI8O', 'German Admin'),
+('miguel@miguel', 'lector', 'assets/img/usuarios/miguel/imagenPerfil', 'miguel', '$2y$10$EFwzUD3TYZ1dazxkMRQBh.elnf9ScQvLkAs2eMtdEauk3vBdLTQOm', 'Miguel Gallego');
 
 -- --------------------------------------------------------
 
@@ -242,8 +245,23 @@ INSERT INTO `usuario` (`email`, `tipo_usuario`, `imagen_perfil`, `nombre_usuario
 CREATE TABLE `valoracion` (
   `id_valoracion` int(11) NOT NULL,
   `id_articulo` int(11) NOT NULL,
-  `valor` int(11) NOT NULL
+  `valor` int(11) NOT NULL,
+  `nombre_usuario` varchar(100) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `valoracion`
+--
+
+INSERT INTO `valoracion` (`id_valoracion`, `id_articulo`, `valor`, `nombre_usuario`) VALUES
+(1, 6, 3, 'admin'),
+(2, 10, 5, 'admin2'),
+(3, 11, 3, 'admin2'),
+(4, 6, 1, 'miguel'),
+(5, 8, 4, 'miguel'),
+(6, 10, 2, 'miguel'),
+(7, 11, 4, 'miguel'),
+(8, 10, 2, 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -320,32 +338,38 @@ ALTER TABLE `valoracion`
 -- AUTO_INCREMENT de la tabla `articulo`
 --
 ALTER TABLE `articulo`
-  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
   MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
 --
 -- AUTO_INCREMENT de la tabla `liga`
 --
 ALTER TABLE `liga`
   MODIFY `id_liga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT de la tabla `partido`
 --
 ALTER TABLE `partido`
   MODIFY `id_partido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT de la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
-  MODIFY `id_valoracion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_valoracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -378,6 +402,7 @@ ALTER TABLE `partido`
 --
 ALTER TABLE `valoracion`
   ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id_articulo`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

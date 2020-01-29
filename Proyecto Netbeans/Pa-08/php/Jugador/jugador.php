@@ -200,3 +200,74 @@ function getPlayersByPlayerRanking($playerRanking) {
 
     return $jugadores;
 }
+
+function nuevoJugador() {
+
+    $error[] = "";
+
+    if (isset($_POST['enviado'])) {
+        if (isset($_POST['nombre']) && isset($_POST['pais']) &&
+                isset($_POST['ranking']) && isset($_POST['equipo'])) {
+
+            $arraySanitize = array(
+                'nombre' => FILTER_SANITIZE_STRING,
+                'pais' => FILTER_SANITIZE_STRING,
+                'ranking' => FILTER_SANITIZE_NUMBER_INT,
+                'equipo' => FILTER_SANITIZE_STRING
+            );
+
+
+
+            $jugador = getPlayerByName($arraySanitize['nombre']);
+
+            if ($arraySanitize['nombre'] != $jugador['nombre']) {
+
+                $datos = filter_input_array(INPUT_POST, $arraySanitize);
+
+                $nombre = $datos["nombre"];
+                $pais = $datos["pais"];
+                $ranking = $datos["ranking"];
+                $equipo = $datos["equipo"];
+
+
+                if ($_FILES['ruta_imagen']['error'] > 0) {
+                    $imagen_perfil = "";
+                } else {
+                    $mTmpFile = $_FILES['ruta_imagen']['tmp_name'];
+                    $mTipo = exif_imagetype($mTmpFile);
+                    if (($mTipo == IMAGETYPE_JPEG) or ( $mTipo == IMAGETYPE_PNG)) {
+                        $ruta = "assets/img/jugadores";
+                        $imagen_perfil = $ruta . "/" . $nombre;
+                        move_uploaded_file($_FILES['ruta_imagen']['tmp_name'], "../../" . $imagen_perfil);
+                    } else {
+                        $imagen_perfil = "";
+                    }
+                }
+
+                $conn = conexionDB();
+
+                $consulta = "INSERT INTO `jugador`"
+                        . "(`id_jugador`, `nombre`, `pais_origen`, "
+                        . "`ranking_jugador`, `nombre_equipo`, `ruta_imagen`) "
+                        . "VALUES ('NULL','$nombre','$pais','$ranking','$equipo','$imagen_perfil')";
+                $resultado = mysqli_query($conn, $consulta);
+
+                if (!$resultado) {
+                    $error[] = "Error en sql crear jugador";
+                }
+
+                mysqli_close($conn);
+            } else {
+                //jugador ya existe
+                $error[] = "El jugador ya existe";
+            }
+        } else {
+            //rellena todos los datos
+            $error[] = "Rellena todos los datos";
+        }
+    }
+
+    print_r($error);
+
+    return $resultado;
+}
