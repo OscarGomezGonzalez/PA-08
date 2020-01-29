@@ -25,7 +25,7 @@ function conexionDB() {
     if (!$db) {
         die("ERROR: Can't connect to DB ");
     }
-    mysqli_set_charset($con, "utf-8");
+    mysqli_set_charset("utf-8", $con);
     return $con;
 }
 
@@ -48,7 +48,7 @@ function setDateFormat($fecha) {
     //$newDate = date("d-m-Y", strtotime($fecha)); 
     setlocale(LC_TIME, "es_ES");
     $newDate = strftime("%A, %d de %B de %Y", strtotime($fecha));
-    //$newDate = date("%A, %d de %B de %Y", strtotime($fecha));
+    $newDate = utf8_decode($newDate);
     return $newDate;
 }
 
