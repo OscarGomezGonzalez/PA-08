@@ -1,6 +1,7 @@
 <?php
 
-include_once '../../funciones.php';
+//include_once '../../funciones.php';
+include_once 'funciones.php';
 
 function borra_liga($idliga) {
     $conn = conexionDB();
