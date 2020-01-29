@@ -1,6 +1,7 @@
 <?php
 
-include_once '../../funciones.php';
+//include_once '../../funciones.php';
+include_once 'funciones.php';
 
 function modif_liga($idliga) {
     if (!isset($_POST['btnModificarLugar'])) {
