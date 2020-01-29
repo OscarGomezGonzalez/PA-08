@@ -30,7 +30,7 @@ if ($datos["password"] == $datos["password-repeat"]) {
             $ruta = "assets/img/usuarios/" . $usuario;
             mkdir("../../" . $ruta, 0777, true);
             $imagen_perfil = $ruta . "/imagenPerfil";
-            move_uploaded_file($_FILES['imagen_perfil']['tmp_name'], $imagen_perfil);
+            move_uploaded_file($_FILES['imagen_perfil']['tmp_name'], "../../" . $imagen_perfil);
         } else {
             $imagen_perfil = "";
         }
