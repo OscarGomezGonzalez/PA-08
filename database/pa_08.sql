@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-01-2020 a las 15:52:24
--- Versión del servidor: 10.4.8-MariaDB
--- Versión de PHP: 7.3.11
+-- Tiempo de generación: 29-01-2020 a las 18:47:38
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -258,11 +256,22 @@ ALTER TABLE `liga`
   ADD PRIMARY KEY (`id_liga`);
 
 --
+-- Indices de la tabla `mapa`
+--
+ALTER TABLE `mapa`
+  ADD PRIMARY KEY (`nombre_mapa`);
+
+--
 -- Indices de la tabla `partido`
 --
 ALTER TABLE `partido`
   ADD PRIMARY KEY (`id_partido`),
-  ADD KEY `id_liga` (`id_liga`);
+  ADD KEY `id_liga` (`id_liga`),
+  ADD KEY `equipo1` (`equipo1`),
+  ADD KEY `equipo2` (`equipo2`),
+  ADD KEY `mapa1` (`mapa1`),
+  ADD KEY `mapa2` (`mapa2`),
+  ADD KEY `mapa3` (`mapa3`);
 
 --
 -- Indices de la tabla `usuario`
@@ -286,37 +295,31 @@ ALTER TABLE `valoracion`
 --
 ALTER TABLE `articulo`
   MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
   MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
 --
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
   MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
 --
 -- AUTO_INCREMENT de la tabla `liga`
 --
 ALTER TABLE `liga`
   MODIFY `id_liga` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `partido`
 --
 ALTER TABLE `partido`
   MODIFY `id_partido` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
   MODIFY `id_valoracion` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- Restricciones para tablas volcadas
 --
@@ -337,14 +340,18 @@ ALTER TABLE `jugador`
 -- Filtros para la tabla `partido`
 --
 ALTER TABLE `partido`
-  ADD CONSTRAINT `partido_ibfk_1` FOREIGN KEY (`id_liga`) REFERENCES `liga` (`id_liga`);
+  ADD CONSTRAINT `partido_ibfk_1` FOREIGN KEY (`id_liga`) REFERENCES `liga` (`id_liga`),
+  ADD CONSTRAINT `partido_ibfk_2` FOREIGN KEY (`equipo1`) REFERENCES `equipo` (`nombre`),
+  ADD CONSTRAINT `partido_ibfk_3` FOREIGN KEY (`equipo2`) REFERENCES `equipo` (`nombre`),
+  ADD CONSTRAINT `partido_ibfk_4` FOREIGN KEY (`mapa1`) REFERENCES `mapa` (`nombre_mapa`),
+  ADD CONSTRAINT `partido_ibfk_5` FOREIGN KEY (`mapa2`) REFERENCES `mapa` (`nombre_mapa`),
+  ADD CONSTRAINT `partido_ibfk_6` FOREIGN KEY (`mapa3`) REFERENCES `mapa` (`nombre_mapa`);
 
 --
 -- Filtros para la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
   ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id_articulo`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
