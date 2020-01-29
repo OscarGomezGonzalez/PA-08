@@ -2,12 +2,23 @@
 
 include_once '../../funciones.php';
 
+function isPlayerInTeam($jugador) {
+
+    $res = true;
+
+    if ($jugador['nombreEquipo'] == "") {
+        $res = false;
+    }
+
+    return $res;
+}
+
 function getAllPlayers() {
 
     //array que guarda todos los errores
     $error[] = "";
     $conn = conexionDB();
-    $sql = "SELECT * FROM jugador ORDER BY ranking_jugador";
+    $sql = "SELECT nombre,nombre_equipo FROM jugador ORDER BY ranking_jugador";
 
     $query = mysqli_query($conn, $sql);
 
@@ -23,8 +34,6 @@ function getAllPlayers() {
                 $jugadores[] = array(
                     'id' => $row['id_jugador'],
                     'nombre' => $row['nombre'],
-                    'pais' => $row['pais_origen'],
-                    'ranking' => $row['ranking_jugador'],
                     'equipo' => $row['nombre_equipo']
                 );
             }

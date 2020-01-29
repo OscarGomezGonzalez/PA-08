@@ -12,23 +12,19 @@ and open the template in the editor.
     <body>
         <form action="#" method="post">
             <br>
-            <input type="text" name="nombre" value="nombre">nombre<br>
-            <input type="date" name="fechaInicio" value="2020-01-30">fechaInicio<br>
-            <input type="date" name="fechaFin" value="2020-01-30">fechaFin<br>
-            <input type="text" name="lugar" value="Mickey">lugar<br>
-            <input type="number" name="primerPremio" value="0">primer premio<br>
-            <input type="number" name="segundoPremio" value="0">segundo premio<br>
-            <input type="number" name="premioSemifinales" value="0">premio semifinales<br>
-            <input type="submit" value="Enviar" name="btnCrear" />
+            <input type="text" name="nombre" value="">nombre<br>
+            <input type="text" name="pais" value=""><br>pais
+            <input type="number" name="ranking" value=""><br>ranking
+            <input type="text" name="equipo" value=""><br>equipo
+            <div class="form-group"><label for="file">Elija foto de perfil: </label><br><input name="imagen_perfil" type="file" value="Selecciona imagen de perfil"></div>       
+            <input type="submit" value="Enviar" name="enviado" />
         </form>
 
         <?php
-        include 'crea_liga.php';
-        include 'ver_ligas.php';
-        include 'borra_liga.php';
-        include 'modif_liga.php';
-
-        ver_ligas();
+        include 'jugador.php';
+        $res = nuevoJugador();
+        echo $res;
+        /*
 
         if (isset($_POST['btnCrear'])) {
             crear_liga();
@@ -44,7 +40,7 @@ and open the template in the editor.
         if (isset($_POST['btnModificar']) || isset($_POST['btnModificarLugar'])) {
             modif_liga($_POST['custId']);
             //header('Location: index.php');
-        }
+        }*/
         ?>
     </body>
 </html>
