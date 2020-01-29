@@ -9,8 +9,7 @@ $saneamiento = array(
     "nombre_usuario" => FILTER_SANITIZE_STRING,
     "email" => FILTER_SANITIZE_EMAIL,
     "password" => FILTER_SANITIZE_STRING,
-    "password-repeat" => FILTER_SANITIZE_STRING,
-    "tipo_usuario" => FILTER_SANITIZE_STRING
+    "password-repeat" => FILTER_SANITIZE_STRING
 );
 
 $datos = filter_input_array(INPUT_POST, $saneamiento);
@@ -19,7 +18,7 @@ if ($datos["password"] == $datos["password-repeat"]) {
     $password = password_hash($datos["password"], PASSWORD_DEFAULT);
     $nombre = $datos["nombre"];
     $email = $datos["email"];
-    $tipo_usuario = $datos["tipo_usuario"];
+    $tipo_usuario = "lector";
 
 
     if ($_FILES['imagen_perfil']['error'] > 0) {
