@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-01-2020 a las 18:23:02
--- Versión del servidor: 10.4.8-MariaDB
--- Versión de PHP: 7.3.11
+-- Tiempo de generación: 28-01-2020 a las 22:57:01
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `pa_08`
 --
-CREATE DATABASE IF NOT EXISTS `pa_08` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `pa_08`;
 
 -- --------------------------------------------------------
 
@@ -37,7 +35,11 @@ CREATE TABLE `articulo` (
   `valor_valoracion` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `categoria` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `imagenes` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+  `imagenes` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
+  `contenido1` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
+  `contenido2` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
+  `contenido3` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
+  `subtitulo` varchar(20) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -50,7 +52,8 @@ CREATE TABLE `comentario` (
   `id_comentario` int(11) NOT NULL,
   `id_articulo` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `texto` text COLLATE utf8_spanish_ci NOT NULL
+  `texto` text COLLATE utf8_spanish_ci NOT NULL,
+  `nombre_usuario` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -157,7 +160,7 @@ CREATE TABLE `partido` (
 CREATE TABLE `usuario` (
   `email` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `tipo_usuario` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `imagen_perfil` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `imagen_perfil` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `nombre_usuario` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `password` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL
