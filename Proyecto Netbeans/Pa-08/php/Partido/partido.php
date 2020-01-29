@@ -1,10 +1,8 @@
 <?php
 
-echo 'loko';
 
 include_once '../../funciones.php';
 
-echo 'loko';
 
 function getPartidoById($idPartido) {
     
@@ -12,7 +10,7 @@ function getPartidoById($idPartido) {
     $error[] = "";
     $conn = conexionDB();
     $sql = "SELECT * FROM partido WHERE id_partido='$idPartido'";
-
+    
     $query = mysqli_query($conn, $sql);
 
     if (!$query) {
@@ -65,22 +63,33 @@ function getPartidoById($idPartido) {
     return $partido;
 }
 
+/*
+ * Funcion para obtener partidos y paginarlos, obtenemos partidos de 6 en 6
+ */
+function getPartidosPaginated($lastOne, $limit) {
 
-function getPartidosPaginated($lastOne) {
-    echo 'loko';
-    $sql = "SELECT * FROM partidos ORDER BY id ASC LIMIT 6 OFFSET '$lastOne'";
+    $sql = "SELECT * FROM partido ORDER BY id_partido ASC LIMIT " . $limit . " OFFSET " . $lastOne;
     $conn = conexionDB();
-    
+ 
     $query = mysqli_query($conn, $sql);
-
+    
     if (!$query) {
         $error[] = "Error en sql paginated";
     } else {
         if (mysqli_num_rows($query) >= 1) {
-
+            
+            $i = 0;
             while ($row = mysqli_fetch_array($query)) {
+ 
 
-                //$partidos[] = $row[];
+                $partidos[] = array(
+                    'id' => $row['id_partido'],
+                    'equipo1' => $row['equipo1'],
+                    'equipo2' => $row['equipo2']
+                );
+
+                $partidos[$i]['ganador'] = getGanadorPartido($row);
+                $i++;
             }
         } else {
             $error[] = "No se han devuelto resultados";
@@ -89,13 +98,24 @@ function getPartidosPaginated($lastOne) {
 
     mysqli_close($conn);
 //For debbuging only
-    //print_r($error);
-    //print_r($rutasMapas);
+    print_r($error);
 
     return $partidos;
 }
 
-
+    //retornamos el numero de partidos
+function getNumPartidos() {
+    $conn = conexionDB();
+    $sql = "SELECT COUNT(id_partido) as total FROM partido";
+    $res = mysqli_query($conn, $sql);
+    $ret = false;
+    if ($arr = mysqli_fetch_array($res)) {
+        $ret = $arr['total'];
+    }
+    mysqli_close($conn);
+    return $ret;
+}
+    
 function getGanadorPartido($partido) {
 
     $g1 = $partido['ganador1'];

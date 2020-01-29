@@ -8,7 +8,8 @@
         <?php
         require_once("../../header.php");
         include_once 'partido.php';
-        $partido = getPartidoById(1);
+        $id_partido = $_POST['idPartido'];
+        $partido = getPartidoById($id_partido);
         //print_r($partido);
         ?>
         <div class="principio" style="height: 100%;">
