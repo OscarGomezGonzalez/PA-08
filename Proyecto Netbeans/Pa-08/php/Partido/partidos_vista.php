@@ -7,8 +7,10 @@
         <!-- Navigation -->
         <?php
         require_once("../../header.php");
-        include_once './partido.php';
-        $partido = getPartidoById(1);
+        include_once 'partido.php';
+        $id_partido = $_POST['idPartido'];
+        $partido = getPartidoById($id_partido);
+        //print_r($partido);
         ?>
         <div class="principio" style="height: 100%;">
             <div class="container" style="height: 100%;min-height: 100%;max-height: 100%;">
@@ -86,7 +88,7 @@
         </div>
 
         <!-- Footer -->
-        <?php include("../../footer.php"); ?>
+        <?php include_once("../../footer.php"); ?>
         <script src="../../assets/js/jquery.min.js"></script>
         <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
     </body>
