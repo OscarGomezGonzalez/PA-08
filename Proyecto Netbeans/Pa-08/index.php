@@ -8,6 +8,7 @@
         <!-- Navigation -->
         <?php
         session_start();
+        $_SESSION["idArticulo_coment"] = 0;
 
         include_once 'funciones.php';
 
@@ -58,10 +59,12 @@
                 <!-- Sidebar Widgets Column -->
                 <div class="col-md-4" id="sidebar" style="padding-left: 0px;padding-right: 0px;width: 50%;min-width: 200px;">
                     <!-- Categories Widget -->
+
                     <div class="card my-4" style="opacity: 0.62;filter: grayscale(0%);background-color: #000000;color: rgb(248,249,251);height: 100%;width: 100%;">
                         <h5 class="card-header">Ligas</h5>
                         <div class="card-body" style="opacity: 1;padding: 0px;width: 100%;height: 100%;">
                             <?php
+
                             include 'php/Liga/ver_ligas.php';
                             ver_ligas();
                             ?>
