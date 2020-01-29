@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Untitled</title>
-        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../assets/fonts/fontawesome-all.min.css">
-        <link rel="stylesheet" href="../../assets/fonts/font-awesome.min.css">
-        <link rel="stylesheet" href="../../assets/fonts/fontawesome5-overrides.min.css">
-        <link rel="stylesheet" href="../../assets/css/Lista-Productos-Canito.css">
-        <link rel="stylesheet" href="../../assets/css/style.css">
-    </head>
+    <?php include_once '../../head.php'; ?>
 
     <body>
+        <?php
+        session_start();
+        $_SESSION["idArticulo_coment"] = 0;
+
+        include_once '../../funciones.php';
+
+        require_once("../../header.php");
+        ?>
         <div>
             <div class="container">
                 <div class="row">
@@ -37,9 +35,6 @@
                             <tbody>
 
                                 <?php
-                                include_once '../../funciones.php';
-
-                                session_start();
                                 $user = $_SESSION['usuario'];
 
                                 $conn1 = conexionDB();
@@ -60,16 +55,9 @@
                                         <td><?php echo $row['fecha'] ?></td>
                                         <td><?php echo $row['texto'] ?></td>
                                         <td class="form-inline">
-                                            <form action="../../php/Comentario/modificarComentario_vista.php"  method="POST">
+                                            <form action="php/Articulo/articulo_vista.php"  method="POST">
                                                 <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
-                                                <button type="submit" class="btn btn-warning"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">Modificar</i></button>
-                                                <input type='hidden' value="<?php echo $row['id_Comentario'] ?>" name='idComentario'/>
-                                                <input type='hidden' value="<?php echo $titulo ?>" name='titulo'/>
-                                            </form>
-                                            <form action="../../php/Articulo/eliminarArticulo.php"  method="POST">
-                                                <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">Eliminar</i></button>
-                                                <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
-                                                <input type='hidden' value="<?php echo $row['titulo'] ?>" name='nomArticulo'/>
+                                                <button type="submit" class="btn btn-light"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">Ver Artículo</i></button>
                                             </form>
                                         </td>
                                     </tr> 

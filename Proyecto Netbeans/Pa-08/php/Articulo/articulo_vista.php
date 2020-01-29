@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 
-     <?php include_once '../../head.php'; ?>
+    <?php include_once '../../head.php'; ?>
 
     <body>
         <?php
-       session_start();
+        session_start();
         require_once("../../header.php");
-        
+
         include_once '../../funciones.php';
 
-       
 
-        if (isset($_SESSION['idArticulo_coment'])) {
-            $articulo = $_SESSION['idArticulo_coment'];
-            unset($_SESSION["idArticulo_coment"]);
-        } else {
+        if ($_SESSION['idArticulo_coment'] == 0) {
             $articulo = $_POST['idArticulo'];
+        } else {
+            $articulo = $_SESSION['idArticulo_coment'];
         }
+
+
+
+
         $conn = conexionDB();
         $consulta = "SELECT * FROM `articulo` WHERE id_articulo='$articulo'";
         $resultado = mysqli_query($conn, $consulta);
@@ -71,10 +73,51 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="text-center text-secondary" style="text-align: center;border:solid;border-radius: 2em;width: 70%; padding-top:10px;margin-left: 15%;">
-                            <h4>></h2>
-                                <p></p>
-                        </div>
+
+                        <?php
+                        $conn2 = conexionDB();
+                        $consulta2 = "SELECT * FROM `comentario` WHERE id_articulo='$articulo'";
+                        $resultado2 = mysqli_query($conn2, $consulta2);
+                        while ($row = mysqli_fetch_array($resultado2)) {
+                            ?>
+                            <div class="text-center text-secondary" style="text-align: center;border:solid;border-radius: 2em;width: 70%; padding-top:10px;margin-left: 15%;">
+
+                                <p><strong>Comentario creado por <?php echo $row['nombre_usuario']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['fecha']; ?></strong></p>
+                                <p>
+                                    <?php echo $row['texto']; ?>
+                                </p>
+                                <?php
+                                if (isset($_SESSION['usuario'])) {
+                                    if ($_SESSION['usuario'] == $row['nombre_usuario']) {
+                                        ?>
+                                        <div class="form-inline" style="margin-left: 30%;">
+                                            <form action = "php/Comentario/eliminarComentario.php" method = "POST">
+                                                <button type = "submit" class = "btn btn-danger"><i class = "far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">Eliminar</i></button>
+                                                <input type = 'hidden' value = "<?php echo $resArticulo['id_articulo'] ?>" name = 'idArticulo'/>
+                                                <input type = 'hidden' value = "<?php echo $row['id_comentario'] ?>" name = 'idComentario'/>
+                                            </form>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <form action = "php/Comentario/modificarComentario_vista.php" method = "POST">
+                                                <button type = "submit" class = "btn btn-warning"><i class = "far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">Modificar</i></button>
+                                                <input type = 'hidden' value = "<?php echo $resArticulo['titulo'] ?>" name = 'titulo'/>
+                                                <input type = 'hidden' value = "<?php echo $resArticulo['id_articulo'] ?>" name = 'idArticulo'/>
+                                                <input type = 'hidden' value = "<?php echo $row['id_comentario'] ?>" name = 'idComentario'/>
+
+                                            </form>
+                                        </div>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                                <br>
+                            </div>
+                            <br>
+                            <br>
+                            <?php
+                        }
+                        ?>
+
+
                     </div>
                 </div>
             </div>
