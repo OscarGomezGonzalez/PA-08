@@ -74,15 +74,8 @@
                 </div>
 
             </div>
-            <!-- /.row -->
-
         </div>
-        <!-- /.container -->
-
-        <!-- Footer -->
         <?php include("footer.php"); ?>
-
-
     </body>
 
 </html>

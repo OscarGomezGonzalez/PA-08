@@ -30,6 +30,7 @@
                             </div>
                         </div>
                     </li>
+                           
                     <?php
                     if (isset($_SESSION['usuario'])) {
                         if ($_SESSION['tipo'] == "lector") {
@@ -48,6 +49,7 @@
                             <?php
                         } else {
                             ?>
+                             <li class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;"><a class="btn btn-warning" role="button" onclick="location.href = 'panelAdmin.php'">Panel de Control</a></li>
                             <li
                                 class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;">
                                 <div class="nav-item dropdown d-md-flex justify-content-md-center align-items-md-center"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Bienvenido <br> <strong><?php echo $_SESSION['usuario']; ?></strong></a>
@@ -56,6 +58,7 @@
                                         <a class="dropdown-item" role="presentation" href="php/Articulo/listaArticulos.php">Mis artículos</a>
                                         <a class="dropdown-item" role="presentation" href="php/Comentario/listaComentarios.php">Mis comentarios</a>
                                         <a class="dropdown-item" role="presentation" href="php/Valoracion/listaValoraciones.php">Mis valoraciones</a>
+                                        <a class="dropdown-item" role="presentation" href="">Modificar datos</a>
                                         <a class="dropdown-item" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
                                     </div> 
                                 </div>

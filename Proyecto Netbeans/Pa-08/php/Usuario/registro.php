@@ -43,8 +43,6 @@ if ($datos["password"] == $datos["password-repeat"]) {
 
     if ($resultado) {
         header("location:../../php/Usuario/inicioSesion_vista.php");
-    } else {
-        header("location:../../php/Usuario/registro_vista.php");
     }
 } else {
     header("location:../../php/Usuario/registro_vista.php");
