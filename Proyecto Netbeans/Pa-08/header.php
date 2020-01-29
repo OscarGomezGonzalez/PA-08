@@ -36,7 +36,7 @@
                                     <div class="dropdown-menu" role="menu">
                                         <a class="dropdown-item" role="presentation" href="php/Usuario/cuentaVista.php">Mi cuenta</a>
                                         <a class="dropdown-item" role="presentation" href="php/Articulo/listaArticulos.php">Mis artículos</a>
-                                        <a class="dropdown-item" role="presentation" href="#">Mis comentarios</a>
+                                        <a class="dropdown-item" role="presentation" href="php/Comentario/listaComentarios.php">Mis comentarios</a>
                                         <a class="dropdown-item" role="presentation" href="#">Mis valoraciones</a>
                                         <a class="dropdown-item" role="presentation" href="php/Usuario/logout.php"><strong>Cerrar Sesión</strong></a>
                                     </div>
@@ -47,7 +47,7 @@
                         }
                     } else {
                         ?>
-                            <li class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;"><a class="btn btn-primary" role="button" onclick="location.href='php/Usuario/inicioSesion_vista.php'">Log In</a></li>
+                        <li class="nav-item d-flex d-md-flex justify-content-start justify-content-md-center align-items-md-center" role="presentation" style="margin-bottom: 10px;margin-top: 10px;"><a class="btn btn-primary" role="button" onclick="location.href = 'php/Usuario/inicioSesion_vista.php'">Log In</a></li>
                             <?php
                         }
                         ?>
