@@ -6,22 +6,39 @@
     <body class="bg-secondary">
 
         <?php
-        //require_once("../../header.php");
+        require_once("../../header.php");
         include_once 'partido.php';
         //obtenemos los primeros 6 partidos
         $offset = 0;
-        $limit = 2;
+        $limit = 3;
+        if (isset($_GET['next'])) {
+            $offset = $_GET['next'] + $limit;
+        } elseif (isset($_GET['previous'])) {
+            $offset = $_GET['previous'] - $limit;
+        }
+
         $partidos = getPartidosPaginated($offset, $limit);
-        print_r($partidos);
+        $left = partidosLeft($offset, $limit);
+        //print_r($partidos);
         ?>
 
-        <div class="text-left principio">
+        <div class="text-left principio" style="margin-bottom: 11%;">
             <div class="container-fluid" style="height: 80%;width: 100%;margin-top: 2%;margin-right: 2%;margin-left: 2%;padding-top: 0%;opacity: 1;">
                 <div class="row justify-content-center" style="width: 100%;">
                     <div class="col-4 col-md-4 col-xl-4 offset-xl-0" style="min-width: 350px;">
-                        <form class="d-md-flex justify-content-md-center align-items-md-center">
-                            <button class="btn d-md-flex" type="button" style="background-color: #98A0A9;color: rgb(0,0,0);font-size: 20px;width: 50%; margin: 5px;" value="5">Anterior Pagina</button>
-                            <button class="btn" type="button" style="background-color: #98A0A9;color: rgb(0,0,0);font-size: 20px;width: 50%;"value="5">Siguiente Pagina</button>
+                        <form action="php/Partido/lista_partidos.php" method="GET" class="d-md-flex justify-content-md-center align-items-md-center">
+                            <?php if ($offset > 0) {
+                                ?><button class="btn d-md-fex" type="submit" name="previous" style="background-color: #98A0A9;color: rgb(0,0,0);font-size: 20px;width: 50%; margin: 5px;" value="<?php echo$offset; ?>">Anterior Pagina</button>
+
+                                <?php
+                            }
+                            ?>
+                            <?php if ($left) {
+                                ?><button class="btn" type="submit" name="next" style="background-color: #98A0A9;color: rgb(0,0,0);font-size: 20px;width: 50%;" value="<?php echo$offset; ?>">Siguiente Pagina</button>
+
+                                <?php
+                            }
+                            ?>
                         </form>
                     </div>
                 </div>
