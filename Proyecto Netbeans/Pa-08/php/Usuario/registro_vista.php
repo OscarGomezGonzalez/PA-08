@@ -21,6 +21,9 @@
     </head>
 
     <body>
+        <?php
+        require_once("../../header.php");
+         ?>
         <div class="bg-secondary register-photo">
             <div class="form-container">
                 <form action="../../php/Usuario/registro.php" enctype="multipart/form-data" method="POST">
@@ -39,6 +42,7 @@
         </div>
         <script src="../../assets/js/jquery.min.js"></script>
         <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+        <?php include("../../footer.php"); ?>
     </body>
 
 </html>

@@ -30,6 +30,9 @@ if (isset($_POST['SI'])) {
         <link rel="stylesheet" href="../../assets/css/style.css">
     </head>
     <body>
+        <?php
+        require_once("../../header.php");
+        ?>
         <div style="background-color: #c6c8ca; width: 45%; margin-left: 29%;  margin-top:15%; border: groove 1em red; border-radius: 2em;"><h3 class="text-danger" style="text-align: center;">¿Esta seguro de eliminar su cuenta?</h3></div>
         <div style="margin-top:2%; margin-left: 45%;" class="form-inline">
             <form action="#"  method="POST">
@@ -40,5 +43,6 @@ if (isset($_POST['SI'])) {
                 <button name="NO" type="submit" class="btn btn-warning"><i class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">NO</i></button>
             </form>
         </div>
+        <?php include("../../footer.php"); ?>
     </body>
 </html>

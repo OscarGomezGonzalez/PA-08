@@ -27,7 +27,7 @@ $contenido2 = $datos["contenido2"];
 $contenido3 = $datos["contenido3"];
 $imagen1Error = false;
 $imagen2Error = false;
-$ruta = "../../assets/img/usuarios/" . $_SESSION["usuario"] . "/articulos/" . $tituloAn;
+$ruta = "assets/img/usuarios/" . $_SESSION["usuario"] . "/articulos/" . $tituloAn;
 
 if ($_FILES['imagen1']['error'] > 0) {
     
@@ -36,7 +36,7 @@ if ($_FILES['imagen1']['error'] > 0) {
     $mTipo = exif_imagetype($mTmpFile);
     if (($mTipo == IMAGETYPE_JPEG) or ( $mTipo == IMAGETYPE_PNG)) {
         $imagen1 = $ruta . "/primeraImagen";
-        move_uploaded_file($_FILES['imagen1']['tmp_name'], $imagen1);
+        move_uploaded_file($_FILES['imagen1']['tmp_name'], "../../" . $imagen1);
     } else {
         $imagen1Error = true;
     }
@@ -48,7 +48,7 @@ if ($_FILES['imagen2']['error'] > 0) {
     $mTipo = exif_imagetype($mTmpFile);
     if (($mTipo == IMAGETYPE_JPEG) or ( $mTipo == IMAGETYPE_PNG)) {
         $imagen2 = $ruta . "/segundaImagen";
-        move_uploaded_file($_FILES['imagen2']['tmp_name'], $imagen2);
+        move_uploaded_file($_FILES['imagen2']['tmp_name'], "../../" . $imagen2);
     } else {
         $imagen2Error = true;
     }
