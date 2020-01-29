@@ -35,7 +35,7 @@ function getArticulosPaginated($busqueda, $offset, $limit) {
 
     mysqli_close($conn);
 //For debbuging only
-    print_r($error);
+    //print_r($error);
 
     return $articulos;
 }

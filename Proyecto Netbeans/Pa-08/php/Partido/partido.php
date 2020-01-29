@@ -61,6 +61,70 @@ function getPartidoById($idPartido) {
     return $partido;
 }
 
+function getPartidosLiga($idLiga) {
+
+    //array que guarda todos los errores
+    $error[] = "";
+    $conn = conexionDB();
+    $sql = "SELECT * FROM partido WHERE id_liga='$idLiga'";
+
+    $query = mysqli_query($conn, $sql);
+
+    if (!$query) {
+        $error[] = "Error en sql getPartidoById";
+    } else {
+
+        if (mysqli_num_rows($query) > 0) {
+
+            while ($row = mysqli_fetch_array($query)) {
+
+                $partido = array(
+                    'id' => $row['id_partido'],
+                    'id_liga' => $row['id_liga'],
+                    'fecha' => setDateFormat($row['fecha']),
+                    'equipo1' => $row['equipo1'],
+                    'equipo2' => $row['equipo2'],
+                    'mapa1' => $row['mapa1'],
+                    'mapa2' => $row['mapa2'],
+                    'mapa3' => $row['mapa3'],
+                    'ganador1' => $row['ganador1'],
+                    'ganador2' => $row['ganador2'],
+                    'ganador3' => $row['ganador3']
+                );
+
+                $partido['ganador'] = getGanadorPartido($partido);
+
+
+                echo '
+            <div class="col-4 col-md-4 col-xl-4 offset-xl-0" style="min-width: 350px;">
+                <div class="card" style="width: 100%;min-width: 100%;height: 100%;min-height: 100%;">
+                    <div class="card-body" style="width: 100%;min-width: 100%;height: 100%;min-height: 100%;">
+                        <div class="row">
+                            <div class="col" style="width: 30%;">
+                                <p class="float-left d-md-flex justify-content-xl-center" style="width: 100%;min-width: 100%;">' . $row['equipo1'] . '<br></p>
+                                <p class="float-left d-xl-flex justify-content-xl-center" style="min-width: 100%;width: 100%;">' . $partido['ganador'] . '<br></p>
+                            </div>
+                            <div class="col" style="width: 20%;min-width: 50px;"><img src="assets/img/vs.png" style="width: 100%;"></div>
+                            <div class="col" style="width: 30%;">
+                                <p class="text-left float-right d-md-flex justify-content-xl-center">' . $partido['equipo2'] . '<br></p>
+                                <p class="text-left float-right d-xl-flex justify-content-xl-center">' . $partido['ganador'] . '<br></p>
+                            </div>
+                        </div>
+                        <form style="width: 100%;min-width: 100%;max-width: 100%;height: 30px;min-height: 30px;"><button class="btn btn-primary" type="button" style="width: 100%;min-width: 100%;max-width: 100%;height: 30px;min-height: 30px;">Button</button></form>
+                    </div>
+                </div>
+            </div>';
+            }
+        } else {
+            $error[] = "Se han devuelto mas de un resultado";
+        }
+    }
+    mysqli_close($conn);
+//For debbuging only
+    //print_r($error);
+    //print_r($partido);
+}
+
 /*
  * Funcion para obtener partidos y paginarlos, obtenemos partidos de 6 en 6
  */
@@ -97,7 +161,7 @@ function getPartidosPaginated($lastOne, $limit) {
 
     mysqli_close($conn);
 //For debbuging only
-    //print_r($error);
+    print_r($error);
 
     return $partidos;
 }
