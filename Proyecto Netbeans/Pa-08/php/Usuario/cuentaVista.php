@@ -13,7 +13,6 @@
 
         include_once '../../funciones.php';
 
-
         session_start();
 
         $usuario = $_SESSION['usuario'];

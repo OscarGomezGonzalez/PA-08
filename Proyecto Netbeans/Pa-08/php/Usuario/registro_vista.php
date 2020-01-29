@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-    <script>
-        function comprobarClave() {
-            clave1 = document.getElementById("pass").value;
-            clave2 = document.getElementById("pass2").value;
-
-            if (clave1 != clave2) {
-                alert("Las contraseñas introducidas no coinciden vuelva a intentarlo");
-            }
-        }
-    </script>
+    <?php include_once '../../head.php'; ?>
 
     <body>
         <?php

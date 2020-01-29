@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-     <?php include_once '../../head.php'; ?>
+    <?php include_once '../../head.php'; ?>
 
     <body>
         <?php
         session_start();
+        $_SESSION['idArticulo_coment'] = 0;
         require_once("../../header.php");
         ?>
         <div style="margin-top: 50px;">
@@ -50,10 +51,12 @@
                                                 <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
                                                 <button type="submit" class="btn btn-light"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">Ver</i></button>
                                             </form>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <form action="php/Articulo/modificarArticulo_vista.php"  method="POST">
                                                 <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
                                                 <button type="submit" class="btn btn-warning"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">Modificar</i></button>
                                             </form>
+                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <form action="php/Articulo/eliminarArticulo.php"  method="POST">
                                                 <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">Eliminar</i></button>
                                                 <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>

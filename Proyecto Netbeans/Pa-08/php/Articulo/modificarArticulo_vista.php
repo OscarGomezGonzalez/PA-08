@@ -33,7 +33,6 @@
                             <div class="form-group"><textarea class="form-control"  maxlength="200" rows="5" name="contenido3" value="" required=""><?php echo $row['contenido3']; ?></textarea></div>
 
                             <input type='hidden' value="<?php echo $row['id_articulo'] ?>" name='idArticulo'/>
-                            <input type='hidden' value="<?php echo $row['titulo'] ?>" name='titulo'/>
                             <div class="form-group"><button class="btn btn-secondary btn-block bg-secondary" type="submit">Modificar Artículo</button></div>
                         </form>
                     </div>
