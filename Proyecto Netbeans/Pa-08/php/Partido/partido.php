@@ -97,7 +97,7 @@ function getPartidosPaginated($lastOne, $limit) {
 
     mysqli_close($conn);
 //For debbuging only
-    print_r($error);
+    //print_r($error);
 
     return $partidos;
 }

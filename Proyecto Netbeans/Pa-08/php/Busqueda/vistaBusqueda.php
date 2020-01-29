@@ -11,7 +11,7 @@
         include("busqueda.php");
 
         $offset = 0;
-        $limit = 2;
+        $limit = 4;
         if (isset($_GET['next'])) {
             $offset = $_GET['next'] + $limit;
         } elseif (isset($_GET['previous'])) {
@@ -20,8 +20,8 @@
         
         $busqueda = $_POST['busqueda'];
 
-        $articulos = getArticulosPaginated("", $offset, $limit);
-        $left = articulosLeft($offset, $limit, "");
+        $articulos = getArticulosPaginated($busqueda, $offset, $limit);
+        $left = articulosLeft($offset, $limit, $busqueda);
         ?>
         <!-- Page Content -->
 
