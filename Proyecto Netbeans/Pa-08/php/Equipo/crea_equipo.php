@@ -3,15 +3,18 @@
 include_once '../../funciones.php';
 //include_once 'funciones.php';
 
+crear_equipo();
+header("../../index.php");
+
 function crear_equipo() {
     
-
+        
+        
         //saneamiento
         $saneamiento = array(
             "nombre" => FILTER_SANITIZE_STRING,
             "pais_origen" => FILTER_SANITIZE_STRING,
-            "ranking_global" => FILTER_SANITIZE_STRING,
-            "ruta_foto" => FILTER_SANITIZE_STRING
+            "ranking" => FILTER_SANITIZE_STRING
         );
         $datos = filter_input_array(INPUT_POST, $saneamiento);
 

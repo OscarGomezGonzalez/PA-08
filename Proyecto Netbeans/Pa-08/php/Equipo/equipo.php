@@ -2,6 +2,46 @@
 
 include_once '../../funciones.php';
 
+function getAllEmplyTeams() {
+
+    function getAllPlayers() {
+        echo 'loko';
+        //array que guarda todos los errores
+        $error[] = "";
+        $conn = conexionDB();
+        $sql = "SELECT nombre_equipo FROM equipo";
+
+        $query = mysqli_query($conn, $sql);
+
+        if (!$query) {
+            $error[] = "Error en sql getEmptyTeams";
+            mysqli_close($conn);
+        } else {
+
+            if (mysqli_num_rows($query) >= 1) {
+
+                while ($row = mysqli_fetch_array($query)) {
+
+                    $jugadores[] = array(
+                        'equipo' => $row['nombre_equipo']
+                    );
+                }
+            } else {
+                $error[] = "No se ha encontrado ninguna fila";
+            }
+
+            mysqli_close($conn);
+        }
+
+        //For debbuging only
+        //print_r($error);
+        //print_r($jugadores);
+
+        return $jugadores;
+    }
+
+}
+
 function getAllEquipos() {
 
     //array que guarda todos los errores
@@ -109,4 +149,3 @@ function getPartidosByEquipo($equipo) {
 
     return $partidos;
 }
-
