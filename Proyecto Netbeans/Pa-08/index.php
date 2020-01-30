@@ -4,7 +4,7 @@
     <?php include_once 'head.php'; ?>
 
     <body class='bg-secondary' id="page-top" style="height: 647px;">
-
+      
         <!-- Navigation -->
         <?php
         session_start();
@@ -23,7 +23,7 @@
                 <!-- Blog Entries Column -->
                 <div class="col-md-8">
 
-                    <h1 class="my-4">Últimas noticias
+                    <h1 style="background-color: white; text-align: center; padding-top: 5px;border-radius: 2em;"class="my-4">Últimas noticias
                         <small>de tus deportes favoritos</small>
                     </h1>
 
@@ -55,16 +55,15 @@
                     ?>
 
                 </div>
-
                 <!-- Sidebar Widgets Column -->
-                <div class="col-md-4" id="sidebar" style="padding-left: 0px;padding-right: 0px;width: 50%;min-width: 200px;">
+                <div class="col-md-4" id="sidebar" style="padding-left: 0px;padding-right: 0px;width: 50%;min-width: 200px; margin-bottom: 2000px;">
                     <!-- Categories Widget -->
 
-                    <div class="card my-4" style="opacity: 0.62;filter: grayscale(0%);background-color: #000000;color: rgb(248,249,251);height: 100%;width: 100%;">
-                        <h5 class="card-header">Ligas</h5>
-                        <div class="card-body" style="opacity: 1;padding: 0px;width: 100%;height: 100%;">
-                            <?php
+                    <div class="card my-4" style="opacity: 0.62;filter: grayscale(0%);background-color: white;color: rgb(248,249,251);height: 100%;width: 100%;">
+                        <h5 style="color: #06352b; text-align: center" class="card-header">Ligas</h5>
 
+                        <div class="card-body" style="opacity: 1;padding: 0px;width: 55%;height: 100%; margin-left: 95px; margin-top: 10%;">
+                            <?php
                             include 'php/Liga/ver_ligas.php';
                             ver_ligas();
                             ?>
