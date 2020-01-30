@@ -13,7 +13,6 @@
 include '../../head.php';
 include '../Jugador/jugador.php';
 include '../Equipo/equipo.php';
-include 'assets/js/script';
 
 if (isset($_POST['equipo'])) {
     formCreaEquipo();
@@ -91,6 +90,33 @@ function formCreaEquipo() {
                 n.value = n.value.substring(0, n.value.length - 1);
             }
         }
+
+        function displayPlayers() {
+            var escogidos = document.getElementById("inputJugadores");
+            if (escogidos.hasChildNodes()) {
+                var children = escogidos.childNodes;
+                var cont = 1;
+                for (var i = 0; i < children.length; i++) {
+                    cont++;
+                }
+            }
+            var op = document.getElementById("jugadorSeleccionado");
+            if (op.value != "") {
+                if (cont <= 10) {
+                    var aux = op.value;
+                    // if (op !== null) {
+
+                    var hijo = document.createElement("input");
+                    var salto = document.createElement("br");
+                    hijo.setAttribute("name", "jugador" + cont);
+                    //hijo.setAttribute("type", "text");
+                    hijo.value = aux;
+                    //var boton = document.createElement("buttom");
+                    escogidos.appendChild(hijo);
+                    escogidos.appendChild(salto);
+                }
+            }
+        }
     </script>
     <body style="background-image: url(&quot;assets/img/csgo-logo-wallpapers-4.jpg&quot;);background-position: center;background-size: auto;">
 
@@ -127,8 +153,9 @@ function formCreaEquipo() {
                     </select>
                 </div> 
 
+                <div id='inputJugadores'>
 
-
+                </div>
                 <div class="form-group">
                     <button class="btn btn-primary btn-block create-account" type="submit">Crear</button>
                 </div>
