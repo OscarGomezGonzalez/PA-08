@@ -46,9 +46,8 @@ function ver_partidas() {
                                 </div>
                             </div>
                             <form action="#panelAdmin.php" method="POST" style="width: 100%;min-width: 100%;max-width: 100%;height: 30px;min-height: 30px;">
-                                <input type="hidden" id="custId" name="custId" value="<?php echo$row['id_liga']; ?>">
-                                <button name="btnModificarLiga" class="btn btn-primary" type="button" style="width: 50%;min-width: 50%;height: 30px;min-height: 30px;background-color: #000000;">Modificar</button>
-                                <button name="btnEliminarLiga" class="btn btn-primary" type="button" style="width: 50%;min-width: 50%;max-width: 100%;height: 30px;min-height: 30px;background-color: #000000;">Eliminar</button>
+                                <input type="hidden" id="custId" name="custId" value="<?php echo$row['nombre']; ?>">
+                                <button name="btnModificarLiga" class="btn btn-primary" type="submit" style="width: 50%;min-width: 50%;height: 30px;min-height: 30px;background-color: #000000;">Modificar</button>
                             </form></div>
                     </div>
 
