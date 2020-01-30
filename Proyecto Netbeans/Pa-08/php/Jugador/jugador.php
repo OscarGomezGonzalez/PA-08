@@ -6,7 +6,7 @@ function isPlayerInTeam($jugador) {
 
     $res = false;
 
-    if (!$jugador['equipo'] == "") {
+    if ($jugador['equipo'] == "") {
         
         $res = true;
     }

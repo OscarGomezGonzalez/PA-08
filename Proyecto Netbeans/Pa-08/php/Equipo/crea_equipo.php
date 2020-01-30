@@ -27,7 +27,7 @@ function crear_equipo() {
                 . "' ')"
                 //. "'" . $datos["ruta_foto"] . "')"
                 ;
-                echo $sql;
+                
         $liga[] = array();
         $query = mysqli_query($conn, $sql);
         $mensaje = '';
