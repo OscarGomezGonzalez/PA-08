@@ -4,10 +4,11 @@ include_once '../../funciones.php';
 
 function isPlayerInTeam($jugador) {
 
-    $res = true;
+    $res = false;
 
-    if ($jugador['nombreEquipo'] == "") {
-        $res = false;
+    if (!$jugador['equipo'] == "") {
+        
+        $res = true;
     }
 
     return $res;
@@ -30,7 +31,7 @@ function getAllPlayers() {
         if (mysqli_num_rows($query) >= 1) {
 
             while ($row = mysqli_fetch_array($query)) {
-
+                
                 $jugadores[] = array(
                     'id' => $row['id_jugador'],
                     'nombre' => $row['nombre'],
@@ -45,7 +46,7 @@ function getAllPlayers() {
     }
 
     //For debbuging only
-    //print_r($error);
+    print_r($error);
     //print_r($jugadores);
 
     return $jugadores;

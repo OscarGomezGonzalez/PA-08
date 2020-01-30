@@ -7,6 +7,7 @@
     <meta name="author" content="">
 
     <title>Pa-08</title>
+	<link rel="shortcut icon" type = "image/png" href="assets/img/csgo_icon.png">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">

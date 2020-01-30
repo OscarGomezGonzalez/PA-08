@@ -45,30 +45,14 @@ function ver_partidas() {
                                     <p class="text-left float-right d-md-flex justify-content-xl-center"><?php echo$row['equipo2']; ?><br></p>
                                 </div>
                             </div>
-                            <form action="#panelAdmin.php" method="POST" style="width: 100%;min-width: 100%;max-width: 100%;height: 30px;min-height: 30px;">
+                            <form action="php/Admin/formularioGenerico" method="POST" style="width: 100%;min-width: 100%;max-width: 100%;height: 30px;min-height: 30px;">
                                 <input type="hidden" id="custId" name="custId" value="<?php echo$row['nombre']; ?>">
-                                <button name="btnModificarLiga" class="btn btn-primary" type="submit" style="width: 50%;min-width: 50%;height: 30px;min-height: 30px;background-color: #000000;">Modificar</button>
+                                <button name="btnModificarPartido" class="btn btn-primary" type="submit" style="width: 50%;min-width: 50%;height: 30px;min-height: 30px;background-color: #000000;">Modificar</button>
                             </form></div>
                     </div>
 
                 </div><?php
-                //Fin antigua vision
-
-                /* echo '    
-                  <div class="col" style="padding-left: 0px;padding-right: 0px;width: 50%;min-width: 200px;">
-                  <div class="card text-left" style="opacity: 0.62;filter: grayscale(0%);background-color: #000000;color: rgb(248,249,251);height: 100%;width: 100%;">
-                  <div class="card-body" style="opacity: 1;padding: 0px;width: 100%;height: 100%;"><img>
-                  <h3 class="card-title">'.$row['nombre'].'</h3>
-                  <h5 class="card-title">'.$row['fecha_inicio'].'</h5>
-                  <h5 class="card-title">'.$row['fecha_fin'].'</h5>
-                  <h6 class="text-muted card-subtitle mb-2">'.$row['lugar'].'</h6>
-                  <form action="index.php" method="post">
-                  <input type="hidden" id="custId" name="custId" value="'.$row['id_liga'].'">
-                  <input class="btn btn-secondary boton-equipo" value="Ver Liga" type="submit">
-                  </form>
-                  </div>
-                  </div>
-                  </div>'; */
+               
             }
         } else {
             $error[] = "No hay nada";

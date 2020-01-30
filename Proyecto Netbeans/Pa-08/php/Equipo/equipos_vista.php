@@ -33,8 +33,11 @@
                     for ($i = 0; $i < $numEquipos; $i++) {
 
                         //si el numero de equipos es par sacamos las tarjetas de dos en dos
+                        
+                            
                         if ($aux == 2) {
                             ?>
+                    
                         </div>
                         <div class="row  justify-content-center" style="margin-bottom: 2%;">
                             <div class="col">
@@ -54,6 +57,7 @@
                             //si el numero de equipos es impar sacamos la
                         } else {
                             ?>
+                            
                             <div class="col">
                                 <div class="card text-left" style="opacity: 0.62;filter: grayscale(0%);background-color: #000000;color: rgb(248,249,251);">
                                     <div class="card-body" style="opacity: 1;"><img class="logoEquipo" src="assets/<?php echo$equipos[$i]['rutaImg']; ?>">
