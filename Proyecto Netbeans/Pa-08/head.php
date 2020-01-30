@@ -34,18 +34,11 @@
 
     <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css">
     <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
-
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
     <link rel="stylesheet" href="assets/css/Article-Clean.css">
-
     <link rel="stylesheet" href="assets/css/-Login-form-Page-BS4-.css">
-
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-
-
     <link rel="stylesheet" href="../../assets/fonts/fontawesome-all.min.css">
-
     <link rel="stylesheet" href="../../assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="../../assets/css/Lista-Productos-Canito.css">
 
@@ -62,12 +55,19 @@
 
     <script>
         function comprobarClave() {
-            clave1 = document.getElementById("pass").value;
-            clave2 = document.getElementById("pass2").value;
+        clave1 = document.getElementById("pass").value;
+        clave2 = document.getElementById("pass2").value;
+        if (clave1 != clave2) {
+        alert("Las contraseñas introducidas no coinciden vuelva a intentarlo");
+        }
+        }
 
-            if (clave1 != clave2) {
-                alert("Las contraseñas introducidas no coinciden vuelva a intentarlo");
-            }
+        function validarEmail(valor) {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)){
+        alert("La dirección de email " + valor + " es correcta.");
+        } else {
+        alert("La dirección de email es incorrecta.");
+        }
         }
     </script>
 

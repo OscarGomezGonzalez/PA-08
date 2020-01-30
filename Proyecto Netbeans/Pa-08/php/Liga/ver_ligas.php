@@ -116,3 +116,56 @@ function ver_unaLiga($idliga) {
     return $liga;
     //print_r($error);
 }
+
+function ver_ligasADMIN() {
+
+    $conn = conexionDB();
+    $sql = "SELECT `id_liga`, `nombre`, `fecha_inicio`, `fecha_fin`, `lugar` FROM `liga`";
+
+    $query = mysqli_query($conn, $sql);
+    if (!$query) {
+        $error[] = "Error en sql";
+        mysqli_close($conn);
+    } else {
+        if (mysqli_num_rows($query) >= 1) {
+            while ($row = mysqli_fetch_array($query)) {
+                $ligas[] = array(
+                    'id_liga' => $row['id_liga'],
+                    'nombre' => $row['nombre'],
+                    'fecha_inicio' => $row['fecha_inicio'],
+                    'fecha_fin' => $row['fecha_fin'],
+                    'lugar' => $row['lugar']
+                );
+                
+                ?>
+                    
+                <div class="col d-lg-flex justify-content-lg-center align-items-lg-center" style="padding-left: 0px;padding-right: 0px;width: 25%;min-width: 200px;margin-right: 1%;margin-bottom: 1%;">
+                    <div class="card text-left" style="opacity: 0.62;filter: grayscale(0%);background-color: #000000;color: rgb(248,249,251);height: 100%;width: 100%;">
+                        <div class="card-body" style="opacity: 1;padding: 0px;width: 100%;height: 100%;">
+                            <div class="row">
+                                <div class="col">
+                                    <h3><?php echo$row['nombre']; ?></h3>
+                                    <h5><?php echo$row['fecha_inicio']; ?></h5>
+                                    <h5><?php echo$row['fecha_fin'];?></h5>
+                                    <h6 class="text-muted mb-2"><?php echo$row['lugar']; ?></h6>
+                                </div>
+                            </div>
+                            <form action="panelAdmin.php" method="POST" style="width: 100%;min-width: 100%;max-width: 100%;height: 30px;min-height: 30px;">
+                                  <input type="hidden" name="custId" value="<?php echo$row['id_liga'];?>">
+                                  <button name="btnModificarLiga" class="btn btn-primary" type="submit" style="width: 50%;min-width: 50%;height: 30px;min-height: 30px;background-color: #000000;">Modificar</button>
+                                  <button name="btnEliminarLiga" class="btn btn-primary" type="submit" style="width: 50%;min-width: 50%;max-width: 100%;height: 30px;min-height: 30px;background-color: #000000;">Eliminar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div><?php
+                
+                
+            }
+        } else {
+            $error[] = "No hay nada";
+        }
+        mysqli_close($conn);
+    }
+
+    //print_r($error);
+}
