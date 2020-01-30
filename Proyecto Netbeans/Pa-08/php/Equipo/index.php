@@ -13,12 +13,9 @@ and open the template in the editor.
         <form action="#" method="post">
             <br>
             <input type="text" name="nombre" value="nombre">nombre<br>
-            <input type="date" name="fechaInicio" value="2020-01-30">fechaInicio<br>
-            <input type="date" name="fechaFin" value="2020-01-30">fechaFin<br>
-            <input type="text" name="lugar" value="Mickey">lugar<br>
-            <input type="number" name="primerPremio" value="0">primer premio<br>
-            <input type="number" name="segundoPremio" value="0">segundo premio<br>
-            <input type="number" name="premioSemifinales" value="0">premio semifinales<br>
+            <input type="text" name="pais_origen" value="pais_origen">pais_origen<br>
+            <input type="text" name="ranking_global" value="ranking_global">ranking_global<br>
+            <input type="text" name="ruta_foto" value="ruta_foto">ruta_foto<br>
             <input type="submit" value="Enviar" name="btnCrear" />
         </form>
 
