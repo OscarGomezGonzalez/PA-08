@@ -1,7 +1,7 @@
 <?php
 
-//include_once '../../funciones.php';
-include_once 'funciones.php';
+include_once '../../funciones.php';
+//include_once 'funciones.php';
 
 function modif_equipo($idEquipo) {
     if (!isset($_POST['btnModificarLugar'])) {
