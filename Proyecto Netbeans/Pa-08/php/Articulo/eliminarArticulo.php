@@ -24,19 +24,21 @@ if (isset($_POST['SI'])) {
 <!DOCTYPE html>
 <html>
 
-       <?php include_once '../../head.php'; ?>
-    
+    <?php include_once '../../head.php'; ?>
+
     <body>
-         <?php require_once("../../header.php"); ?>
-        <div style="background-color: #c6c8ca; width: 45%; margin-left: 29%;  margin-top:15%; border: groove 1em red; border-radius: 2em;"><h3 class="text-danger" style="text-align: center;">¿Esta seguro de eliminar este articulo?</h3></div>
-        <div style="margin-top:2%; margin-left: 45%;" class="form-inline">
-            <form action="php/Articulo/eliminarArticulo.php"  method="POST">
-                <button name="SI" type="submit" class="btn btn-danger"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">SI</i></button>
-            </form>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-            <form action="php/Articulo/eliminarArticulo.php"  method="POST">
-                <button name="NO" type="submit" class="btn btn-warning"><i class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">NO</i></button>
-            </form>
+        <?php require_once("../../header.php"); ?>
+        <div style="margin-bottom: 25%;">
+            <div style="background-color: #c6c8ca; width: 45%; margin-left: 29%;  margin-top:15%; border: groove 1em red; border-radius: 2em;"><h3 class="text-danger" style="text-align: center;">¿Esta seguro de eliminar este articulo?</h3></div>
+            <div style="margin-top:2%; margin-left: 45%;" class="form-inline">
+                <form action="php/Articulo/eliminarArticulo.php"  method="POST">
+                    <button name="SI" type="submit" class="btn btn-danger"><i class="fas fa-pencil-alt d-xl-flex justify-content-xl-center align-items-xl-center">SI</i></button>
+                </form>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                <form action="php/Articulo/eliminarArticulo.php"  method="POST">
+                    <button name="NO" type="submit" class="btn btn-warning"><i class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center">NO</i></button>
+                </form>
+            </div>
         </div>
         <?php
         require_once("../../footer.php");

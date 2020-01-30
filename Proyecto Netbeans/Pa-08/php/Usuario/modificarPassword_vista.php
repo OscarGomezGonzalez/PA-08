@@ -9,7 +9,7 @@
 
         require_once("../../header.php");
         ?>
-        <div class="bg-secondary register-photo">
+        <div class="bg-secondary register-photo"  style="margin-bottom:12%;">
             <div class="form-container">
                 <form action="php/Usuario/modificarPassword.php"  method="POST">
                     <h2 class="text-center">MODIFICAR CONTRASEÑA DE "<?php echo $_SESSION["nombre"]; ?>"</h2>

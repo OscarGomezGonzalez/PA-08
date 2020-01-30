@@ -9,7 +9,7 @@
         $_SESSION['idArticulo_coment'] = 0;
         require_once("../../header.php");
         ?>
-        <div style="margin-top: 125px;">
+        <div style="margin-top: 125px; margin-bottom:12%;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">

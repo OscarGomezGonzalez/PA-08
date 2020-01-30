@@ -12,7 +12,7 @@
 
         require_once("../../header.php");
         ?>
-        <div>
+        <div  style="margin-bottom:12%;">
             <div class="container" style="margin-top: 125px;">
                 <div class="row">
                     <div class="col-md-4">

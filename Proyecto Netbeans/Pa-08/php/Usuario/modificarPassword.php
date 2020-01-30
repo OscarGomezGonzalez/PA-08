@@ -36,6 +36,7 @@ if ($contraseñaComparar != $passActual) {
         $password = password_hash($newPass, PASSWORD_DEFAULT);
         $consulta = "UPDATE `usuario` SET `password`='$password' WHERE nombre_usuario='$usuario'";
         $resultado = mysqli_query($conn, $consulta);
+        $_SESSION["password"] = $newPass;
         mysqli_close($conn);
         if ($resultado) {
             header("location:../../php/Usuario/cuentaVista.php");

@@ -17,7 +17,7 @@
         $row = mysqli_fetch_array($resultado);
         ?>
 
-        <div class="article-clean">
+        <div class="article-clean"  style="margin-bottom:12%;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">

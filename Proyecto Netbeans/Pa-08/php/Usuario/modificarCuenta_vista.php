@@ -9,7 +9,7 @@
 
         require_once("../../header.php");
         ?>
-        <div class="bg-secondary register-photo">
+        <div class="bg-secondary register-photo"  style="margin-bottom:12%;">
             <div class="form-container">
                 <form action="php/Usuario/modificarCuenta.php" enctype="multipart/form-data" method="POST">
                     <h2 class="text-center">MODIFICAR CUENTA DE "<?php echo $_SESSION["nombre"]; ?>"</h2>

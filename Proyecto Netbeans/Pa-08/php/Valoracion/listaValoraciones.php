@@ -8,7 +8,7 @@
         include_once '../../funciones.php';
         require_once("../../header.php");
         ?>
-        <div style="margin-top: 125px;">
+        <div style="margin-top: 125px; margin-bottom:12%;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
@@ -61,8 +61,6 @@
                 </div>
             </div>
         </div>
-        <script src="../../assets/js/jquery.min.js"></script>
-        <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
         <?php require_once("../../footer.php"); ?>
     </body>
 </html>

@@ -27,7 +27,7 @@
         <?php
         require_once("../../header.php");
         ?>
-        <div class="bg-secondary register-photo">
+        <div class="bg-secondary register-photo"  style="margin-bottom:12%;">
             <div class="form-container">
                 <form action="php/Usuario/registro.php" enctype="multipart/form-data" method="POST">
                     <h2 class="text-center">UNETE a nosotros</h2>

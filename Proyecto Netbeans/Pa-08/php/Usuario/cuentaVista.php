@@ -26,7 +26,7 @@
         $_SESSION["foto"] = $row["imagen_perfil"];
         $_SESSION["email"] = $row["email"];
         ?>
-        <div class="container profile profile-view" id="profile" >
+        <div class="container profile profile-view" id="profile" style="margin-bottom:12%;"  >
             <div class="row">
                 <div class="col-md-12 alert-col relative">
                     <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
