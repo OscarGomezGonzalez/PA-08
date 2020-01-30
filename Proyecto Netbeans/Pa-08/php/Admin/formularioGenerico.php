@@ -13,6 +13,7 @@
 include '../../head.php';
 include '../Jugador/jugador.php';
 include '../Equipo/equipo.php';
+include 'assets/js/script';
 
 if (isset($_POST['equipo'])) {
     formCreaEquipo();
@@ -84,6 +85,13 @@ function creaLiga() {
 
 function formCreaEquipo() {
     ?>
+    <script>
+        function validar(n) {
+            if (isNaN(n.value) || n.value > 500) {
+                n.value = n.value.substring(0, n.value.length - 1);
+            }
+        }
+    </script>
     <body style="background-image: url(&quot;assets/img/csgo-logo-wallpapers-4.jpg&quot;);background-position: center;background-size: auto;">
 
         <div class="justify-content-center registration-form" style="margin-top: 10%; margin-left: 10%; margin-right: 10%;">
@@ -95,7 +103,7 @@ function formCreaEquipo() {
                 <div class="form-group">
                     <input class="form-control item" type="text"  placeholder="Pais" name="pais" required="" minlength="4"></div>
                 <div class="form-group">
-                    <input class="form-control item" type="number" placeholder="Ranking" name="ranking" required=""></div>
+                    <input class="form-control item" type="text" onkeyup="validar(this)" placeholder="Ranking" name="ranking" required=""></div>
                 <div class="form-group" id="jugadoresList">
 
                     <label id="jugadoresList">Elige Jugadores:</label>
@@ -120,12 +128,12 @@ function formCreaEquipo() {
                 </div> 
 
 
-        
-        <div class="form-group">
-            <button class="btn btn-primary btn-block create-account" type="submit">Crear</button>
-        </div>
-    </form></div>
-    
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block create-account" type="submit">Crear</button>
+                </div>
+            </form></div>
+
     </body>
     <?php
 }
@@ -170,12 +178,12 @@ function modEquipo() {
                 <div id='inputJugadores'>
 
                 </div>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block create-account" type="submit">Modificar</button>
-                </div>
-            </form>
-        
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block create-account" type="submit">Modificar</button>
+        </div>
+    </form>
+
     </body>
     <?php
 }
@@ -202,20 +210,20 @@ function formCreaJugador() {
 
                     <select id = "jugadorSeleccionado" class = "form-control op-select" value = "" onchange = "displayPlayers()" id = "selectJugador">
 
-                        <?php
-                        /*$equipos = getAllEmplyTeams();
-                        //print_r($jugadores);
-                        $numEquipos = sizeof($jugadores);
-                        echo 'loko';
-                        for ($i = 0; $i < $numEquipos; $i++) {
+                <?php
+                /* $equipos = getAllEmplyTeams();
+                  //print_r($jugadores);
+                  $numEquipos = sizeof($jugadores);
+                  echo 'loko';
+                  for ($i = 0; $i < $numEquipos; $i++) {
 
-                            if (!isPlayerInTeam($equipos[$i])) {
-                                ?>
-                                <option class="op"><?php echo$equipos[$i]['nombre']; ?></option>
-                                <?php
-                            }
-                        }*/
-                        ?>
+                  if (!isPlayerInTeam($equipos[$i])) {
+                  ?>
+                  <option class="op"><?php echo$equipos[$i]['nombre']; ?></option>
+                  <?php
+                  }
+                  } */
+                ?>
                     </select></div>--> 
                 <div class="form-group">
                     <button class="btn btn-primary btn-block create-account" type="submit">Crear</button>
