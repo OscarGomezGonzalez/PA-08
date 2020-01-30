@@ -23,6 +23,23 @@ function ver_jugadores() {
                     'nombre_equipo' => $row['nombre_equipo'],
                     'ruta_imagen' => $row['ruta_imagen']
                 );
+<<<<<<< HEAD
+                ?>
+                <div class="col-4 col-md-4 col-xl-4 offset-xl-0 d-lg-flex justify-content-lg-center align-items-lg-center" style="min-width: 200px;width: 25%;">
+                    <div class="card" style="background-color: #000000;color: rgb(248,249,251);opacity: 0.62;width: 100%;height: 100%;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h4><?php echo$row['nombre'] ?></h4>
+                                    <p class="float-left"><?php echo$row['pais_origen'] ?></p>
+                                    <p class="text-left float-right">Ranking: <?php echo$row['ranking_jugador']; ?></p>
+                                </div>
+                            </div>
+                            <form style="width: 100%;min-width: 100%;max-width: 100%;height: 30px;min-height: 30px;">
+                                <input type="hidden" name="custId" value="<?php echo$row['id_jugador']; ?>">
+
+                                <button class="btn btn-primary" name="btnModificarJugador" type="submit" style="width: 50%;min-width: 50%;height: 30px;min-height: 30px;background-color: #000000;">Modificar</button>
+=======
                 //Antigua vision, sirve para trazar mejor
                 echo '<p>' . $row['id_jugador'] . ' ' . $row['nombre'] . ' ' . $row['pais_origen'] . ' ' . $row['ranking_jugador'] .' ' . $row['nombre_equipo'] .  ' ' . $row['ruta_imagen'] . '</p>';
                 echo '
@@ -44,6 +61,7 @@ function ver_jugadores() {
                             <form action="index.php" method="post">
                                     <input type="hidden" id="custId" name="custId" value="'.$row['id_liga'].'">
                                     <input class="btn btn-secondary boton-equipo" value="Ver Liga" type="submit">
+>>>>>>> master
                             </form>
                         </div>
                     </div>

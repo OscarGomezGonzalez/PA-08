@@ -20,12 +20,14 @@
     ?>
 
     <?php
-    if (isset($_POST['btnEliminarLiga'])) {
+    if (isset($_POST['btnModificarLiga'])) {
    
         $id = $_POST['custId'];
-        echo $id;
-        borra_liga($id);
         
+    }elseif (isset ($_POST['btnModificarLiga'])) {
+        $id = $_POST['custId'];
+    }elseif (isset ($_POST['btnModificarJugador'])) {
+        $id = $_POST['custId'];
     }
     ?>
 
