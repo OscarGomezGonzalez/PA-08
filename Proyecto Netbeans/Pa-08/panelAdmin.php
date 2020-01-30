@@ -39,7 +39,7 @@
                     <div class="col" style="width: 100%;min-width: 100%;">
                         <form action="php/Admin/formularioGenerico.php" method="POST"class="d-lg-flex justify-content-lg-center" style="min-width: 100%;width: 100%;">
                             <button onclick="location.href = 'formularioGenerico.php'" name="liga" class="btn btn-primary" type="submit" style="width: 20%;background-color: #000000;">Crear Liga</button>
-                            <button onclick="location.href = 'formularioGenerico.php'" name="partida" class="btn btn-primary" type="submit" style="width: 20%;background-color: #000000;">Crear Partida</button>
+                            <button onclick="location.href = 'formularioGenerico.php'" name="partido" class="btn btn-primary" type="submit" style="width: 20%;background-color: #000000;">Crear Partida</button>
                             <button class="btn btn-primary" onclick="location.href = 'formularioGenerico.php'" name="equipo" type="submit" style="width: 20%;background-color: #000000;">Crear Equipo</button>
                             <button onclick="location.href = 'formularioGenerico.php'" class="btn btn-primary" name="jugador" type="submit" style="width: 20%;background-color: #000000;">Crear Jugador</button>
                         </form>
