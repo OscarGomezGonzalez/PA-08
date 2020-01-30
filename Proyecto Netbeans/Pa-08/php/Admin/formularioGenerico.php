@@ -39,31 +39,9 @@
                     <div class="form-group">
                         <input class="form-control item" type="text"  placeholder="Pais" name="pais" required="" minlength="4"></div>
                     <div class="form-group">
-                        <input class="form-control item" type="ranking" placeholder="Ranking" name="ranking" required=""></div>
+                        <input class="form-control item" type="number" placeholder="Ranking" name="ranking" required=""></div>
 
-                    <div class="form-group" id="jugadoresList">
-
-                        <label id="jugadoresList">Elige Jugadores:</label>
-                        <select id="jugadorSeleccionado" class="form-control op-select" value="" onchange="displayPlayers()" id="selectJugador">
-
-                            <?php
-                            $jugadores = getAllPlayers();
-                            print_r($jugadores);
-
-                            $numJugadores = sizeof($jugadores);
-
-                            for ($i = 0; $i < $numJugadores; $i++) {
-
-                                if (!isPlayerInTeam($jugadores[$i])) {
-                                    ?>
-                                    <option class="op"><?php echo$jugadores[$i]['nombre']; ?></option>
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </select>
-                    </div> 
-                    <div id='inputJugadores'>
+                   
 
                     </div>
                     <div class="form-group">
@@ -138,7 +116,7 @@
                     <div class = "form-group">
                         <input class = "form-control item" type = "text" placeholder = "Pais" name = "pais" required = "" minlength = "4"></div>
                     <div class = "form-group">
-                        <input class = "form-control item" type = "ranking" id = "password" placeholder = "Ranking" name = "ranking" required = "" minlength = "4"></div>
+                        <input class = "form-control item" type = "number" id = "password" placeholder = "Ranking" name = "ranking" required = "" minlength = "4"></div>
 
                     <div class = "form-group" id = "jugadoresList">
 

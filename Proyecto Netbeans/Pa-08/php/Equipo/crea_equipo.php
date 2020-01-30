@@ -13,7 +13,7 @@ function crear_equipo() {
         //saneamiento
         $saneamiento = array(
             "nombre" => FILTER_SANITIZE_STRING,
-            "pais_origen" => FILTER_SANITIZE_STRING,
+            "pais" => FILTER_SANITIZE_STRING,
             "ranking" => FILTER_SANITIZE_STRING
         );
         $datos = filter_input_array(INPUT_POST, $saneamiento);
@@ -23,9 +23,11 @@ function crear_equipo() {
 
         $conn = conexionDB();
         $sql = "INSERT INTO `equipo` (`nombre`, `pais_origen`, `ranking_global`, `ruta_foto`) "
-                . "VALUES ('" . $datos["nombre"] . "', '" . $datos["pais_origen"] . "', '" . $datos["ranking_global"] . "', "
-                . "'" . $datos["ruta_foto"] . "')"
+                . "VALUES ('" . $datos["nombre"] . "', '" . $datos["pais"] . "', " . $datos["ranking"] . ", "
+                . "' ')"
+                //. "'" . $datos["ruta_foto"] . "')"
                 ;
+                echo $sql;
         $liga[] = array();
         $query = mysqli_query($conn, $sql);
         $mensaje = '';
