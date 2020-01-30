@@ -52,25 +52,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="assets/js/script.js"></script>
 
-
-    <script>
-        function comprobarClave() {
-        clave1 = document.getElementById("pass").value;
-        clave2 = document.getElementById("pass2").value;
-        if (clave1 != clave2) {
-        alert("Las contraseñas introducidas no coinciden vuelva a intentarlo");
-        }
-        }
-
-        function validarEmail(valor) {
-        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)){
-        alert("La dirección de email " + valor + " es correcta.");
-        } else {
-        alert("La dirección de email es incorrecta.");
-        }
-        }
-    </script>
-
     <style>
         .valoracion {
             position: relative;

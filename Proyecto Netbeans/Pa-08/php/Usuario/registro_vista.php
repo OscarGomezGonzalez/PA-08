@@ -2,8 +2,28 @@
 <html>
 
     <?php include_once '../../head.php'; ?>
+    <script>
+        function pruebaemail(valor) {
+            re = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+            if (!re.exec(valor.value)) {
+                alert('El email escogido "' + valor.value + '" no es valido');
+                valor.style.color = "red";
+            } else {
+                alert('El email escogido "' + valor.value + '" es valido');
+                valor.style.color = "green";
+            }
+        }
 
+        function comprobarClave() {
+            clave1 = document.getElementById("pass").value;
+            clave2 = document.getElementById("pass2").value;
+            if (clave1 != clave2) {
+                alert("Las contraseñas introducidas no coinciden vuelva a intentarlo");
+            }
+        }
+    </script>
     <body>
+
         <?php
         require_once("../../header.php");
         ?>
@@ -13,7 +33,7 @@
                     <h2 class="text-center">UNETE a nosotros</h2>
                     <div class="form-group"><input class="form-control" type="text" name="nombre" placeholder="Nombre completo" required=""></div>
                     <div class="form-group"><input class="form-control" type="text" name="nombre_usuario" placeholder="Nombre de usuario" required=""></div>
-                    <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required=""></div>
+                    <div class="form-group"><input class="form-control" type="email" name="email" onblur="pruebaemail(this);" placeholder ="Email" required=""></div>
                     <div class="form-group"><input class="form-control" type="password" name="password" id="pass" placeholder="Contraseña" required=""></div>
                     <div class="form-group"><input class="form-control" type="password" name="password-repeat" id="pass2" placeholder="Repita la contraseña" required=""></div>
                     <div class="form-group"><label for="file">Elija foto de perfil: </label><br><input name="imagen_perfil" type="file" value="Selecciona imagen de perfil"></div>
